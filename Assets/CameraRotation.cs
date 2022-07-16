@@ -22,9 +22,11 @@ public class CameraRotation : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(yRotation, MouseY, 0);
 
-        Cube.transform.Rotate(Vector3.up * MouseX); //Rotate MouseY on X axis, and MouseX on Y axis
-                                                    //you have to Rotate the Cube
-                                                    //WHY I ALWAYS FORGET THAT I HAVE TO MOVE PUT THE CUBES BODY HERE
+        /* Cube.transform.Rotate(Vector3.up * MouseX);*/ //Rotate MouseY on X axis, and MouseX on Y axis
+                                                         //you have to Rotate the Cube
+                                                         //WHY I ALWAYS FORGET THAT I HAVE TO MOVE PUT THE CUBES BODY HERE
+
+        Cube.transform.Rotate(Vector3.up * MouseX);
 
 
     }
