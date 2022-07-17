@@ -18,20 +18,15 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float Horizontal = Input.GetAxis("Horizontal");//for X movement  (THESE ARE WAY FUCKING BETTER) AXIS
-        float Vertical = Input.GetAxis("Vertical");//for Z movement
-
-        Horizontal = Horizontal* speed * Time.deltaTime;
-        Vertical = Vertical * speed * Time.deltaTime;
-
+        float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         /* transform.Translate(Horizontal, 0, Vertical); */ //initializing it with new Vector3 or you can simply use Horizontal, 0, Vertical too
         transform.Translate(Horizontal, 0, Vertical);
 
-
         if (Input.GetButtonDown("Jump") && isOntheGround) //GetButtondown is better
         {
-            rb.AddForce(transform.up * JumpSpeed, ForceMode.Impulse);  //transform.up works :))
-            isOntheGround = false; //THIS ONE IS MORE SOPHISTICATED. EVEN WE WERE CHECKING IF THE PLAYER IS ON THE GROUND OR NOT
+            rb.AddForce(transform.up * JumpSpeed, ForceMode.Impulse);
+            isOntheGround = false;
 
         }
 
