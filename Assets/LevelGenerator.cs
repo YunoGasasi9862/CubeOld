@@ -17,10 +17,9 @@ public class LevelGenerator : MonoBehaviour
         for(int ground=0; ground<NumberofGround; ground++)
         {
             GameObject platform = Instantiate(plat, pos, Quaternion.identity);
+            pos.z += DistanceZ;
         }
        
-
-
         yield return null;
 
     }

@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     public float speed = 20f;
     public float JumpSpeed = 5f;
     bool isOntheGround = false;
+   public bool Mode1Automatic;
+   public bool Mode2Manual;
     Rigidbody rb;
     void Start()
     {
@@ -18,20 +20,58 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        /* transform.Translate(Horizontal, 0, Vertical); */ //initializing it with new Vector3 or you can simply use Horizontal, 0, Vertical too
-        transform.Translate(Horizontal, 0, Vertical);
 
-        if (Input.GetButtonDown("Jump") && isOntheGround) //GetButtondown is better
+        CheckforMode();
+
+        if(Mode1Automatic)
         {
-            rb.AddForce(transform.up * JumpSpeed, ForceMode.Impulse);
-            isOntheGround = false;
+            Mode2Manual = false;
+            rb.AddForce(Vector3.forward * speed);
+
+
+
+            float Horizontal = Input.GetAxis("Horizontal");
 
         }
 
-      
-       
+        if(Mode2Manual)
+        {
+            Mode1Automatic = false;
+
+            float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+            /* transform.Translate(Horizontal, 0, Vertical); */ //initializing it with new Vector3 or you can simply use Horizontal, 0, Vertical too
+            transform.Translate(Horizontal, 0, Vertical);
+            if (Input.GetButtonDown("Jump") && isOntheGround) //GetButtondown is better
+            {
+                rb.AddForce(transform.up * JumpSpeed, ForceMode.Impulse);
+                isOntheGround = false;
+
+            }
+
+        }
+
+
+
+
+    }
+
+    void CheckforMode()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (Mode1Automatic)
+            {
+                Mode1Automatic = false;
+                Mode2Manual = true;
+            }
+
+            if (Mode2Manual)
+            {
+                Mode1Automatic = true;
+                Mode2Manual = false;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)  //for JUMPS IMMA USE COLLISION DETECTOR NOW. THIS IS SO MUCH FUCKING BETTER!!!
