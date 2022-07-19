@@ -22,22 +22,6 @@ public class Movement : MonoBehaviour
     {
 
         CheckforMode();
-
-        if(Mode1Automatic)
-        {
-            Mode2Manual = false;
-            rb.AddForce(Vector3.forward * speed);
-
-
-
-            float Horizontal = Input.GetAxis("Horizontal");
-
-        }
-
-        if(Mode2Manual)
-        {
-            Mode1Automatic = false;
-
             float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
             float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
             /* transform.Translate(Horizontal, 0, Vertical); */ //initializing it with new Vector3 or you can simply use Horizontal, 0, Vertical too
@@ -49,28 +33,22 @@ public class Movement : MonoBehaviour
 
             }
 
-        }
-
-
+       
 
 
     }
 
     void CheckforMode()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) && Mode1Automatic)
         {
-            if (Mode1Automatic)
-            {
-                Mode1Automatic = false;
-                Mode2Manual = true;
-            }
-
-            if (Mode2Manual)
-            {
-                Mode1Automatic = true;
-                Mode2Manual = false;
-            }
+            Mode1Automatic = false;
+            Mode2Manual = true;
+        }
+        if (Input.GetKeyDown(KeyCode.M) && Mode2Manual)
+        {
+            Mode1Automatic = true;
+            Mode2Manual = false;
         }
     }
 
