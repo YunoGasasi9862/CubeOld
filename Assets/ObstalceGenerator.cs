@@ -8,9 +8,5 @@ public class ObstalceGenerator : MonoBehaviour
     public GameObject obstacle;
     int numberofObstacles = 20;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
