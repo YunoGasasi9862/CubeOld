@@ -6,8 +6,9 @@ public class ShuffleTransformPoints : MonoBehaviour
 {
     public GameObject spawnPoint;
     public int SpawnPoints = 3;
-    private float MaxDistance = 0.3f;
-    private float minX = -0.5f, maxX = 0.45f;
+    private float minDistance= 6f;
+    private float MaxDistance = 10f;
+    private float minX = -6f, maxX = 6f;
     private void Start()
     {
         StartCoroutine(ShufflePoints());
@@ -19,9 +20,8 @@ public class ShuffleTransformPoints : MonoBehaviour
         Vector3 pos = transform.position;
        for(int i=0; i<SpawnPoints; i++) { 
             pos.x = Random.Range(minX, maxX);
-            pos.z += MaxDistance;
-            GameObject shuffle = Instantiate(point, point.position, point.rotation).gameObject; //this seems to work now, WTF??
-
+            pos.z += Random.Range(minDistance, MaxDistance);
+            GameObject shuffle = Instantiate(spawnPoint, pos, Quaternion.identity); //this seems to work now, WTF??
 
         }
 

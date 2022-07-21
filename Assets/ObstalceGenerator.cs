@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class ObstalceGenerator : MonoBehaviour
 {
-    public Transform[] generatepoints;
+    public ShuffleTransformPoints script;
     public GameObject obstacle;
     int numberofObstacles = 20;
 
-    
+
+    private void Update()
+    {
+        
+    }
+
+
 }

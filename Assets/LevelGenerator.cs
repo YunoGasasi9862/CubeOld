@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     int NumberofGround = 40;
-    float DistanceZ = 20;
+    float DistanceZ = 22;
     public GameObject plat;
     private void Start()
     {
