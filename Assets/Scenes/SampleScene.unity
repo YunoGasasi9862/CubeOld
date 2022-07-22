@@ -212,8 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f9ee95dbc9dc54fa63c76b78601d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generatepoints: []
-  obstacle: {fileID: 0}
+  obstacle: {fileID: 2011754054077313677, guid: 1cfb477788849c741b47f684572b33dd, type: 3}
+  cube: {fileID: 7628574912462419819, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
