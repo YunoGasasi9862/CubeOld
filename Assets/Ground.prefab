@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7628574912462419821}
   - component: {fileID: 7628574912462419820}
   - component: {fileID: 594967914051363348}
+  - component: {fileID: 1112906737068075892}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -112,3 +113,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 761506012694786528, guid: 435c5a3d915ed0d48a44336d8e68f8df, type: 3}
   SpawnPoints: 3
+  pos: {x: 0, y: 0, z: 0}
+--- !u!114 &1112906737068075892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628574912462419819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f9ee95dbc9dc54fa63c76b78601d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle: {fileID: 2011754054077313677, guid: 1cfb477788849c741b47f684572b33dd, type: 3}
+  cube: {fileID: 7628574912462419819}
+  position: {x: 0, y: 0, z: 0}

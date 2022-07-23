@@ -11,9 +11,11 @@ public class ShuffleTransformPoints : MonoBehaviour
     private float MaxDistance = 10f;
     private float minX = -6f, maxX = 6f;
     public Vector3 pos;
+    ObstalceGenerator track;
     private void Start()
     {
         StartCoroutine(ShufflePoints());
+        track = GameObject.FindObjectOfType<ObstalceGenerator>();
     }
     IEnumerator ShufflePoints()
     {
@@ -21,14 +23,13 @@ public class ShuffleTransformPoints : MonoBehaviour
         //3 points only
    
           pos = transform.position;
-       for(int i=0; i<SpawnPoints; i++) { 
+          for(int i=0; i<SpawnPoints; i++) { 
             pos.x = Random.Range(minX, maxX);
             pos.z += Random.Range(minDistance, MaxDistance);
             shuffle = Instantiate(spawnPoint, pos, Quaternion.identity); //this seems to work now, WTF??
+            track.position = pos; //assigning the position for every new object
 
         }
-
-
 
         yield return null;
     }
