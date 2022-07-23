@@ -15,7 +15,7 @@ public class ShuffleTransformPoints : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ShufflePoints());
-        track = GameObject.FindObjectOfType<ObstalceGenerator>();
+        track = GetComponent<ObstalceGenerator>(); 
     }
     IEnumerator ShufflePoints()
     {
@@ -27,7 +27,7 @@ public class ShuffleTransformPoints : MonoBehaviour
             pos.x = Random.Range(minX, maxX);
             pos.z += Random.Range(minDistance, MaxDistance);
             shuffle = Instantiate(spawnPoint, pos, Quaternion.identity); //this seems to work now, WTF??
-            track.position = pos; //assigning the position for every new object
+           //assigning the position for every new object
 
         }
 
