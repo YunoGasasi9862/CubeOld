@@ -212,3 +212,4 @@ MonoBehaviour:
   - {fileID: 6609372791257570043}
   point: {fileID: 0}
   pos: {x: 0, y: 0, z: 0}
+  obstacle: {fileID: 2011754054077313677, guid: 1cfb477788849c741b47f684572b33dd, type: 3}

@@ -8,8 +8,8 @@ public class ShuffleTransformPoints : MonoBehaviour
       public Transform[] spawnpoints;
      public GameObject point;
      public Vector3 pos;
-  
-  
+    public GameObject obstacle;
+
     private void Start()
     {
         int index = Random.Range(0, spawnpoints.Length);
@@ -19,12 +19,12 @@ public class ShuffleTransformPoints : MonoBehaviour
 
             if (i == index)
             {
-                spawnpoints[index].gameObject.SetActive(true);
-
+                spawnpoints[index].gameObject.SetActive(true); //only that will be active
+                Instantiate(obstacle, spawnpoints[index].transform.position, Quaternion.identity);
             }
             else
             {
-                spawnpoints[i].gameObject.SetActive(false);
+                spawnpoints[i].gameObject.SetActive(false);  //the rest will be set t ofalse
             }
         }
         // Instantiate(spawnPoint, spawnPoint.transform.position, Quaternion.identity); //this seems to work now, WTF??
