@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4958773257316984637}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.98, y: 0.65, z: -3.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -112,11 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0f975f8bef5164a831cb75581703de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MouseSensitivity: 200
+  MouseSensitivity: 100
   speed: 10
   JumpSpeed: 5
-  Mode1Automatic: 0
-  Mode2Manual: 1
 --- !u!54 &4958773257316984615
 Rigidbody:
   m_ObjectHideFlags: 0

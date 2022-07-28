@@ -6,7 +6,6 @@ public class ShuffleTransformPoints : MonoBehaviour
 {
       Transform spawnPoint;
       public Transform[] spawnpoints;
-     public GameObject point;
      public Vector3 pos;
     public GameObject obstacle;
 

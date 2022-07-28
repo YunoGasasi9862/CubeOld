@@ -5,7 +5,6 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float MouseSensitivity = 100f;
     public float speed = 20f;
     public float JumpSpeed = 5f;
     bool isOntheGround = false;
@@ -19,10 +18,11 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
+
         float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-            float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        /* transform.Translate(Horizontal, 0, Vertical); */ //initializing it with new Vector3 or you can simply use Horizontal, 0, Vertical too
-        transform.Translate(Horizontal, 0, Vertical);     
+        float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+        transform.Translate(Horizontal, 0, Vertical);
        if(Input.GetButtonDown("Jump") && isOntheGround)
         {
             rb.AddForce(transform.up * JumpSpeed, ForceMode.Impulse);
