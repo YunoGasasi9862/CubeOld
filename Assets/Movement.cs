@@ -26,7 +26,6 @@ public class Movement : MonoBehaviour
        if(Input.GetButtonDown("Jump") && isOntheGround)
         {
             rb.AddForce(transform.up * JumpSpeed, ForceMode.Impulse);
-            isOntheGround = false;
         }
 
        

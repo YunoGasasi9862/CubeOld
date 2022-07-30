@@ -269,26 +269,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4445028508187041325, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4445028508187041325, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 4445028508187041325, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5585379879221652861, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5585379879221652861, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.53
-      objectReference: {fileID: 0}
     - target: {fileID: 7628574912462419819, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
       propertyPath: m_Name
       value: Ground
