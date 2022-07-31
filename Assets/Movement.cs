@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
         float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
-       if(Input.GetButtonDown("Jump") && isOntheGround)
+        if (Input.GetButtonDown("Jump") && isOntheGround)
         {
             rb.AddForce(transform.up * JumpSpeed, ForceMode.Impulse);
         }

@@ -8,27 +8,40 @@ public class MovingOsbtacle : MonoBehaviour
      Transform LeftBound;
     public GameObject ground;
      Vector3 position;
-    public bool left, right;
-    // Update is called once per frame
+       // Update is called once per frame
 
     private void Awake()
     {
         ground = GameObject.FindWithTag("Ground");
-        Rightbound = ground.transform.GetChild(8);
-        LeftBound = ground.transform.GetChild(9); //this is how you get childs
-        //randomize the movement here!!!
 
-        position = Rightbound.position;
+        Rightbound = ground.transform.GetChild(8);
+        LeftBound = ground.transform.GetChild(9);
+        CheckPos();
 
     }
     void Update()
     {
-
-
-        transform.Translate(position * Time.deltaTime);
+        transform.Translate(position * 2* Time.deltaTime);
+        //do something else now, make th scene beautiful!
 
     }
 
+    void CheckPos()
+    {
+        float ran = Random.Range(0, 1);
+
+        switch (ran)
+        {
+            case 0:
+                position = Rightbound.position;
+                break;
+
+            case 1:
+                position = LeftBound.position;
+                break;
+        }
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
