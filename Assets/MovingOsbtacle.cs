@@ -7,7 +7,10 @@ public class MovingOsbtacle : MonoBehaviour
      Transform Rightbound;
      Transform LeftBound;
     public GameObject ground;
+    float number;
+    float speed;
      Vector3 position;
+    
        // Update is called once per frame
 
     private void Awake()
@@ -16,32 +19,28 @@ public class MovingOsbtacle : MonoBehaviour
 
         Rightbound = ground.transform.GetChild(8);
         LeftBound = ground.transform.GetChild(9);
-        CheckPos();
+
+        number = Random.Range(0, 2);//this checks for 0, 1 and assign the position randomly
+        speed = Random.Range(1, 4);  //his checks the speed of each cube
+        if(number==0)
+        {
+            position = Rightbound.position;
+
+        }
+        else if(number==1)
+        {
+            position = LeftBound.position;
+
+        }
 
     }
-    void Update()
+    void FixedUpdate()
     {
-        transform.Translate(position * 2* Time.deltaTime);
+        transform.Translate(position * speed * Time.deltaTime);
         //do something else now, make th scene beautiful!
 
     }
 
-    void CheckPos()
-    {
-        float ran = Random.Range(0, 1);
-
-        switch (ran)
-        {
-            case 0:
-                position = Rightbound.position;
-                break;
-
-            case 1:
-                position = LeftBound.position;
-                break;
-        }
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
