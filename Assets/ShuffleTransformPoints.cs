@@ -18,8 +18,8 @@ public class ShuffleTransformPoints : MonoBehaviour
 
             if (i == index)
             {
-                spawnpoints[index].gameObject.SetActive(true); //only that will be active
-                Instantiate(obstacle, spawnpoints[index].transform.position, Quaternion.identity);
+                spawnpoints[i].gameObject.SetActive(true);
+                Instantiate(obstacle, spawnpoints[i].transform.position, Quaternion.identity);
             }
             else
             {
