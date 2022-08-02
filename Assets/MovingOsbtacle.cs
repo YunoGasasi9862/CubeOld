@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MovingOsbtacle : MonoBehaviour
 {
      Transform Rightbound;
@@ -10,14 +9,16 @@ public class MovingOsbtacle : MonoBehaviour
     float number;
     float speed;
      Vector3 position;
+    GameManager gameManager;
     
        // Update is called once per frame
 
     private void Awake()
     {
+        gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
         ground = GameObject.FindWithTag("Ground");
 
-        Rightbound = ground.transform.GetChild(8); //getchild function gets a child object that is 8th, and use its transform!
+        Rightbound = ground.transform.GetChild(8);
         LeftBound = ground.transform.GetChild(9);
 
         number = Random.Range(0, 2);//this checks for 0, 1 and assign the position randomly
@@ -39,7 +40,8 @@ public class MovingOsbtacle : MonoBehaviour
         }
 
     }
-    void FixedUpdate()
+    void FixedUpdate() //fixed update worked for translating the objects left and right continuously
+        //the regular update function didn't work !!
     {
         transform.Translate(position * speed * Time.deltaTime);
         //do something else now, make th scene beautiful!
@@ -52,7 +54,8 @@ public class MovingOsbtacle : MonoBehaviour
 
         if (other.tag == "BoundLeft")
         {
-            position = Rightbound.position;
+            position = Rightbound.position;  //this conclision checks if the tag is boundleft, 
+            //if it is boundleft, it will invert the position to right
         }
         if (other.tag == "BoundRight")
         {
@@ -61,5 +64,12 @@ public class MovingOsbtacle : MonoBehaviour
         }
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag=="Player")
+        {
+            gameManager.GameOver();
+        }
+    }
+
 }
