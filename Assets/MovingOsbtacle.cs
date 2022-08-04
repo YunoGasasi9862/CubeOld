@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class MovingOsbtacle : MonoBehaviour
 {
      Transform Rightbound;
@@ -10,6 +11,8 @@ public class MovingOsbtacle : MonoBehaviour
     float speed;
      Vector3 position;
     GameManager gameManager;
+    public Text gameOver;
+    bool isPaused;
     
        // Update is called once per frame
 
@@ -68,7 +71,17 @@ public class MovingOsbtacle : MonoBehaviour
     {
         if(collision.collider.tag=="Player")
         {
-            gameManager.GameOver();
+           gameOver.text = "Game Over";
+            isPaused = true;
+
+            if(isPaused)
+            {
+                Time.timeScale = 0;
+            }
+
+
+
+            //gameManager.GameOver();
         }
     }
 

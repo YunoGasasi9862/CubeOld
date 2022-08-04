@@ -128,3 +128,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ground: {fileID: 7628574912462419819, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
+  gameOver: {fileID: 2720111650484070444, guid: aa303a5d596fda54cac7bc21ef015881, type: 3}
