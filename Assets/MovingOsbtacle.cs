@@ -10,15 +10,13 @@ public class MovingOsbtacle : MonoBehaviour
     float number;
     float speed;
      Vector3 position;
-    GameManager gameManager;
-    public Text gameOver;
-    bool isPaused;
+  
     
        // Update is called once per frame
 
     private void Awake()
     {
-        gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
+      
         ground = GameObject.FindWithTag("Ground");
 
         Rightbound = ground.transform.GetChild(8);
@@ -67,22 +65,6 @@ public class MovingOsbtacle : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.tag=="Player")
-        {
-           gameOver.text = "Game Over";
-            isPaused = true;
-
-            if(isPaused)
-            {
-                Time.timeScale = 0;
-            }
-
-
-
-            //gameManager.GameOver();
-        }
-    }
+   
 
 }

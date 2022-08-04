@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     {
         if(!isOver)
         {
-            Invoke("Restart", 0.5f);
+            Invoke("Restart", 0.1f);
             isOver = true;
 
         }

@@ -112,9 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0f975f8bef5164a831cb75581703de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MouseSensitivity: 100
   speed: 10
   JumpSpeed: 5
+  jumps: {fileID: 0}
+  gameOver: {fileID: 2720111650484070444, guid: aa303a5d596fda54cac7bc21ef015881, type: 3}
 --- !u!54 &4958773257316984615
 Rigidbody:
   m_ObjectHideFlags: 0
