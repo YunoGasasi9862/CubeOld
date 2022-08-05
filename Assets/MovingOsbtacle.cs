@@ -49,7 +49,6 @@ public class MovingOsbtacle : MonoBehaviour
 
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
 
@@ -64,7 +63,5 @@ public class MovingOsbtacle : MonoBehaviour
 
         }
     }
-
-   
 
 }

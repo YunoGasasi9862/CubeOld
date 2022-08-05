@@ -9,6 +9,7 @@ TagManager:
   - BoundLeft
   - gameManager
   - Obstacle
+  - GameOver
   layers:
   - Default
   - TransparentFX
