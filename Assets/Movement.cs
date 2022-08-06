@@ -13,14 +13,16 @@ public class Movement : MonoBehaviour
      public Text jumps;
 
     GameManager gameManager;
-
-  
+    public Text Over;
+    bool isPaused = false;
+    public Text Restart;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
-
+        Over = GameObject.Find("Canvas/Panel/GameOver").GetComponent<Text>(); //OMG THIS WORKED!!!!
+        Restart = GameObject.Find("Canvas/Panel/Restart").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,9 @@ public class Movement : MonoBehaviour
             float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
             transform.Translate(Horizontal, 0, Vertical);
+
+        if (!isPaused)
+        {
 
             if (MaxNumberofJumps > 0)
             {
@@ -45,7 +50,20 @@ public class Movement : MonoBehaviour
 
             //shows number of jumps left
             showJump();
-        
+        }
+
+
+        if(isPaused && Input.GetKeyDown(KeyCode.F))
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+            Restart.gameObject.SetActive(false);
+            Over.gameObject.SetActive(false);
+            gameManager.GameOver(); //restarting the game
+
+        }
+
+
 
     }
     void showJump()
@@ -62,7 +80,11 @@ public class Movement : MonoBehaviour
 
         if (collision.collider.tag == "Obstacle")
         {
-            gameManager.GameOver();
+            isPaused = true;
+            Over.gameObject.SetActive(true);
+            Restart.gameObject.SetActive(true);
+            Time.timeScale = 0;
+
 
         }
 
