@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShuffleTransformPoints : MonoBehaviour
 {
-      Transform spawnPoint;
       public Transform[] spawnpoints;
      public Vector3 pos;
     public GameObject obstacle;
@@ -12,7 +11,6 @@ public class ShuffleTransformPoints : MonoBehaviour
     private void Start()
     {
         int index = Random.Range(0, spawnpoints.Length);
-        spawnPoint = spawnpoints[index];
         for (int i = 0; i < spawnpoints.Length; i++)
         {
 

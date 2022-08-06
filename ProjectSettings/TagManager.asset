@@ -10,6 +10,7 @@ TagManager:
   - gameManager
   - Obstacle
   - GameOver
+  - Fall
   layers:
   - Default
   - TransparentFX

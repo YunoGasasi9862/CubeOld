@@ -10,25 +10,24 @@ public class MovingOsbtacle : MonoBehaviour
     float number;
     float speed;
      Vector3 position;
-  
-    
+
+
        // Update is called once per frame
 
     private void Awake()
     {
-      
-        ground = GameObject.FindWithTag("Ground");
 
-        Rightbound = ground.transform.GetChild(8);
+        ground = GameObject.FindWithTag("Ground");
         LeftBound = ground.transform.GetChild(9);
+        Rightbound = ground.transform.GetChild(8);
 
         number = Random.Range(0, 2);//this checks for 0, 1 and assign the position randomly
         speed = Random.Range(1, 4);  //his checks the speed of each cube
 
         //speed variable gives variable speed to the spawned obstacle!
         //number generates a value between 0 and 1, and use it to give either right bound or left bound
-       
-        
+
+
         if(number==0)
         {
             position = Rightbound.position;
@@ -54,7 +53,7 @@ public class MovingOsbtacle : MonoBehaviour
 
         if (other.tag == "BoundLeft")
         {
-            position = Rightbound.position;  //this conclision checks if the tag is boundleft, 
+            position = Rightbound.position;  //this conclision checks if the tag is boundleft,
             //if it is boundleft, it will invert the position to right
         }
         if (other.tag == "BoundRight")

@@ -9,6 +9,7 @@ public class LevelGenerator : MonoBehaviour
     public GameObject plat;
     private void Start()
     {
+
         StartCoroutine(GenerateLevel());
     }
     IEnumerator GenerateLevel()
@@ -19,7 +20,7 @@ public class LevelGenerator : MonoBehaviour
             GameObject platform = Instantiate(plat, pos, Quaternion.identity);
             pos.z += DistanceZ;
         }
-       
+
         yield return null;
 
     }

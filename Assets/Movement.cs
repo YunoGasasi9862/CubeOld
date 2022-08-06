@@ -28,8 +28,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-     
+
+
             float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
             float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
@@ -64,8 +64,8 @@ public class Movement : MonoBehaviour
         }
 
 
-
     }
+
     void showJump()
     {
         jumps.text = MaxNumberofJumps.ToString("0");
@@ -80,13 +80,22 @@ public class Movement : MonoBehaviour
 
         if (collision.collider.tag == "Obstacle")
         {
-            isPaused = true;
-            Over.gameObject.SetActive(true);
-            Restart.gameObject.SetActive(true);
-            Time.timeScale = 0;
-
+            GameEndChecK();
 
         }
+        if (collision.collider.tag=="Fall")
+        {
+            GameEndChecK();
+        }
+
+    }
+
+    void GameEndChecK()
+    {
+        isPaused = true;
+        Over.gameObject.SetActive(true);
+        Restart.gameObject.SetActive(true);
+        Time.timeScale = 0;
 
     }
 }
