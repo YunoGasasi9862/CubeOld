@@ -17,12 +17,16 @@ public class Movement : MonoBehaviour
     bool isPaused = false;
     public Text Restart;
     float thrustspeed = 3f;
+
+    public bool headstart=true;
+    public Text HS;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
         Over = GameObject.Find("Canvas/Panel/GameOver").GetComponent<Text>(); //OMG THIS WORKED!!!!
         Restart = GameObject.Find("Canvas/Panel/Restart").GetComponent<Text>();
+        HS = GameObject.Find("Canvas/Panel/Headstart").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -50,14 +54,19 @@ public class Movement : MonoBehaviour
 
             if (!isOntheGround)
             {
+                    if (Input.GetKey(KeyCode.H))
+                    {
+
+                        rb.AddForce(transform.forward * thrustspeed, ForceMode.Impulse);
+                    }
 
 
-                HeadStart();
+
 
             }
 
-                //shows number of jumps left
-                showJump();
+            //shows number of jumps left
+            showJump();
         }
 
 
@@ -107,13 +116,4 @@ public class Movement : MonoBehaviour
 
     }
 
-    void HeadStart()
-    {
-
-            if(Input.GetKey(KeyCode.H))
-            {
-                rb.AddForce(transform.forward * thrustspeed, ForceMode.Impulse);
-            }
-
-    }
 }
