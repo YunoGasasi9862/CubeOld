@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     public Text Over;
     bool isPaused = false;
     public Text Restart;
-
+    float thrustspeed = 3f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,8 +48,16 @@ public class Movement : MonoBehaviour
                 }
             }
 
-            //shows number of jumps left
-            showJump();
+            if (!isOntheGround)
+            {
+
+
+                HeadStart();
+
+            }
+
+                //shows number of jumps left
+                showJump();
         }
 
 
@@ -96,6 +104,16 @@ public class Movement : MonoBehaviour
         Over.gameObject.SetActive(true);
         Restart.gameObject.SetActive(true);
         Time.timeScale = 0;
+
+    }
+
+    void HeadStart()
+    {
+
+            if(Input.GetKey(KeyCode.H))
+            {
+                rb.AddForce(transform.forward * thrustspeed, ForceMode.Impulse);
+            }
 
     }
 }
