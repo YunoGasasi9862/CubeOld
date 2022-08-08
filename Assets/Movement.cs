@@ -34,11 +34,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-            float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
-            transform.Translate(Horizontal, 0, Vertical);
-
+        transform.Translate(Horizontal, 0, Vertical);
         if (!isPaused)
         {
 
@@ -60,6 +59,12 @@ public class Movement : MonoBehaviour
                     }
 
                 }
+            }
+
+            if(MaxNumberofJumps==0)
+            {
+                if(HS!=null)
+                    Destroy(HS.gameObject);
             }
 
 
