@@ -19,6 +19,7 @@ public class MovingOsbtacle : MonoBehaviour
 
         ground = GameObject.FindWithTag("Ground");
 
+
         Rightbound = ground.transform.GetChild(8);
         LeftBound = ground.transform.GetChild(9);
         number = Random.Range(0, 2);//this checks for 0, 1 and assign the position randomly
