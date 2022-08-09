@@ -14,12 +14,15 @@ public class Movement : MonoBehaviour
 
     GameManager gameManager;
     public Text Over;
+    public Text Coincount;
     bool isPaused = false;
     public Text Restart;
     float thrustspeed = 2f;
 
-    public Text HS;
+    int coinCount=0;
 
+    public Text HS;
+    public AudioSource sound;
 
     void Start()
     {
@@ -111,6 +114,9 @@ public class Movement : MonoBehaviour
 
         if(collision.collider.tag=="Coin")
         {
+            coinCount++;
+            Coincount.text = coinCount.ToString("0");
+            sound.Play();
             Destroy(collision.gameObject);
         }
 

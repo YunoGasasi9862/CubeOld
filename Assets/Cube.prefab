@@ -215,6 +215,7 @@ MonoBehaviour:
   JumpSpeed: 5
   jumps: {fileID: 0}
   Over: {fileID: 0}
+  Coincount: {fileID: 0}
   Restart: {fileID: 0}
   HS: {fileID: 0}
 --- !u!54 &835676998267658403
