@@ -11,6 +11,7 @@ TagManager:
   - Obstacle
   - GameOver
   - Fall
+  - Coin
   layers:
   - Default
   - TransparentFX

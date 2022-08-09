@@ -24,7 +24,6 @@ public class CameraRotation : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
 
-
         Cube.transform.Rotate(Vector3.up * MouseX);
 
 

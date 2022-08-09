@@ -109,6 +109,11 @@ public class Movement : MonoBehaviour
             GameEndChecK();
         }
 
+        if(collision.collider.tag=="Coin")
+        {
+            Destroy(collision.gameObject);
+        }
+
     }
 
     void GameEndChecK()
