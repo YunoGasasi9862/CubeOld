@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShuffleTransformPoints : MonoBehaviour
 {
       public Transform[] spawnpoints;
-     public Vector3 pos;
     public GameObject obstacle;
 
     private void Start()
