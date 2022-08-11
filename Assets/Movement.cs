@@ -24,6 +24,8 @@ public class Movement : MonoBehaviour
     public Text HS;
     public AudioSource sound;
 
+    public GameObject particles;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -118,6 +120,7 @@ public class Movement : MonoBehaviour
             coinCount++;
             Coincount.text = coinCount.ToString("0");
             sound.Play();
+            Instantiate(particles, collision.collider.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
         }
 
