@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
 
     public Text HS;
     public AudioSource sound;
-
+    public AudioSource collisionsound;
     public GameObject particles;
 
     void Start()
@@ -74,7 +74,6 @@ public class Movement : MonoBehaviour
             }
 
 
-
             //shows number of jumps left
             showJump();
         }
@@ -108,6 +107,8 @@ public class Movement : MonoBehaviour
         if (collision.collider.tag == "Obstacle")
         {
             GameEndChecK();
+            collisionsound.Play();
+
 
         }
         if (collision.collider.tag=="Fall")
