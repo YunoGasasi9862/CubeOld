@@ -44,12 +44,12 @@ public class Movement : MonoBehaviour
 
 
         transform.Translate(Horizontal, 0, Vertical);
-        if (!isPaused)
+         if (!isPaused)
         {
 
             if (MaxNumberofJumps > 0)
             {
-               if(Input.GetButtonDown("Jump") && isOntheGround)
+              if(Input.GetButtonDown("Jump") && isOntheGround)
                 {
                     rb.AddForce(transform.up * JumpSpeed, ForceMode.Impulse);
                     MaxNumberofJumps--;
