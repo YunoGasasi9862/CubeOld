@@ -26,6 +26,9 @@ public class Movement : MonoBehaviour
     public AudioSource collisionsound;
     public GameObject particles;
 
+
+    public GameObject UI;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -64,6 +67,11 @@ public class Movement : MonoBehaviour
                         rb.AddForce(transform.forward * thrustspeed, ForceMode.Impulse);
                     }
 
+                }
+
+                if(Input.GetKeyDown(KeyCode.I))
+                {
+                    UI.gameObject.SetActive(true);
                 }
             }
 
