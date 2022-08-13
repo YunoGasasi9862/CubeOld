@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     public float JumpSpeed = 5f;
     bool isOntheGround = false;
     Rigidbody rb;
-    int MaxNumberofJumps = 3;
+    public int MaxNumberofJumps = 3;
      public Text jumps;
 
     GameManager gameManager;
