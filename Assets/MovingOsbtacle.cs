@@ -18,7 +18,6 @@ public class MovingOsbtacle : MonoBehaviour
     {
 
         ground = GameObject.FindWithTag("Ground");
-
         Rightbound = ground.transform.GetChild(8);
 
         LeftBound = ground.transform.GetChild(9);
