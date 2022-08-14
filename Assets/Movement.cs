@@ -35,6 +35,7 @@ public class Movement : MonoBehaviour
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
         Over = GameObject.Find("Canvas/Panel/GameOver").GetComponent<Text>(); //OMG THIS WORKED!!!!
         Restart = GameObject.Find("Canvas/Panel/Restart").GetComponent<Text>();
+        // HS = GameObject.Find("Canvas/Panel/HS").GetComponent<Text>();
         HS = GameObject.Find("Canvas/Panel/HS").GetComponent<Text>();
     }
 
