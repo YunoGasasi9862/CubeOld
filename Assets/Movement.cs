@@ -70,11 +70,6 @@ public class Movement : MonoBehaviour
 
                 }
 
-                if(Input.GetKeyDown(KeyCode.I))
-                {
-                    Time.timeScale = 0;
-                    UI.gameObject.SetActive(true);
-                }
 
             }
 
