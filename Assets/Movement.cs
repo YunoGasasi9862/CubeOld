@@ -29,20 +29,26 @@ public class Movement : MonoBehaviour
 
     public GameObject UI;
 
+    private void Awake()
+    {
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
-        Over = GameObject.Find("Canvas/Panel/GameOver").GetComponent<Text>(); //OMG THIS WORKED!!!!
-        Restart = GameObject.Find("Canvas/Panel/Restart").GetComponent<Text>();
-        // HS = GameObject.Find("Canvas/Panel/HS").GetComponent<Text>();
-        HS = GameObject.Find("Canvas/Panel/HS").GetComponent<Text>();
-    }
+        Over = GameObject.Find("Canvas/GameOver").GetComponent<Text>(); //OMG THIS WORKED!!!!
+        Restart = GameObject.Find("Canvas/Restart").GetComponent<Text>();
 
+        HS = GameObject.Find("Canvas/HS").GetComponent<Text>();
+
+    }
 
     // Update is called once per frame
     void Update()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
