@@ -27,7 +27,8 @@ public class Movement : MonoBehaviour
     public GameObject particles;
 
 
-    public GameObject UI;
+
+    public GameObject canvas;
 
     private void Awake()
     {
@@ -40,19 +41,18 @@ public class Movement : MonoBehaviour
         Restart = GameObject.Find("Canvas/Restart").GetComponent<Text>();
 
         HS = GameObject.Find("Canvas/HS").GetComponent<Text>();
+        canvas = GameObject.Find("Canvas");
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
 
-        float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        float Horizontal = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime ;
+        float Vertical = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
 
-
+        // rb.velocity = new Vector3(Horizontal, rb.velocity.y, Vertical);
         transform.Translate(Horizontal, 0, Vertical);
          if (!isPaused)
         {
@@ -77,9 +77,19 @@ public class Movement : MonoBehaviour
                 }
 
 
+
+
             }
 
-            if(MaxNumberofJumps==0)
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Instantiate(canvas, transform.position, Quaternion.identity);
+
+
+            }
+            if (MaxNumberofJumps==0)
             {
                 if(HS!=null)
                     Destroy(HS.gameObject);
