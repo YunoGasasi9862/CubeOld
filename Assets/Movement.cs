@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -75,8 +76,6 @@ public class Movement : MonoBehaviour
                     }
 
                 }
-
-
 
 
             }
@@ -158,4 +157,5 @@ public class Movement : MonoBehaviour
 
     }
 
+   
 }
