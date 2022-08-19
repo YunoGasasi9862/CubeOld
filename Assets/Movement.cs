@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     public Text Restart;
     float thrustspeed = 2f;
 
-    int coinCount=0;
+     int coinCount=0;
 
     public Text HS;
     public AudioSource sound;
@@ -28,12 +28,9 @@ public class Movement : MonoBehaviour
     public GameObject particles;
 
 
+    public GameObject text;
 
-    public GameObject canvas;
-
-    private void Awake()
-    {
-    }
+  
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,7 +39,7 @@ public class Movement : MonoBehaviour
         Restart = GameObject.Find("Canvas/Restart").GetComponent<Text>();
 
         HS = GameObject.Find("Canvas/HS").GetComponent<Text>();
-        canvas = GameObject.Find("Canvas");
+        text = GameObject.Find("Canvas/BuyJumps");
 
     }
 
@@ -50,10 +47,10 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        float Horizontal = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime ;
+        float Horizontal = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
         float Vertical = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
 
-        // rb.velocity = new Vector3(Horizontal, rb.velocity.y, Vertical);
+
         transform.Translate(Horizontal, 0, Vertical);
          if (!isPaused)
         {
@@ -84,8 +81,7 @@ public class Movement : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                Instantiate(canvas, transform.position, Quaternion.identity);
-
+                text.SetActive(true);
 
             }
             if (MaxNumberofJumps==0)
@@ -110,6 +106,7 @@ public class Movement : MonoBehaviour
 
         }
 
+        Coincount.text = coinCount.ToString("0");
 
     }
 
@@ -157,5 +154,15 @@ public class Movement : MonoBehaviour
 
     }
 
-   
+    public void InreaseJumps()
+    {
+        if (MaxNumberofJumps <= 3 && coinCount >= 3)
+        {
+         
+            MaxNumberofJumps++;
+            coinCount = coinCount - 3;
+
+        }
+
+    }
 }
