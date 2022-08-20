@@ -30,6 +30,8 @@ public class Movement : MonoBehaviour
 
     public GameObject text;
 
+    [SerializeField] bool CoinAchieved;
+
   
     void Start()
     {
@@ -82,6 +84,7 @@ public class Movement : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 text.SetActive(true);
+                CoinAchieved = true;
 
             }
             if (MaxNumberofJumps==0)
@@ -90,6 +93,7 @@ public class Movement : MonoBehaviour
                     Destroy(HS.gameObject);
             }
 
+         
 
             //shows number of jumps left
             showJump();
@@ -142,7 +146,6 @@ public class Movement : MonoBehaviour
             Instantiate(particles, collision.collider.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
         }
-
     }
 
     void GameEndChecK()
@@ -164,5 +167,16 @@ public class Movement : MonoBehaviour
 
         }
 
+    }
+
+    void DisableCoinText()  //fix this tomorrow!!!
+    {
+        if (CoinAchieved)
+        {
+            text.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            CoinAchieved = false;
+        }
     }
 }
