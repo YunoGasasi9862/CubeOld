@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
 
      int coinCount=0;
 
-    public Text HS;
+    public GameObject HS;
     public AudioSource sound;
     public AudioSource collisionsound;
     public GameObject particles;
@@ -33,14 +33,16 @@ public class Movement : MonoBehaviour
     [SerializeField] bool CoinAchieved;
 
   
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
-        Over = GameObject.Find("Canvas/GameOver").GetComponent<Text>(); //OMG THIS WORKED!!!!
+        //OMG THIS WORKED!!!!
+        Over = GameObject.Find("Canvas/GameOver").GetComponent<Text>();
         Restart = GameObject.Find("Canvas/Restart").GetComponent<Text>();
 
-        HS = GameObject.Find("Canvas/HS").GetComponent<Text>();
+        HS = GameObject.Find("Canvas/HS");
         text = GameObject.Find("Canvas/BuyJumps");
 
     }
@@ -49,8 +51,8 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        float Horizontal = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
-        float Vertical = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
+        float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
 
         transform.Translate(Horizontal, 0, Vertical);
@@ -84,16 +86,21 @@ public class Movement : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 text.SetActive(true);
-                CoinAchieved = true;
 
             }
             if (MaxNumberofJumps==0)
             {
-                if(HS!=null)
-                    Destroy(HS.gameObject);
+                if (HS != null)
+                    HS.gameObject.SetActive(false);
+            }
+            else
+            {
+          
+                    HS.gameObject.SetActive(true);
+
             }
 
-         
+            DisableCoinText();
 
             //shows number of jumps left
             showJump();
@@ -113,6 +120,7 @@ public class Movement : MonoBehaviour
         Coincount.text = coinCount.ToString("0");
 
     }
+  
 
     void showJump()
     {
@@ -164,6 +172,7 @@ public class Movement : MonoBehaviour
          
             MaxNumberofJumps++;
             coinCount = coinCount - 3;
+            CoinAchieved = true;  //i replaced the choin Achieved to here because this will not be called every frame. Which means, only once :) so it worked!!
 
         }
 
