@@ -51,6 +51,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
+
         float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
@@ -69,6 +70,12 @@ public class Movement : MonoBehaviour
                 }
 
 
+             
+
+
+            }
+            if(MaxNumberofJumps>=0)
+            {
                 if (!isOntheGround)
                 {
                     if (Input.GetKey(KeyCode.H))
@@ -77,10 +84,7 @@ public class Movement : MonoBehaviour
                     }
 
                 }
-
-
             }
-
             if (Input.GetKeyDown(KeyCode.I))
             {
                 Cursor.lockState = CursorLockMode.None;
@@ -159,6 +163,7 @@ public class Movement : MonoBehaviour
     void GameEndChecK()
     {
         isPaused = true;
+
         Over.gameObject.SetActive(true);
         Restart.gameObject.SetActive(true);
         Time.timeScale = 0;

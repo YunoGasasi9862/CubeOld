@@ -224,7 +224,8 @@ MonoBehaviour:
   sound: {fileID: 2026769372}
   collisionsound: {fileID: 1812376890}
   particles: {fileID: 27920305033932179, guid: 8d159d1d78a3ded4eb5b797f2dd760b9, type: 3}
-  canvas: {fileID: 1762061307695997988, guid: 2e5fd622d766a2b42a9b68f7e6a965cf, type: 3}
+  text: {fileID: 0}
+  CoinAchieved: 0
 --- !u!54 &835676998267658403
 Rigidbody:
   m_ObjectHideFlags: 0

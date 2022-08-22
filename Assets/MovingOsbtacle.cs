@@ -22,6 +22,7 @@ public class MovingOsbtacle : MonoBehaviour
         Rightbound = ground.transform.GetChild(8);
 
         LeftBound = ground.transform.GetChild(9);
+
         number = Random.Range(0, 2);//this checks for 0, 1 and assign the position randomly
         speed = Random.Range(1, 4);  //his checks the speed of each cube
 

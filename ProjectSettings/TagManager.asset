@@ -12,6 +12,7 @@ TagManager:
   - GameOver
   - Fall
   - Coin
+  - PassBoundary
   layers:
   - Default
   - TransparentFX
