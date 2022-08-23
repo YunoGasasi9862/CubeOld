@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385544c1fbfa8ff4081f5c04632cfdbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ground: 0
   plat: {fileID: 7628574912462419819, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
+  LastPosition: 0
 --- !u!1001 &247198909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,6 +224,14 @@ PrefabInstance:
     - target: {fileID: 7628574912462419823, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236536434049566802, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
+      propertyPath: m_TagString
+      value: PassBoundary
+      objectReference: {fileID: 0}
+    - target: {fileID: 8796030583322749144, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.496
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
@@ -1415,6 +1425,10 @@ PrefabInstance:
       propertyPath: Coincount
       value: 
       objectReference: {fileID: 465016803}
+    - target: {fileID: 835676998267658428, guid: b4a905b9759a9964885b16f7acfab0e9, type: 3}
+      propertyPath: CoinAchieved
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 835676998267658429, guid: b4a905b9759a9964885b16f7acfab0e9, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -5,22 +5,28 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     int NumberofGround = 40;
-     bool[] platforms;
+
+    public ArrayList platforms;
+   public int ground;
     float DistanceZ = 22;
     public GameObject plat;
+    [SerializeField] float LastPosition;
     private void Start()
     {
-
+        platforms = new ArrayList(NumberofGround);
         StartCoroutine(GenerateLevel());
     }
+
+  
     IEnumerator GenerateLevel()
     {
         Vector3 pos=transform.position;
-        for(int ground=0; ground<NumberofGround; ground++)
+        for( ground=0; ground<NumberofGround; ground++)
         {
-            platforms[ground] = true;
+            platforms.Add(1);
             GameObject platform = Instantiate(plat, pos, Quaternion.identity);
             pos.z += DistanceZ;
+            LastPosition = pos.z;
         }
 
         yield return null;
