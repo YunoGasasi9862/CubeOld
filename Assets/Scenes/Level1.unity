@@ -225,14 +225,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8236536434049566802, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
-      propertyPath: m_TagString
-      value: PassBoundary
-      objectReference: {fileID: 0}
-    - target: {fileID: 8796030583322749144, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.496
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
 --- !u!1 &321409031
@@ -1151,6 +1143,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1703877050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236536434049566802, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
+  m_PrefabInstance: {fileID: 247198909}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1703877053
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703877050}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1834900622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,6 +1410,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1455225099, guid: b4a905b9759a9964885b16f7acfab0e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455225100, guid: b4a905b9759a9964885b16f7acfab0e9, type: 3}
+      propertyPath: m_Radius
+      value: 49.68
+      objectReference: {fileID: 0}
     - target: {fileID: 835676998267658425, guid: b4a905b9759a9964885b16f7acfab0e9, type: 3}
       propertyPath: m_Name
       value: Cube
@@ -1425,10 +1446,6 @@ PrefabInstance:
       propertyPath: Coincount
       value: 
       objectReference: {fileID: 465016803}
-    - target: {fileID: 835676998267658428, guid: b4a905b9759a9964885b16f7acfab0e9, type: 3}
-      propertyPath: CoinAchieved
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 835676998267658429, guid: b4a905b9759a9964885b16f7acfab0e9, type: 3}
       propertyPath: m_RootOrder
       value: 1

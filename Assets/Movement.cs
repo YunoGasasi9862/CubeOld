@@ -33,7 +33,6 @@ public class Movement : MonoBehaviour
     [SerializeField] bool CoinAchieved;
 
 
-    [SerializeField] LevelGenerator generate;
   
 
     void Start()
@@ -47,7 +46,6 @@ public class Movement : MonoBehaviour
         HS = GameObject.Find("Canvas/HS");
         text = GameObject.Find("Canvas/BuyJumps");
 
-        generate = GameObject.FindObjectOfType<LevelGenerator>().GetComponent<LevelGenerator>();
     }
 
     // Update is called once per frame
@@ -60,6 +58,8 @@ public class Movement : MonoBehaviour
 
 
         transform.Translate(Horizontal, 0, Vertical);
+
+
          if (!isPaused)
         {
 
@@ -163,14 +163,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag=="PassBoundary")
-        {
-            generate.platforms[generate.ground] = false;
-            Debug.Log(generate.platforms[generate.ground]);
-        }
-    }
+   
     void GameEndChecK()
     {
         isPaused = true;
