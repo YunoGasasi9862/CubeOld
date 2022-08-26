@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour
     [SerializeField] bool CoinAchieved;
 
 
-  
+
 
     void Start()
     {
@@ -59,7 +59,6 @@ public class Movement : MonoBehaviour
 
         transform.Translate(Horizontal, 0, Vertical);
 
-
          if (!isPaused)
         {
 
@@ -67,13 +66,13 @@ public class Movement : MonoBehaviour
             {
               if(Input.GetButtonDown("Jump") && isOntheGround)
                 {
-                    rb.AddForce(transform.up * JumpSpeed, ForceMode.Impulse);
+                    rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
                     MaxNumberofJumps--;
                     isOntheGround = false;
                 }
 
 
-             
+
 
 
             }
@@ -102,7 +101,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-          
+
                     HS.gameObject.SetActive(true);
 
             }
@@ -127,7 +126,7 @@ public class Movement : MonoBehaviour
         Coincount.text = coinCount.ToString("0");
 
     }
-  
+
 
     void showJump()
     {
@@ -163,7 +162,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-   
+
     void GameEndChecK()
     {
         isPaused = true;
@@ -178,7 +177,7 @@ public class Movement : MonoBehaviour
     {
         if (MaxNumberofJumps <= 3 && coinCount >= 3)
         {
-         
+
             MaxNumberofJumps++;
             coinCount = coinCount - 3;
             CoinAchieved = true;  //i replaced the choin Achieved to here because this will not be called every frame. Which means, only once :) so it worked!!
