@@ -226,6 +226,10 @@ MonoBehaviour:
   particles: {fileID: 27920305033932179, guid: 8d159d1d78a3ded4eb5b797f2dd760b9, type: 3}
   text: {fileID: 0}
   CoinAchieved: 0
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
+  col: {fileID: 835676998267658424}
 --- !u!54 &835676998267658403
 Rigidbody:
   m_ObjectHideFlags: 0

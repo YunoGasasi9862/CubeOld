@@ -8,7 +8,6 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     public float speed = 20f;
     public float JumpSpeed = 5f;
-    bool isOntheGround = false;
     Rigidbody rb;
     public int MaxNumberofJumps = 3;
      public Text jumps;
@@ -32,6 +31,9 @@ public class Movement : MonoBehaviour
 
     [SerializeField] bool CoinAchieved;
 
+    [SerializeField] LayerMask ground;
+    [SerializeField] BoxCollider col;
+
 
 
 
@@ -45,13 +47,14 @@ public class Movement : MonoBehaviour
 
         HS = GameObject.Find("Canvas/HS");
         text = GameObject.Find("Canvas/BuyJumps");
+        col = GetComponent<BoxCollider>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(isOnetheGround());
 
         float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
@@ -64,11 +67,10 @@ public class Movement : MonoBehaviour
 
             if (MaxNumberofJumps > 0)
             {
-              if(Input.GetButtonDown("Jump") && isOntheGround)
+              if(Input.GetButtonDown("Jump") && isOnetheGround())
                 {
                     rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
                     MaxNumberofJumps--;
-                    isOntheGround = false;
                 }
 
 
@@ -78,7 +80,7 @@ public class Movement : MonoBehaviour
             }
             if(MaxNumberofJumps>=0)
             {
-                if (!isOntheGround)
+                if (!isOnetheGround())
                 {
                     if (Input.GetKey(KeyCode.H))
                     {
@@ -135,10 +137,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)  //for JUMPS IMMA USE COLLISION DETECTOR NOW. THIS IS SO MUCH FUCKING BETTER!!!
     {
-        if (collision.collider.tag == "Ground")
-        {
-            isOntheGround = true;
-        }
+
 
         if (collision.collider.tag == "Obstacle")
         {
@@ -195,5 +194,11 @@ public class Movement : MonoBehaviour
             Cursor.visible = false;
             CoinAchieved = false;
         }
+    }
+
+    private bool isOnetheGround()
+    {
+
+        return Physics.BoxCast(col.bounds.center, transform.localScale, Vector3.down, transform.rotation, .1f, ground);
     }
 }
