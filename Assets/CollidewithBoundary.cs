@@ -9,7 +9,11 @@ public class CollidewithBoundary : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-                 Destroy(transform.parent.gameObject); //fix this
+            if(transform.parent!=null)
+            {
+                Destroy(transform.parent.gameObject); //fix this
+
+            }
         }
     }
 }

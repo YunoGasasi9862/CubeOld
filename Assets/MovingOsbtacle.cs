@@ -17,15 +17,14 @@ public class MovingOsbtacle : MonoBehaviour
     private void Start()
     {
 
-        if(ground.transform!=null)
-        {
+
             ground = GameObject.FindWithTag("Ground");
 
             Rightbound = ground.transform.GetChild(8);
 
             LeftBound = ground.transform.GetChild(9);
 
-        }
+
 
         number = Random.Range(0, 2);//this checks for 0, 1 and assign the position randomly
         speed = Random.Range(1, 4);  //his checks the speed of each cube
@@ -46,14 +45,12 @@ public class MovingOsbtacle : MonoBehaviour
         }
 
     }
-    void FixedUpdate() //fixed update worked for translating the objects left and right continuously
+    void Update() //fixed update worked for translating the objects left and right continuously
         //the regular update function didn't work !!
     {
-        if(ground.transform!=null)
-        {
+
             transform.Translate(position * speed * Time.deltaTime);
 
-        }
         //do something else now, make th scene beautiful!
 
     }
@@ -73,6 +70,7 @@ public class MovingOsbtacle : MonoBehaviour
 
             }
         }
+
 
     }
 
