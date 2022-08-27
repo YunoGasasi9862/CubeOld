@@ -54,11 +54,9 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isOnetheGround());
 
         float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-
 
         transform.Translate(Horizontal, 0, Vertical);
 
@@ -67,20 +65,17 @@ public class Movement : MonoBehaviour
 
             if (MaxNumberofJumps > 0)
             {
-              if(Input.GetButtonDown("Jump") && isOnetheGround())
+                if (Input.GetButtonDown("Jump") && isOnetheGround())
                 {
                     rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
                     MaxNumberofJumps--;
                 }
 
 
-
-
-
             }
             if(MaxNumberofJumps>=0)
             {
-                if (!isOnetheGround())
+                if (isOnetheGround()==false)
                 {
                     if (Input.GetKey(KeyCode.H))
                     {
@@ -199,6 +194,6 @@ public class Movement : MonoBehaviour
     private bool isOnetheGround()
     {
 
-        return Physics.BoxCast(col.bounds.center, transform.localScale, Vector3.down, transform.rotation, .1f, ground);
+        return Physics.BoxCast(col.bounds.center, col.bounds.size, Vector3.down, transform.rotation, 3f, ground);  //IT WORKED YEEHAW
     }
 }

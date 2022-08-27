@@ -6,15 +6,12 @@ public class LevelGenerator : MonoBehaviour
 {
     int NumberofGround = 40;
 
-    public List<bool> platforms;
    public int ground=0;
     float DistanceZ = 22;
     public GameObject plat;
     public GameObject platform;
-    [SerializeField] float LastPosition;
     private void Start()
     {
-        platforms = new List<bool>();
         StartCoroutine(GenerateLevel());
     }
 
@@ -25,10 +22,10 @@ public class LevelGenerator : MonoBehaviour
         for( ground=0; ground<NumberofGround; ground++)
         {
 
-                platforms.Add(true);
+
                 platform = Instantiate(plat, pos, Quaternion.identity);
                 pos.z += DistanceZ;
-                LastPosition = pos.z;
+
 
 
         }
@@ -37,5 +34,5 @@ public class LevelGenerator : MonoBehaviour
 
     }
 
- 
+
 }

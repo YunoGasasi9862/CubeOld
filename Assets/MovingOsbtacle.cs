@@ -14,14 +14,18 @@ public class MovingOsbtacle : MonoBehaviour
 
        // Update is called once per frame
 
-    private void Awake()
+    private void Start()
     {
 
-        ground = GameObject.FindWithTag("Ground");
+        if(ground.transform!=null)
+        {
+            ground = GameObject.FindWithTag("Ground");
 
-        Rightbound = ground.transform.GetChild(8);
+            Rightbound = ground.transform.GetChild(8);
 
-        LeftBound = ground.transform.GetChild(9);
+            LeftBound = ground.transform.GetChild(9);
+
+        }
 
         number = Random.Range(0, 2);//this checks for 0, 1 and assign the position randomly
         speed = Random.Range(1, 4);  //his checks the speed of each cube
@@ -45,24 +49,31 @@ public class MovingOsbtacle : MonoBehaviour
     void FixedUpdate() //fixed update worked for translating the objects left and right continuously
         //the regular update function didn't work !!
     {
-        transform.Translate(position * speed * Time.deltaTime);
+        if(ground.transform!=null)
+        {
+            transform.Translate(position * speed * Time.deltaTime);
+
+        }
         //do something else now, make th scene beautiful!
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.tag == "BoundLeft")
+        if(ground.transform!=null)
         {
-            position = Rightbound.position;  //this conclision checks if the tag is boundleft,
-            //if it is boundleft, it will invert the position to right
-        }
-        if (other.tag == "BoundRight")
-        {
-            position = LeftBound.position;
+            if (other.tag == "BoundLeft")
+            {
+                position = Rightbound.position;  //this conclision checks if the tag is boundleft,
+                                                 //if it is boundleft, it will invert the position to right
+            }
+            if (other.tag == "BoundRight")
+            {
+                position = LeftBound.position;
 
+            }
         }
+
     }
 
 }
