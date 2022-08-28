@@ -18,11 +18,11 @@ public class LevelGenerator : MonoBehaviour
 
     IEnumerator GenerateLevel()
     {
-        Vector3 pos=transform.position;
-        for( ground=0; ground<NumberofGround; ground++)
+        Vector3 pos = transform.position;
+        for (ground=0; ground < NumberofGround; ground++)
         {
-                platform = Instantiate(plat, pos, Quaternion.identity);
-                pos.z += DistanceZ;
+            platform = Instantiate(plat, pos, Quaternion.identity);
+            pos.z += DistanceZ;
         }
 
         yield return null;
