@@ -21,18 +21,15 @@ public class LevelGenerator : MonoBehaviour
         Vector3 pos=transform.position;
         for( ground=0; ground<NumberofGround; ground++)
         {
-
-
                 platform = Instantiate(plat, pos, Quaternion.identity);
                 pos.z += DistanceZ;
-
-
-
         }
 
         yield return null;
 
     }
+
+
 
 
 }

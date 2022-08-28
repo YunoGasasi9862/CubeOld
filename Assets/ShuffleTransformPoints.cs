@@ -6,6 +6,7 @@ public class ShuffleTransformPoints : MonoBehaviour
 {
       public Transform[] spawnpoints;
     public GameObject obstacle;
+    GameObject obst;
 
     private void Start()
     {
@@ -16,7 +17,8 @@ public class ShuffleTransformPoints : MonoBehaviour
             if (i == index)
             {
                 spawnpoints[i].gameObject.SetActive(true);
-                Instantiate(obstacle, spawnpoints[i].transform.position, Quaternion.identity);
+                obst=Instantiate(obstacle, spawnpoints[i].transform.position, Quaternion.identity);
+                obst.transform.parent = gameObject.transform;
             }
             else
             {
@@ -25,6 +27,8 @@ public class ShuffleTransformPoints : MonoBehaviour
         }
         // Instantiate(spawnPoint, spawnPoint.transform.position, Quaternion.identity); //this seems to work now, WTF??
     }
+
+
 
     //assigning the position for every new objec
 

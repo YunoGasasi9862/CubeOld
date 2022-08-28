@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class CollidewithBoundary : MonoBehaviour
 {
-
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.tag == "Player")
+        if(other.tag=="Player")
         {
-            if(transform.parent!=null)
-            {
-                Destroy(transform.parent.gameObject); //fix this
-
-            }
+            Destroy(transform.parent.gameObject);
         }
+
     }
 }
