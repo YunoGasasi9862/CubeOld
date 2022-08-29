@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public Text Coincount;
     bool isPaused = false;
     public Text Restart;
-    float thrustspeed = 2f;
+    float thrustspeed = 30f;
 
      int coinCount=0;
 
@@ -72,17 +72,15 @@ public class Movement : MonoBehaviour
 
 
             }
-            if(MaxNumberofJumps>=0)
-            {
-                if (isOnetheGround()==false)
-                {
-                    if (Input.GetKey(KeyCode.H))
+
+
+                   if (Input.GetKey(KeyCode.H))
                     {
-                        rb.AddForce(transform.forward * thrustspeed, ForceMode.Impulse);
+                          rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, thrustspeed);
                     }
 
-                }
-            }
+
+
             if (Input.GetKeyDown(KeyCode.I))
             {
                 Cursor.lockState = CursorLockMode.None;

@@ -7,7 +7,7 @@ public class LevelGenerator : MonoBehaviour
     int NumberofGround = 40;
 
    public int ground=0;
-    public float DistanceZ = 22;
+     float DistanceZ = 22;
     public GameObject plat;
     public GameObject platform;
     public Vector3 pos;
