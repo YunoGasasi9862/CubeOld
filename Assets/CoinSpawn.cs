@@ -16,7 +16,7 @@ public class CoinSpawn : MonoBehaviour
             if(i==Index)
             {
                 coinSpawn[i].gameObject.SetActive(true);
-               GameObject co= Instantiate(coin, coinSpawn[i].transform.position, Quaternion.identity);
+                GameObject co = Instantiate(coin, coinSpawn[i].transform.position, Quaternion.identity);
                 co.transform.parent = gameObject.transform;
             }
             else

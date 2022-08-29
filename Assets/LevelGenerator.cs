@@ -7,9 +7,10 @@ public class LevelGenerator : MonoBehaviour
     int NumberofGround = 40;
 
    public int ground=0;
-    float DistanceZ = 22;
+    public float DistanceZ = 22;
     public GameObject plat;
     public GameObject platform;
+    public Vector3 pos;
     private void Start()
     {
         StartCoroutine(GenerateLevel());
@@ -18,7 +19,7 @@ public class LevelGenerator : MonoBehaviour
 
     IEnumerator GenerateLevel()
     {
-        Vector3 pos = transform.position;
+         pos = transform.position;
         for (ground=0; ground < NumberofGround; ground++)
         {
             platform = Instantiate(plat, pos, Quaternion.identity);

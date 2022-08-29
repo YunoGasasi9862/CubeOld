@@ -59,7 +59,6 @@ public class Movement : MonoBehaviour
         float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
-
          if (!isPaused)
         {
 
