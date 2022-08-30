@@ -191,6 +191,6 @@ public class Movement : MonoBehaviour
     private bool isOnetheGround()
     {
 
-        return Physics.BoxCast(col.bounds.center, col.bounds.size, Vector3.down, transform.rotation, 3f, ground);  //IT WORKED YEEHAW
+        return Physics.BoxCast(col.bounds.center, col.bounds.size, Vector2.down, transform.rotation, 3f, ground);
     }
 }
