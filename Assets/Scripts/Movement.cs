@@ -160,6 +160,8 @@ public class Movement : MonoBehaviour
 
         Over.gameObject.SetActive(true);
         Restart.gameObject.SetActive(true);
+        collisionsound.Play();
+
         Time.timeScale = 0;
 
     }
@@ -191,6 +193,6 @@ public class Movement : MonoBehaviour
     private bool isOnetheGround()
     {
 
-        return Physics.BoxCast(col.bounds.center, col.bounds.size, Vector2.down, transform.rotation, 3f, ground);
+        return Physics.BoxCast(col.bounds.center, col.bounds.size, Vector2.down, transform.rotation, 3f);
     }
 }

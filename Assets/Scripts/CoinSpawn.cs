@@ -13,7 +13,7 @@ public class CoinSpawn : MonoBehaviour
         int Index = Random.Range(0, coinSpawn.Length);
         for(int i=0; i<coinSpawn.Length; i++)
         {
-            if(i==Index)
+            if (i == Index)
             {
                 coinSpawn[i].gameObject.SetActive(true);
                 GameObject co = Instantiate(coin, coinSpawn[i].transform.position, Quaternion.identity);
