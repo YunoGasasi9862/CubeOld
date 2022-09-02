@@ -161,7 +161,6 @@ public class Movement : MonoBehaviour
         Over.gameObject.SetActive(true);
         Restart.gameObject.SetActive(true);
         collisionsound.Play();
-
         Time.timeScale = 0;
 
     }
