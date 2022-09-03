@@ -6,10 +6,11 @@ public class PickupSpawn : MonoBehaviour
 {
     [SerializeField] Transform[] points;
     [SerializeField] GameObject pickup;
+    [SerializeField] int Possible;
     void Start()
     {
-        int Possible = Random.Range(0, 3);
-        if(Possible==2)
+         Possible = Random.Range(0, 15);
+        if(Possible==3 || Possible==7)
         {
             int index = Random.Range(0, points.Length);
             for (int i = 0; i < points.Length; i++)
