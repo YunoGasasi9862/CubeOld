@@ -13,6 +13,7 @@ TagManager:
   - Fall
   - Coin
   - PassBoundary
+  - Pickup
   layers:
   - Default
   - TransparentFX

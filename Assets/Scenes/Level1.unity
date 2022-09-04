@@ -779,6 +779,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletCount: 10
   bullet: {fileID: 5621131916197148487, guid: cc6bf37e00a9fc14ca7dfc434db8d44b, type: 3}
+--- !u!114 &1044425629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044425623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb1aac0e2d4543418dac981d50e9fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuzzle: {fileID: 0}
 --- !u!1 &1213385161
 GameObject:
   m_ObjectHideFlags: 0
