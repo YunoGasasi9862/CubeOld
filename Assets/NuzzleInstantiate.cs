@@ -22,7 +22,7 @@ public class NuzzleInstantiate : MonoBehaviour
 
      for(int i=0; i<bulletCount; i++)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
 
             GameObject bul = Instantiate(bullet, transform.position, Quaternion.identity);
             Destroy(bul, 5f);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
-    [SerializeField] float shootingspeed = 30f;
+    [SerializeField] float shootingspeed = 50f;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
