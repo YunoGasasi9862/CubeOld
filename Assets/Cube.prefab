@@ -463,9 +463,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5196952947375659179}
   - component: {fileID: 1044425625}
+  - component: {fileID: 1044425626}
+  - component: {fileID: 1044425629}
   m_Layer: 0
   m_Name: Nozzle
-  m_TagString: Untagged
+  m_TagString: Nozzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,3 +500,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1044425626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648999279704481235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625411b90474bc44b8f064c0cc0f5409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletCount: 10
+  bullet: {fileID: 5621131916197148487, guid: cc6bf37e00a9fc14ca7dfc434db8d44b, type: 3}
+  isTrue: 0
+--- !u!114 &1044425629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648999279704481235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb1aac0e2d4543418dac981d50e9fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuzzle: {fileID: 0}

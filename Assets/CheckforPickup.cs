@@ -15,7 +15,9 @@ public class CheckforPickup : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Pickup"))
         {
-            //nuzzle.
+            nuzzle.isTrue = true;
+            Destroy(other.gameObject);
+            
         }
     }
 }
