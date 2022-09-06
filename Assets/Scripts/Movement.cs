@@ -150,8 +150,9 @@ public class Movement : MonoBehaviour
             coinCount++;
             Coincount.text = coinCount.ToString("0");
             sound.Play();
-            Instantiate(particles, collision.collider.transform.position, Quaternion.identity);
+            GameObject part= Instantiate(particles, collision.collider.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
+            Destroy(part, 5f);
         }
     }
 

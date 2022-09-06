@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class NuzzleInstantiate : MonoBehaviour
 {
-    [SerializeField] int bulletCount = 10;
+    [SerializeField] int bulletCount = 3;
     [SerializeField] private GameObject bullet;
     public bool isTrue=false;
   

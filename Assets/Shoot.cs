@@ -14,4 +14,15 @@ public class Shoot : MonoBehaviour
     {
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, shootingspeed);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+
+            //add explosion animation
+        }
+    }
 }

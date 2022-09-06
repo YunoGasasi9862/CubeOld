@@ -9,7 +9,7 @@ public class CollidewithBoundary : MonoBehaviour
 
     private void Awake()
     {
-        generator = FindObjectOfType<LevelGenerator>().GetComponent <LevelGenerator>();
+        generator = FindObjectOfType<LevelGenerator>().GetComponent<LevelGenerator>();
     }
 
     private void OnTriggerEnter(Collider other)

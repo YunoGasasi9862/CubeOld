@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625411b90474bc44b8f064c0cc0f5409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCount: 10
+  bulletCount: 3
   bullet: {fileID: 5621131916197148487, guid: cc6bf37e00a9fc14ca7dfc434db8d44b, type: 3}
   isTrue: 0
 --- !u!114 &1044425629
@@ -528,3 +528,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuzzle: {fileID: 0}
+  particleAnim: {fileID: 27920305033932179, guid: 7592b42e38446b94eb540214a4ca856a, type: 3}
