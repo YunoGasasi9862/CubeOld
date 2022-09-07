@@ -18,7 +18,7 @@ public class MovingOsbtacle : MonoBehaviour
     {
         //I FUCKING FIXED IT!! IM IN TEARS WALLAHI!!!. RATHER THAN USING GAMEOBJECT GROUND, I USED TRANFORM :))
 
-        Rightbound = ground.GetChild(8);
+            Rightbound = ground.GetChild(8);
 
             LeftBound = ground.GetChild(9);
 
