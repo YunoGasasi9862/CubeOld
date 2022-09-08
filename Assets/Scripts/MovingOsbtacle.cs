@@ -14,6 +14,8 @@ public class MovingOsbtacle : MonoBehaviour
 
        // Update is called once per frame
 
+
+    //CHANGE THIS WITH TRIG FUCNTION!!!! (Make it more decent!) as its oscillating, use the TRIGNOMETRY FUCNTION!!
     private void Start()
     {
         //I FUCKING FIXED IT!! IM IN TEARS WALLAHI!!!. RATHER THAN USING GAMEOBJECT GROUND, I USED TRANFORM :))
