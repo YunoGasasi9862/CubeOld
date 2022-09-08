@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -1184954446382937487}
-  shootingspeed: 50
+  shootingspeed: 10
 --- !u!1 &5621131917233819870
 GameObject:
   m_ObjectHideFlags: 0
