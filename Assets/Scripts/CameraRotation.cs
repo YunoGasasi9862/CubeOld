@@ -20,10 +20,11 @@ public class CameraRotation : MonoBehaviour
 
 
         XRotation -= MouseY;  //x rotation (against y axis)
+        
 
         XRotation = Mathf.Clamp(XRotation, -45, 45);
 
-        transform.localRotation = Quaternion.Euler(XRotation, 0, 0);
+        transform.localRotation = Quaternion.Euler(XRotation, 0, 0); //the rotation of the camera in relative to its parent, that is the CUBE!!!
 
         Cube.transform.Rotate(Vector3.up * MouseX); //y axis against X axix
 

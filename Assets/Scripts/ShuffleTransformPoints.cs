@@ -8,7 +8,7 @@ public class ShuffleTransformPoints : MonoBehaviour
     public GameObject obstacle;
     GameObject obst;
 
-    private void Start()
+    private void Start()   //FIX THIS SCRIPT. Only ENABLE THE OBSTACLE, and SET IT PLACE TO THAT POINT!!
     {
         int index = Random.Range(0, spawnpoints.Length);
         for (int i = 0; i < spawnpoints.Length; i++)

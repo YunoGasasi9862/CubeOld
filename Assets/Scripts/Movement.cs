@@ -78,7 +78,7 @@ public class Movement : MonoBehaviour
 
                    if (Input.GetKey(KeyCode.H))
                     {
-                          rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, thrustspeed);
+                        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, thrustspeed);
                     }
 
 
