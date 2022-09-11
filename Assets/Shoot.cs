@@ -6,17 +6,21 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] float shootingspeed = 50f;
+    Vector3 pos;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-       
+        pos = transform.position;
 
     }
     void Update()
     {
 
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, shootingspeed);
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y,shootingspeed);
+
+        transform.position += transform.up * Mathf.Sin(Time.time * 4f) * 0.2f;
+        
     }
 
 

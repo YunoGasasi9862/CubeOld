@@ -18,12 +18,11 @@ public class CameraRotation : MonoBehaviour
         float MouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
         float MouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
 
-
         XRotation -= MouseY;
 
         XRotation = Mathf.Clamp(XRotation, -45, 45);
 
-        transform.localRotation = Quaternion.Euler(XRotation, 0, 0);  //rotattion of the parent: camera's parent is the cube
+        transform.localRotation= Quaternion.Euler(XRotation, 0, 0);
 
         Cube.transform.Rotate(Vector3.up * MouseX);
 

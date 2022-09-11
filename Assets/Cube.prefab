@@ -217,11 +217,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   JumpSpeed: 5
+  rb: {fileID: 835676998267658403}
   MaxNumberofJumps: 3
   jumps: {fileID: 0}
-  Over: {fileID: 0}
+  gameManager: {fileID: 0}
   Coincount: {fileID: 0}
-  Restart: {fileID: 0}
+  isPaused: 0
+  thrustspeed: 30
+  coinCount: 0
   HS: {fileID: 0}
   sound: {fileID: 2026769372}
   collisionsound: {fileID: 1812376890}
@@ -232,6 +235,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   col: {fileID: 835676998267658424}
+  CanvasRestart: {fileID: 81502570701441484, guid: 813b42e1bc678864f9bad5d24526f50b, type: 3}
+  HUD: {fileID: 0}
 --- !u!54 &835676998267658403
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -480,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5648999279704481235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.055, y: -0.056, z: 0.64}
+  m_LocalPosition: {x: 0.005, y: -0.056, z: 0.276}
   m_LocalScale: {x: 4.39, y: 3.29, z: 0.67}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -498,7 +503,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.2}
+  m_Size: {x: 0.33, y: 0.47, z: 2.19}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1044425626
 MonoBehaviour:

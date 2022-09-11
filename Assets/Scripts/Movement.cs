@@ -6,28 +6,26 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 20f;
-    public float JumpSpeed = 5f;
-    Rigidbody rb;
-    public int MaxNumberofJumps = 3;
-     public Text jumps;
+    [SerializeField] float speed = 20f;
+    [SerializeField] float JumpSpeed = 5f;
+    [SerializeField] Rigidbody rb;
+    [SerializeField] int MaxNumberofJumps = 3;
+    [SerializeField] Text jumps;
 
-    GameManager gameManager;
-    public Text Over;
-    public Text Coincount;
-    bool isPaused = false;
-    public Text Restart;
-    float thrustspeed = 30f;
+    [SerializeField] GameManager gameManager;
+    [SerializeField] Text Coincount;
+    [SerializeField] bool isPaused = false;
+    [SerializeField] float thrustspeed = 30f;
 
-     int coinCount=0;
+    [SerializeField] int coinCount=0;
 
-    public GameObject HS;
-    public AudioSource sound;
-    public AudioSource collisionsound;
-    public GameObject particles;
+    [SerializeField] GameObject HS;
+    [SerializeField] AudioSource sound;
+    [SerializeField] AudioSource collisionsound;
+    [SerializeField] GameObject particles;
 
 
-    public GameObject text;
+    [SerializeField] GameObject text;
 
     [SerializeField] bool CoinAchieved;
 
@@ -35,18 +33,18 @@ public class Movement : MonoBehaviour
     [SerializeField] BoxCollider col;
 
 
+    [SerializeField] GameObject CanvasRestart;
+    [SerializeField] GameObject HUD;
+
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
-        //OMG THIS WORKED!!!!
-        Over = GameObject.Find("Canvas/GameOver").GetComponent<Text>();
-        Restart = GameObject.Find("Canvas/Restart").GetComponent<Text>();
 
-        HS = GameObject.Find("Canvas/HS");
-        text = GameObject.Find("Canvas/BuyJumps");
+        HS = GameObject.Find("HUD/HS");
+        text = GameObject.Find("HUD/BuyJumps");
         col = GetComponent<BoxCollider>();
 
     }
@@ -74,13 +72,10 @@ public class Movement : MonoBehaviour
 
 
             }
-
-
                    if (Input.GetKey(KeyCode.H))
                     {
                         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, thrustspeed);
                     }
-
 
 
             if (Input.GetKeyDown(KeyCode.I))
@@ -113,8 +108,6 @@ public class Movement : MonoBehaviour
         {
             Time.timeScale = 1;
             isPaused = false;
-            Restart.gameObject.SetActive(false);
-            Over.gameObject.SetActive(false);
             gameManager.GameOver(); //restarting the game
 
         }
@@ -161,11 +154,8 @@ public class Movement : MonoBehaviour
     {
         isPaused = true;
 
-        Over.gameObject.SetActive(true);
-        Restart.gameObject.SetActive(true);
-        
-       
-
+        Instantiate(CanvasRestart, transform.position, Quaternion.identity);
+        HUD.SetActive(false);
         collisionsound.Play();
         Time.timeScale = 0;
 
