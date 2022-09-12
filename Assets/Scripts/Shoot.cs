@@ -6,6 +6,7 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] float shootingspeed = 50f;
+    [SerializeField] GameObject Anim;
     Vector3 pos;
 
     private void Start()
@@ -17,9 +18,9 @@ public class Shoot : MonoBehaviour
     void Update()
     {
 
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y,shootingspeed);
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, shootingspeed);
 
-        transform.position += transform.up * Mathf.Sin(Time.time * 4f) * 0.2f;
+        transform.position += transform.up * Mathf.Sin(Time.time * 10f) * .1f;
         
     }
 
@@ -29,9 +30,10 @@ public class Shoot : MonoBehaviour
         if(collision.gameObject.CompareTag("Obstacle"))
         {
             Destroy(collision.gameObject);
+            GameObject animation = Instantiate(Anim, collision.gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
 
-            //add explosion animation
+           
         }
     }
 }

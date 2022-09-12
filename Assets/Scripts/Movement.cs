@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
     [SerializeField] GameObject particles;
 
 
-    [SerializeField] GameObject text;
+    [SerializeField] GameObject BuyJumps;
 
     [SerializeField] bool CoinAchieved;
 
@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
 
         HS = GameObject.Find("HUD/HS");
-        text = GameObject.Find("HUD/BuyJumps");
+       // BuyJumps = GameObject.Find("HUD/BuyJumps").gameObject;
         col = GetComponent<BoxCollider>();
 
     }
@@ -55,7 +55,6 @@ public class Movement : MonoBehaviour
 
         float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-
 
         transform.Translate(Horizontal, 0, Vertical);
 
@@ -82,9 +81,12 @@ public class Movement : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                text.SetActive(true);
+                BuyJumps.gameObject.SetActive(true);
+               
 
             }
+
+          
             if (MaxNumberofJumps==0)
             {
                 if (HS != null)
@@ -116,12 +118,10 @@ public class Movement : MonoBehaviour
 
     }
 
-
     void showJump()
     {
         jumps.text = MaxNumberofJumps.ToString("0");
     }
-
     private void OnCollisionEnter(Collision collision)  //for JUMPS IMMA USE COLLISION DETECTOR NOW. THIS IS SO MUCH FUCKING BETTER!!!
     {
 
@@ -148,8 +148,6 @@ public class Movement : MonoBehaviour
             Destroy(part, 5f);
         }
     }
-
-
     void GameEndChecK()
     {
         isPaused = true;
@@ -160,7 +158,6 @@ public class Movement : MonoBehaviour
         Time.timeScale = 0;
 
     }
-
     public void InreaseJumps()
     {
         if (MaxNumberofJumps <= 3 && coinCount >= 3)
@@ -178,7 +175,7 @@ public class Movement : MonoBehaviour
     {
         if (CoinAchieved)
         {
-            text.SetActive(false);
+            BuyJumps.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             CoinAchieved = false;

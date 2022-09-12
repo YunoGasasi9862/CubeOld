@@ -15,6 +15,7 @@ TagManager:
   - PassBoundary
   - Pickup
   - Nozzle
+  - Bullet
   layers:
   - Default
   - TransparentFX

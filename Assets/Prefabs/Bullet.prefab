@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1145901025283542720}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: -1184954446382937487}
   shootingspeed: 50
+  Anim: {fileID: 884701864721959545, guid: 165a5490881946c40b1eeefc9f11d55c, type: 3}
 --- !u!1 &5621131917233819870
 GameObject:
   m_ObjectHideFlags: 0
