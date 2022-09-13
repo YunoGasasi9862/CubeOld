@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+
 public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -42,9 +44,6 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
-
-        HS = GameObject.Find("HUD/HS");
-       // BuyJumps = GameObject.Find("HUD/BuyJumps").gameObject;
         col = GetComponent<BoxCollider>();
 
     }
@@ -52,8 +51,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+
         float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
