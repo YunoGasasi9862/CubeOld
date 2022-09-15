@@ -15,7 +15,7 @@ public class Shoot : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pos = transform.position;
+     
         cam = Camera.main;
     
     }
@@ -25,6 +25,7 @@ public class Shoot : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, shootingspeed);
 
         transform.position += transform.up * Mathf.Sin(Time.time * 20f) * 0.1f;
+
     }
 
 
