@@ -38,6 +38,8 @@ public class Movement : MonoBehaviour
     [SerializeField] GameObject CanvasRestart;
     [SerializeField] GameObject HUD;
 
+    [SerializeField] Animator anim;
+
 
 
     void Start()
@@ -51,11 +53,25 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         transform.Translate(Horizontal, 0, Vertical);
+        if(Horizontal>0f || Vertical>0f)
+        {
+            anim.SetInteger("AnimationPar", 1);
+        }else if(Horizontal <0f || Vertical <0f)
+        {
+            anim.SetInteger("AnimationPar", 1);
 
-         if (!isPaused)
+        }else
+        {
+            anim.SetInteger("AnimationPar", 0);
+        }
+
+
+        if (!isPaused)
         {
 
             if (MaxNumberofJumps > 0)
@@ -182,6 +198,7 @@ public class Movement : MonoBehaviour
     private bool isOnetheGround()
     {
 
-        return Physics.BoxCast(col.bounds.center, col.bounds.size,  Vector2.down, transform.rotation, 3f, ground);
+        return Physics.BoxCast(col.bounds.center, col.bounds.size, Vector2.down, transform.rotation, 3f, ground);
+
     }
 }

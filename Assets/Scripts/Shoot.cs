@@ -26,6 +26,7 @@ public class Shoot : MonoBehaviour
 
         transform.position += transform.up * Mathf.Sin(Time.time * 20f) * 0.1f;
 
+
     }
 
 
