@@ -21,7 +21,6 @@ public class ShuffleTransformPoints : MonoBehaviour
                 spawnpoints[i].gameObject.SetActive(true);
                 obst = Instantiate(obstacle, spawnpoints[i].transform.position, Quaternion.identity);
                 obst.transform.parent = gameObject.transform;
-             
 
                
             }
