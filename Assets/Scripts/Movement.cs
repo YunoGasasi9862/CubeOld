@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
     [SerializeField] bool CoinAchieved;
 
     [SerializeField] LayerMask ground;
-    [SerializeField] BoxCollider col;
+     private CapsuleCollider col;
 
 
     [SerializeField] GameObject CanvasRestart;
@@ -40,14 +40,15 @@ public class Movement : MonoBehaviour
 
     [SerializeField] Animator anim;
 
+    private float Horizontal;
+    private float Vertical;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
-        col = GetComponent<BoxCollider>();
-
+        col = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -55,20 +56,13 @@ public class Movement : MonoBehaviour
     {
 
 
-        float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        transform.Translate(Horizontal, 0, Vertical);
-        if(Horizontal>0f || Vertical>0f)
-        {
-            anim.SetInteger("AnimationPar", 1);
-        }else if(Horizontal <0f || Vertical <0f)
-        {
-            anim.SetInteger("AnimationPar", 1);
+         Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 
-        }else
-        {
-            anim.SetInteger("AnimationPar", 0);
-        }
+         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+        transform.Translate(Horizontal, 0, Vertical);
+        CheckAnimation();
+
 
 
         if (!isPaused)
@@ -129,6 +123,8 @@ public class Movement : MonoBehaviour
 
         Coincount.text = coinCount.ToString("0");
 
+
+      
     }
 
     void showJump()
@@ -198,7 +194,37 @@ public class Movement : MonoBehaviour
     private bool isOnetheGround()
     {
 
-        return Physics.BoxCast(col.bounds.center, col.bounds.size, Vector2.down, transform.rotation, 3f, ground);
+        return Physics.CapsuleCast(col.bounds.center, col.bounds.size, 0.1f, Vector2.down, 3f, ground);
+
+    }
+
+    void CheckAnimation()
+    {
+        if ( Horizontal >0 || Vertical > 0f)
+        {
+            anim.SetInteger("AnimationPar", 1);
+        }
+        else if ( Horizontal <0f || Vertical < 0f)
+        {
+            anim.SetInteger("AnimationPar", 1);
+
+        }
+        else
+        {
+            anim.SetInteger("AnimationPar", 0);
+        }
+
+
+        if(rb.velocity.y >=0.1f)
+        {
+            anim.SetInteger("AnimationPar", 2);
+
+        }else if(rb.velocity.y <=-.1f)
+        {
+            anim.SetInteger("AnimationPar", 3);
+
+        }
+
 
     }
 }
