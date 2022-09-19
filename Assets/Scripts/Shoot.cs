@@ -24,7 +24,7 @@ public class Shoot : MonoBehaviour
 
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, shootingspeed);
 
-        transform.position += transform.up * Mathf.Sin(Time.time * 20f) * 0.1f;
+        transform.position += transform.up * Mathf.Sin(Time.time * 20f) * 0.1f; 
 
     }
 

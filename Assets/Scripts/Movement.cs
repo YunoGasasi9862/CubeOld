@@ -61,6 +61,7 @@ public class Movement : MonoBehaviour
          Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
+
         CheckAnimation();
 
 
@@ -215,16 +216,15 @@ public class Movement : MonoBehaviour
         }
 
 
-        if(rb.velocity.y >=0.1f)
+        
+        if(rb.velocity.y >= 0.1f)
         {
             anim.SetInteger("AnimationPar", 2);
 
         }else if(rb.velocity.y <=-.1f)
         {
             anim.SetInteger("AnimationPar", 3);
-
         }
-
 
     }
 }
