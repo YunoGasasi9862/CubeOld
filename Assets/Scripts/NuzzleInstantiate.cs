@@ -24,7 +24,7 @@ public class NuzzleInstantiate : MonoBehaviour
         {
             yield return new WaitForSeconds(.3f);
 
-            GameObject bul = Instantiate(bullet, transform.position, Quaternion.identity);
+            GameObject bul = Instantiate(bullet, transform.position, transform.parent.rotation);
             Destroy(bul, 5f);
         }
 

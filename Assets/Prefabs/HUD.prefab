@@ -80,7 +80,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "H" for a thrust
+  m_Text: HOLD "H" to flip
 --- !u!95 &986498015925684657
 Animator:
   serializedVersion: 4

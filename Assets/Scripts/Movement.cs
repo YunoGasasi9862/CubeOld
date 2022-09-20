@@ -56,9 +56,9 @@ public class Movement : MonoBehaviour
     {
 
 
-         Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 
-         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
 
@@ -81,7 +81,7 @@ public class Movement : MonoBehaviour
             }
                    if (Input.GetKey(KeyCode.H))
                     {
-                        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, thrustspeed);
+                      anim.SetInteger("AnimationPar", 4);
                     }
 
 
@@ -217,7 +217,7 @@ public class Movement : MonoBehaviour
 
 
         
-        if(rb.velocity.y >= 0.1f)
+        if(rb.velocity.y >=0.1f)
         {
             anim.SetInteger("AnimationPar", 2);
 
