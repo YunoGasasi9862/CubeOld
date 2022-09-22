@@ -61,7 +61,6 @@ public class Movement : MonoBehaviour
         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
-
         CheckAnimation();
 
 
@@ -73,7 +72,7 @@ public class Movement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Jump") && isOnetheGround())
                 {
-                    rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+                   rb.velocity= new Vector2(rb.velocity.x, JumpSpeed);
                     MaxNumberofJumps--;
                 }
 
@@ -195,7 +194,7 @@ public class Movement : MonoBehaviour
     private bool isOnetheGround()
     {
 
-        return Physics.CapsuleCast(col.bounds.center, col.bounds.size, 0.1f, Vector2.down, 3f, ground);
+        return Physics.CapsuleCast(col.bounds.center, col.bounds.size, .1f, Vector2.down, 3f, ground);
 
     }
 
