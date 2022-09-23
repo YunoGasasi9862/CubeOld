@@ -44,6 +44,7 @@ public class Movement : MonoBehaviour
     private float Vertical;
 
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,9 +62,11 @@ public class Movement : MonoBehaviour
         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
+
+
         CheckAnimation();
 
-
+        
 
         if (!isPaused)
         {
@@ -93,25 +96,15 @@ public class Movement : MonoBehaviour
 
             }
 
-          
-            if (MaxNumberofJumps==0)
-            {
-                if (HS != null)
-                    HS.gameObject.SetActive(false);
-            }
-            else
-            {
-
-                    HS.gameObject.SetActive(true);
-
-            }
-
             DisableCoinText();
 
             //shows number of jumps left
             showJump();
+
+            
         }
 
+   
 
         if(isPaused && Input.GetKeyDown(KeyCode.F))
         {
@@ -216,7 +209,7 @@ public class Movement : MonoBehaviour
 
 
         
-        if(rb.velocity.y >=0.1f)
+        if(rb.velocity.y >=.1f)
         {
             anim.SetInteger("AnimationPar", 2);
 
