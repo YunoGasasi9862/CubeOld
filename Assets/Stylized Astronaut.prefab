@@ -544,6 +544,7 @@ MonoBehaviour:
   CanvasRestart: {fileID: 81502570701441484, guid: 813b42e1bc678864f9bad5d24526f50b, type: 3}
   HUD: {fileID: 0}
   anim: {fileID: 95340733316770424}
+  planet: {fileID: 5831545720805581359, guid: b0431628d6e72534ca8b54dd49548657, type: 3}
 --- !u!114 &8749468493987318319
 MonoBehaviour:
   m_ObjectHideFlags: 0

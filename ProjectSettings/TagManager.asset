@@ -16,6 +16,7 @@ TagManager:
   - Pickup
   - Nozzle
   - Bullet
+  - Planet
   layers:
   - Default
   - TransparentFX

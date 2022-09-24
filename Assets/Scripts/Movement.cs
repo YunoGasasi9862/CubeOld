@@ -40,8 +40,13 @@ public class Movement : MonoBehaviour
 
     [SerializeField] Animator anim;
 
+    [SerializeField] GameObject planet;
+
+    private bool destroy = false;
+    private Vector3 newLocation;
     private float Horizontal;
     private float Vertical;
+    private GameObject temp=null;
 
 
 
@@ -50,6 +55,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
         col = GetComponent<CapsuleCollider>();
+        InstantiatePlanet();
     }
 
     // Update is called once per frame
@@ -65,8 +71,9 @@ public class Movement : MonoBehaviour
 
 
         CheckAnimation();
+        CheckForSpace();
 
-        
+
 
         if (!isPaused)
         {
@@ -75,7 +82,7 @@ public class Movement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Jump") && isOnetheGround())
                 {
-                   rb.velocity= new Vector2(rb.velocity.x, JumpSpeed);
+                    rb.velocity = new Vector3(rb.velocity.x, JumpSpeed);
                     MaxNumberofJumps--;
                 }
 
@@ -217,6 +224,49 @@ public class Movement : MonoBehaviour
         {
             anim.SetInteger("AnimationPar", 3);
         }
+
+    }
+
+    void CheckForSpace()
+    {
+        //if(Mathf.Abs(Vector3.Distance(transform.position, player.transform.position))<=120f)
+
+
+      
+            if (transform.position.z >= temp.transform.position.z) //wtf THIS IS WORKING? but not the
+                                                                     //but not the DistancE? FUCK YOU !!
+            {
+                Destroy(temp);
+                destroy = true;
+
+            }
+
+            if(destroy==true)
+           {
+            temp = Instantiate(planet, newLocation, Quaternion.identity);
+            destroy = false;
+          }
+          
+
+
+    }
+
+    void InstantiatePlanet()
+    {
+        int posCheck = Random.Range(0, 2);
+        if (posCheck == 0)
+        {
+            newLocation.x = -62f;
+        }
+        else
+        {
+            newLocation.x = 62f;
+        }
+
+        newLocation.y = 92.0f;
+        newLocation.z = transform.position.z + 1000f;
+        temp=Instantiate(planet, newLocation, Quaternion.identity);
+
 
     }
 }
