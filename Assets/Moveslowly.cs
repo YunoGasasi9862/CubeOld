@@ -7,12 +7,13 @@ using UnityEngine.Tilemaps;
 public class Moveslowly : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
-    [SerializeField] float speed = 2f;
+    [SerializeField] float speed ;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        speed = Random.Range(-80, -70);
     }
     void Update()
     {

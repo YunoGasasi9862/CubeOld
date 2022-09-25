@@ -28,6 +28,7 @@ public class CameraRotation : MonoBehaviour
 
         Cube.transform.Rotate(Vector3.up * MouseX);
 
+
         //the is similar to transform.Rotate (0,0,4);
 
     }

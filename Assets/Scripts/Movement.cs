@@ -236,13 +236,14 @@ public class Movement : MonoBehaviour
             if (transform.position.z >= temp.transform.position.z) //wtf THIS IS WORKING? but not the
                                                                      //but not the DistancE? FUCK YOU !!
             {
-                Destroy(temp);
+                Destroy(temp,5f);
                 destroy = true;
 
             }
 
             if(destroy==true)
            {
+            new WaitForSeconds(3f);
             temp = Instantiate(planet, newLocation, Quaternion.identity);
             destroy = false;
           }
@@ -256,11 +257,11 @@ public class Movement : MonoBehaviour
         int posCheck = Random.Range(0, 2);
         if (posCheck == 0)
         {
-            newLocation.x = -62f;
+            newLocation.x = -70f;
         }
         else
         {
-            newLocation.x = 62f;
+            newLocation.x = 70f;
         }
 
         newLocation.y = 92.0f;
