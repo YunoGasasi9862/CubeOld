@@ -69,7 +69,6 @@ public class Movement : MonoBehaviour
 
         transform.Translate(Horizontal, 0, Vertical);
 
-
         CheckAnimation();
         CheckForSpace();
 
