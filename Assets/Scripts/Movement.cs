@@ -242,8 +242,8 @@ public class Movement : MonoBehaviour
 
             if(destroy==true)
            {
-            new WaitForSeconds(3f);
-            temp = Instantiate(planet, newLocation, Quaternion.identity);
+
+            Invoke("CreatePlanet", 3f);
             destroy = false;
           }
           
@@ -251,6 +251,11 @@ public class Movement : MonoBehaviour
 
     }
 
+    void CreatePlanet()
+    {
+        temp = Instantiate(planet, newLocation, Quaternion.identity);
+
+    }
     void InstantiatePlanet()
     {
         int posCheck = Random.Range(0, 2);
