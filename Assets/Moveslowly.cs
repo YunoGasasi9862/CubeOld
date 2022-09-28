@@ -18,7 +18,7 @@ public class Moveslowly : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector3(0, 0, speed);
-        transform.Rotate(0,0, 180 * Time.deltaTime);
+      
 
     }
 

@@ -62,7 +62,6 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-
         Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 
         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
@@ -81,7 +80,7 @@ public class Movement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Jump") && isOnetheGround())
                 {
-                    rb.velocity = new Vector3(rb.velocity.x, JumpSpeed);
+                    rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
                     MaxNumberofJumps--;
                 }
 
