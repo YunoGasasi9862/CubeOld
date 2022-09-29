@@ -566,6 +566,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1282691602, guid: b0431628d6e72534ca8b54dd49548657, type: 3}
+      propertyPath: XZ
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282691602, guid: b0431628d6e72534ca8b54dd49548657, type: 3}
+      propertyPath: YZ
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5831545720805581359, guid: b0431628d6e72534ca8b54dd49548657, type: 3}
       propertyPath: m_Name
       value: Planet

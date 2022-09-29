@@ -14,8 +14,6 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         float MouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
 
         float MouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
@@ -26,7 +24,8 @@ public class CameraRotation : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(XRotation, 0, 0);
 
-        Cube.transform.Rotate(Vector3.up * MouseX);
+        Cube.transform.Rotate(MouseX * Vector3.up);
+ 
 
 
         //the is similar to transform.Rotate (0,0,4);
