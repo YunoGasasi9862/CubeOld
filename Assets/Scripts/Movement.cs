@@ -67,7 +67,6 @@ public class Movement : MonoBehaviour
         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
-
         CheckAnimation();
         CheckForSpace();
 
@@ -192,7 +191,7 @@ public class Movement : MonoBehaviour
     private bool isOnetheGround()
     {
 
-        return Physics.CapsuleCast(col.bounds.center, col.bounds.size, .1f, Vector3.down, 3f, ground);
+        return Physics.CapsuleCast(col.bounds.center, col.bounds.size, .1f, Vector2.down, 3f, ground);
 
     }
 

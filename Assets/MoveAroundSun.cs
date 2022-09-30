@@ -6,12 +6,22 @@ public class MoveAroundSun : MonoBehaviour
 {
 
     float angle = 0;
-    [SerializeField] bool XY;
+    int sign1;
+   [SerializeField] bool XY;
     [SerializeField] bool XZ;
     [SerializeField] bool YZ;
 
     private void Start()
     {
+       sign1 = Random.Range(0, 2);
+        if (sign1 == 0)
+        {
+            sign1 = -1;
+        }
+        else
+        {
+            sign1 = 1;
+        }
         int Choose = Random.Range(0, 3);
 
         switch (Choose)
@@ -62,18 +72,19 @@ public class MoveAroundSun : MonoBehaviour
 
     void XtoZ()
     {
-        transform.position = new Vector3(transform.parent.position.x + 100 * Mathf.Sin(angle*3), transform.position.y, transform.parent.position.z + 100 * Mathf.Cos(angle*3));
+      
+        transform.position = new Vector3(transform.parent.position.x + ( 70 * Mathf.Sin((sign1)*angle * 3)), transform.position.y, transform.parent.position.z + 70 * Mathf.Cos((sign1) * angle * 3));
 
     }
 
     void XtoY()
     {
-        transform.position = new Vector3(transform.parent.position.x + 100 * Mathf.Sin(angle*3), transform.parent.position.y + 100* Mathf.Cos(angle*3), transform.position.z);
+        transform.position = new Vector3(transform.parent.position.x + 70 * Mathf.Sin((sign1) * angle *3), transform.parent.position.y + 70 * Mathf.Cos((sign1) * angle *3), transform.position.z);
 
     }
     void YtoZ()
     {
-        transform.position = new Vector3(transform.position.x, transform.parent.position.y + 100* Mathf.Sin(angle *3), transform.parent.position.z + 100 * Mathf.Cos(angle *3));
+        transform.position = new Vector3(transform.position.x, transform.parent.position.y + 70 * Mathf.Sin((sign1) * angle *3), transform.parent.position.z + 70 * Mathf.Cos((sign1) * angle *3));
 
     }
 
