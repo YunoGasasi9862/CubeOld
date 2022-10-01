@@ -47,7 +47,7 @@ public class MovingOsbtacle : MonoBehaviour
         //the regular update function didn't work !!
     {
 
-        transform.Translate(position.x * speed * Time.deltaTime, 0f, 0f);//YAYAYAY I FIXED IT IM GONNA CRY!!
+        transform.Translate(position.x * speed * Time.deltaTime, 0, 0);//YAYAYAY I FIXED IT IM GONNA CRY!!
   
         //if(Vector2.distance())
     }

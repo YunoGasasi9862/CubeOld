@@ -67,6 +67,7 @@ public class Movement : MonoBehaviour
         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
+
         CheckAnimation();
         CheckForSpace();
 
