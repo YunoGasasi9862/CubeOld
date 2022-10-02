@@ -73,18 +73,18 @@ public class MoveAroundSun : MonoBehaviour
     void XtoZ()
     {
       
-        transform.position = new Vector3(transform.parent.position.x + (70 * Mathf.Sin((sign1) * angle * 3)), transform.position.y, transform.parent.position.z + 70 * Mathf.Cos((sign1) * angle * 3));
+        transform.position = new Vector3(transform.parent.position.x + (40 * Mathf.Sin((sign1) * angle * 3)) , transform.position.y, transform.parent.position.z + 40 * Mathf.Cos((sign1) * angle * 3));
 
     }
 
     void XtoY()
     {
-        transform.position = new Vector3(transform.parent.position.x + 70 * Mathf.Sin((sign1) * angle *3), transform.parent.position.y + 70 * Mathf.Cos((sign1) * angle *3), transform.position.z);
+        transform.position = new Vector3(transform.parent.position.x + 40 * Mathf.Sin((sign1) * angle *3), transform.parent.position.y + 40 * Mathf.Cos((sign1) * angle *3), transform.position.z);
 
     }
     void YtoZ()
     {
-        transform.position = new Vector3(transform.position.x, transform.parent.position.y + 70 * Mathf.Sin((sign1) * angle *3), transform.parent.position.z + 70 * Mathf.Cos((sign1) * angle *3));
+        transform.position = new Vector3(transform.position.x, transform.parent.position.y + 40 * Mathf.Sin((sign1) * angle *3), transform.parent.position.z + 40 * Mathf.Cos((sign1) * angle *3));
 
     }
 
