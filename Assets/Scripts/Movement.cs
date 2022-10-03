@@ -241,6 +241,15 @@ public class Movement : MonoBehaviour
 
             if(destroy==true)
            {
+             int posCheck = Random.Range(0, 2);
+              if (posCheck == 0)
+             {
+                  newLocation.x = -70f;
+               }
+             else
+             {
+                 newLocation.x = 70f;
+             }
 
             temp = Instantiate(planet, newLocation, Quaternion.identity);
             destroy = false;

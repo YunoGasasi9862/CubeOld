@@ -342,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5831545720805581522}
   speed: -10
+  PlanetColor: {fileID: 5831545720805581521}
 --- !u!54 &5831545720805581522
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -8,12 +8,16 @@ public class Moveslowly : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] float speed ;
-
+    [SerializeField] Renderer PlanetColor;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        PlanetColor = GetComponent<Renderer>();
         speed = Random.Range(-80, -70);
+        PlanetColor.material.SetColor("_EmissionColor", Color.red);  //"_Color is the shader property name"
+        //because the material 
+        //Its _EmissiveColor for emission
     }
     void Update()
     {
