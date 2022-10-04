@@ -20,8 +20,7 @@ public class CameraRotation : MonoBehaviour
 
 
         XRotation -= MouseY;
-
-        XRotation = Mathf.Clamp(XRotation, -45, 45);
+        XRotation = Mathf.Clamp(XRotation, -45,45);
 
         transform.localRotation = Quaternion.Euler(XRotation, 0, 0);
 

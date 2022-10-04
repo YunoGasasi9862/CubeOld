@@ -15,7 +15,12 @@ public class Moveslowly : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         PlanetColor = GetComponent<Renderer>();
         speed = Random.Range(-80, -70);
-        PlanetColor.material.SetColor("_EmissionColor", Color.red);  //"_Color is the shader property name"
+        float R = Random.Range(-100f, 10f);
+        float G = Random.Range(10f, 50f);
+        float B = Random.Range(-100f, 50f);
+
+        PlanetColor.material.SetColor("_EmissionColor", new Color(R, G, B)); //"_Color is the shader property name"
+     
         //because the material 
         //Its _EmissiveColor for emission
     }

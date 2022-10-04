@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class MagnetarRotate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    private float speed = 20;
     void Update()
     {
-        
+        transform.Rotate(0, speed * Time.deltaTime, 0);
     }
 }
