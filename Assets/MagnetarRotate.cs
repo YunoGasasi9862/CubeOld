@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagnetarRotate : MonoBehaviour
 {
-    private float speed = 20;
+    [SerializeField] float speed = 30;
     void Update()
     {
         transform.Rotate(0, speed * Time.deltaTime, 0);

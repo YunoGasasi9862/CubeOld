@@ -272,7 +272,7 @@ public class Movement : MonoBehaviour
             newLocation.x = 70f;
         }
 
-        newLocation.y = 92.0f;
+        newLocation.y = 150f;
         newLocation.z = transform.position.z + 1000f;
         temp=Instantiate(planet, newLocation, Quaternion.identity);
 
