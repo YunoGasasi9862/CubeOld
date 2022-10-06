@@ -491,14 +491,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 368495262, guid: 89c8d81db8d5a6841b8d7b1eb5dd40aa, type: 3}
-      propertyPath: near clip plane
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 368495262, guid: 89c8d81db8d5a6841b8d7b1eb5dd40aa, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 664981360, guid: 89c8d81db8d5a6841b8d7b1eb5dd40aa, type: 3}
       propertyPath: HS
       value: 
@@ -828,7 +820,7 @@ GameObject:
   - component: {fileID: 1912863107}
   - component: {fileID: 1912863110}
   m_Layer: 7
-  m_Name: Sphere
+  m_Name: Rotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
