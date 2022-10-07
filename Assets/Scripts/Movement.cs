@@ -17,7 +17,6 @@ public class Movement : MonoBehaviour
     [SerializeField] GameManager gameManager;
     [SerializeField] Text Coincount;
     [SerializeField] bool isPaused = false;
-    [SerializeField] float thrustspeed = 30f;
 
     [SerializeField] int coinCount=0;
 
@@ -62,7 +61,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime ;
 
         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
