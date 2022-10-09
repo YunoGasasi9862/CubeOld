@@ -60,9 +60,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime ;
-
+        Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
