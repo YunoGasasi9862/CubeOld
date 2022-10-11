@@ -1,62 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
     private GameObject Player;
-    private Rigidbody rb;
     [SerializeField]float speed = 50f;
+    [SerializeField] GameManager manager;
+    private float DotProduct;
+    private float angleinRadians;
+        private float angleinDegrees;
     private Vector3 previousPosition;
+    private float previousAngle;
+  
+   
         
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
         Player = GameObject.FindGameObjectWithTag("Player");
     }
     void Update()
     {
 
 
-        //check tomorrow how to move it without using Vector3.movetowards
-     
-          if(Vector2.Distance(transform.position, Player.transform.position)>=30)
-         {
+
+
+
+        if (Vector2.Distance(transform.position, Player.transform.position) >= 5)  //OMG IT WORKED! I FUCKING DID IT!!!  (IT FOLLOWS THE PLAYER UNTIL THE DISTANCE IS > 20)
+        {
             transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
-            previousPosition = transform.position;
+            previousPosition = Player.transform.position;
+
+
+            //check tomorrow how to move it without using Vector3.movetowards
+
+
+
+
+            //using the DotProduct method, and rotating it on that Axis only
+
+            DotProduct = Vector3.Dot(transform.position, Player.transform.position);
+
+
+            DotProduct = DotProduct / (transform.position.magnitude * Player.transform.position.magnitude);
+
+
+            //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
+            angleinRadians = Mathf.Acos(DotProduct);
+
+
+            //if need in degrees
+            angleinDegrees = angleinRadians * (180 / Mathf.PI);
+            previousAngle = angleinDegrees;
+            transform.rotation = Quaternion.AngleAxis(angleinDegrees, Vector3.right);
 
         }
         else
-          {
-            transform.position = Vector3.MoveTowards(previousPosition, Player.transform.position, speed * Time.deltaTime);
+        {
 
-
+            transform.position = Vector3.MoveTowards(transform.position, previousPosition, speed * Time.deltaTime);
+            transform.rotation = Quaternion.AngleAxis(previousAngle, Vector3.right);
         }
 
 
-        //using the DotProduct method, and rotating it on that Axis only
+    }
+    
 
-        float DotProduct = Vector3.Dot(transform.position, Player.transform.position);
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.CompareTag("Player"))
+        {
 
-
-        DotProduct = DotProduct / (transform.position.magnitude * Player.transform.position.magnitude);
-
-
-        //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
-        float angleinRadians = Mathf.Acos(DotProduct);
-
-
-        //if need in degrees
-        float angleinDegrees = angleinRadians * (180 / Mathf.PI);
-
-        float PreviousRotationAngle = angleinDegrees;
-
-        transform.rotation = Quaternion.AngleAxis(PreviousRotationAngle, Vector3.right);
-
-        
-         
-
-       
+        }
     }
 
 

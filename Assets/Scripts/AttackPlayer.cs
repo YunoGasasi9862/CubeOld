@@ -8,19 +8,21 @@ public class AttackPlayer : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject Laser;
     private bool isInstantiated = false;
- 
+    private GameObject laserFire;
+    [SerializeField] Rigidbody laserFireRb;
     void Update()
     {
-        float Distance = Vector3.Distance(transform.position, Laser.transform.position);
+        float Distance = Vector3.Distance(transform.position, player.transform.position);
         if (Distance <=400f && !isInstantiated)
         {
-            GameObject laserFire = Instantiate(Laser, transform.position, Quaternion.identity);
+            laserFire = Instantiate(Laser, transform.position, Quaternion.identity);
+  
             isInstantiated = true;
         }
 
-     
-
-     
-
+        if(laserFireRb.velocity.magnitude <=.1f)
+        {
+            Destroy(laserFire, 3f);
+        }
     }
 }
