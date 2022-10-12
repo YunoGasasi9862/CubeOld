@@ -19,12 +19,10 @@ public class FollowPlayer : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        manager = FindObjectOfType<GameManager>();
     }
     void Update()
     {
-
-
-
 
 
         if (Vector2.Distance(transform.position, Player.transform.position) >= 5)  //OMG IT WORKED! I FUCKING DID IT!!!  (IT FOLLOWS THE PLAYER UNTIL THE DISTANCE IS > 20)
@@ -42,13 +40,11 @@ public class FollowPlayer : MonoBehaviour
 
             DotProduct = Vector3.Dot(transform.position, Player.transform.position);
 
-
             DotProduct = DotProduct / (transform.position.magnitude * Player.transform.position.magnitude);
 
 
             //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
             angleinRadians = Mathf.Acos(DotProduct);
-
 
             //if need in degrees
             angleinDegrees = angleinRadians * (180 / Mathf.PI);
@@ -71,7 +67,7 @@ public class FollowPlayer : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player"))
         {
-
+          //  manager.GameOver();
         }
     }
 
