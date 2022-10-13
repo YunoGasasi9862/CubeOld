@@ -8,7 +8,7 @@ public class FarAwayObjectMovement : MonoBehaviour
     void Update()
     {
         angle+=.01f;
-        transform.position = new Vector3(transform.parent.position.x + 30000 * Mathf.Sin(angle), transform.parent.position.y + 35000 * Mathf.Sin(angle) * Mathf.Cos(angle), transform.parent.position.z + 8000 * Mathf.Cos(angle));
+        transform.position = new Vector3(transform.parent.position.x + 40000 * Mathf.Sin(angle) * 2, transform.parent.position.y + 35000 * Mathf.Sin(angle) * Mathf.Cos(angle) * 2, transform.parent.position.z + 12000 * Mathf.Cos(angle) * 3);
         if (angle>360)
         {
             angle = 0;
