@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1282691600}
   - component: {fileID: 1282691599}
   - component: {fileID: 1282691602}
-  - component: {fileID: 6307037730573449514}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -114,21 +113,6 @@ MonoBehaviour:
   XY: 0
   XZ: 0
   YZ: 0
---- !u!114 &6307037730573449514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282691597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce381d4be8bd954468a64ff21642a5f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3790455090260460069, guid: 37fa0a37dd5182a499b35ffffa113d7a, type: 3}
-  Laser: {fileID: 492888401409130802, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}
-  laserFireRb: {fileID: 614956398214071857, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}
 --- !u!1 &2811862531414653907
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +126,6 @@ GameObject:
   - component: {fileID: 4734001993961579633}
   - component: {fileID: 3855666921393801913}
   - component: {fileID: 5831106995886540587}
-  - component: {fileID: 3791730339586394511}
   m_Layer: 0
   m_Name: Sphere 2
   m_TagString: Untagged
@@ -243,21 +226,6 @@ MonoBehaviour:
   XY: 0
   XZ: 0
   YZ: 0
---- !u!114 &3791730339586394511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2811862531414653907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce381d4be8bd954468a64ff21642a5f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3790455090260460069, guid: 37fa0a37dd5182a499b35ffffa113d7a, type: 3}
-  Laser: {fileID: 492888401409130802, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}
-  laserFireRb: {fileID: 614956398214071857, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}
 --- !u!1 &5113993252994756196
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +239,6 @@ GameObject:
   - component: {fileID: 1857509699243069829}
   - component: {fileID: 4221445392250881538}
   - component: {fileID: 8299115559124542392}
-  - component: {fileID: 8447387104309940131}
   m_Layer: 0
   m_Name: Sphere 3
   m_TagString: Untagged
@@ -372,21 +339,6 @@ MonoBehaviour:
   XY: 0
   XZ: 0
   YZ: 0
---- !u!114 &8447387104309940131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5113993252994756196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce381d4be8bd954468a64ff21642a5f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3790455090260460069, guid: 37fa0a37dd5182a499b35ffffa113d7a, type: 3}
-  Laser: {fileID: 492888401409130802, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}
-  laserFireRb: {fileID: 614956398214071857, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}
 --- !u!1 &5831545720805581359
 GameObject:
   m_ObjectHideFlags: 0
