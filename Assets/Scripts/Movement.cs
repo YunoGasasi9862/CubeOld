@@ -190,7 +190,6 @@ public class Movement : MonoBehaviour
     {
 
         return Physics.CapsuleCast(col.bounds.center, col.bounds.size, .1f, Vector2.down, 3f, ground);
-
     }
 
     void CheckAnimation()
