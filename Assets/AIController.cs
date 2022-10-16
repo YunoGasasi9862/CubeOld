@@ -16,10 +16,8 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
      
            rb.AddForce(Vector3.forward * -Speed * Time.deltaTime);
         
-
     }
 }

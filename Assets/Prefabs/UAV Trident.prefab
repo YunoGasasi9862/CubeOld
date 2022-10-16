@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 499964}
   - component: {fileID: 558777923}
   - component: {fileID: 558777924}
+  - component: {fileID: 3822754094980842146}
   m_Layer: 0
   m_Name: UAV Trident
   m_TagString: Untagged
@@ -110,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 191634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.78, y: -1.36, z: 2.62}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 417102}
@@ -146,4 +147,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 3790455090260460069, guid: 37fa0a37dd5182a499b35ffffa113d7a, type: 3}
-  Speed: 150
+  Speed: 250
+--- !u!114 &3822754094980842146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce381d4be8bd954468a64ff21642a5f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3790455090260460069, guid: 37fa0a37dd5182a499b35ffffa113d7a, type: 3}
+  Laser: {fileID: 492888401409130802, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}
+  laserFireRb: {fileID: 614956398214071857, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}

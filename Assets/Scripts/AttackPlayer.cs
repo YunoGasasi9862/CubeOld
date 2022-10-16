@@ -13,7 +13,7 @@ public class AttackPlayer : MonoBehaviour
     void Update()
     {
         float Distance = Vector3.Distance(transform.position, player.transform.position);
-        if (Distance <=100f && !isInstantiated)
+        if (Distance <=200f && !isInstantiated)
         {
             laserFire = Instantiate(Laser, transform.position, Quaternion.identity);
   

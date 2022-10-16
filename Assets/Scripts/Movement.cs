@@ -69,7 +69,6 @@ public class Movement : MonoBehaviour
         CheckForSpace();
 
 
-
         if (!isPaused)
         {
 
