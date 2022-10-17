@@ -28,33 +28,32 @@ public class InstantiateSpaceShip : MonoBehaviour
     {
         if(destroyed)
         {
-  
+ 
+           Invoke("SpawnJet", 2.0f);
 
-            if (Player != null)
-            {
-                position = Player.transform.position;
-                position.y = Player.transform.position.y + 100f;
-                position.z = Player.transform.position.z + 1000f;
-            }
-
-
-            Invoke("SpawnJet", 2.0f);
-           
 
         }
         if (spaceship!=null && spaceship.transform.position.z < Player.transform.position.z)
-            {
+         {
                 Destroy(spaceship, 3f);
                 destroyed = true;
-            }
+          }
         
 
     }
 
      void SpawnJet() //using IEnumerator instead
     {
+
+        if (Player != null)
+        {
+            position = Player.transform.position;
+            position.y = Player.transform.position.y + 100f;
+            position.z = Player.transform.position.z + 1000f;
+        }
         spaceship = Instantiate(SpaceShip, position, Quaternion.identity);
         destroyed = false;
+
     }
 
 

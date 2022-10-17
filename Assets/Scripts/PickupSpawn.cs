@@ -18,7 +18,8 @@ public class PickupSpawn : MonoBehaviour
                 if (i == index)
                 {
                     points[i].gameObject.SetActive(true);
-                    Instantiate(pickup, points[i].transform.position, Quaternion.identity);
+                    GameObject pick= Instantiate(pickup, points[i].transform.position, Quaternion.identity);
+                    pick.transform.parent = gameObject.transform;
                    
                 }
                 else

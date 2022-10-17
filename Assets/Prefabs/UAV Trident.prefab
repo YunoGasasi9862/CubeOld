@@ -162,4 +162,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3790455090260460069, guid: 37fa0a37dd5182a499b35ffffa113d7a, type: 3}
   Laser: {fileID: 492888401409130802, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}
+  NumberofLasers: 3
   laserFireRb: {fileID: 614956398214071857, guid: 8cd1f5c6d905e564d874af9347036d3f, type: 3}
