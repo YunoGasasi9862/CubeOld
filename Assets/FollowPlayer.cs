@@ -28,6 +28,7 @@ public class FollowPlayer : MonoBehaviour
         if (Vector2.Distance(transform.position, Player.transform.position) >=20)  //OMG IT WORKED! I FUCKING DID IT!!!  (IT FOLLOWS THE PLAYER UNTIL THE DISTANCE IS > 20)
         {
             transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+
             previousPosition = Player.transform.position;
 
 
@@ -47,7 +48,7 @@ public class FollowPlayer : MonoBehaviour
             //if need in degrees
             angleinDegrees = angleinRadians * 180 / (Mathf.PI);
             previousAngle = angleinDegrees;
-            transform.rotation = Quaternion.AngleAxis(angleinDegrees, Vector3.right); 
+            transform.rotation = Quaternion.AngleAxis(angleinDegrees, Vector3.right);
 
         }
         else

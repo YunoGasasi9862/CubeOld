@@ -35,7 +35,7 @@ public class InstantiateSpaceShip : MonoBehaviour
         }
         if (spaceship!=null && spaceship.transform.position.z < Player.transform.position.z)
          {
-                Destroy(spaceship, 3f);
+                Destroy(spaceship, 5f);
                 destroyed = true;
           }
         

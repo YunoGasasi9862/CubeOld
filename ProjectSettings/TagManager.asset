@@ -17,6 +17,7 @@ TagManager:
   - Nozzle
   - Bullet
   - Planet
+  - Laser
   layers:
   - Default
   - TransparentFX

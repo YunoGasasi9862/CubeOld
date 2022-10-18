@@ -8,33 +8,55 @@ public class AttackPlayer : MonoBehaviour
 {
 
     [SerializeField] GameObject player;
-    [SerializeField] GameObject Laser;
     private bool isInstantiated = false;
     private GameObject laserFire;
-    [SerializeField] int NumberofLasers;
-    [SerializeField] Rigidbody laserFireRb;
-     void Update()
+    [SerializeField] GameObject[] Lasers;
+    public GameObject[] instantiatedLasers;
+
+ 
+    void Update()
     {
         float Distance = Vector3.Distance(transform.position, player.transform.position);
         if (Distance <= 400f && !isInstantiated)
         {
-            while (NumberofLasers > 0)
+            for(int i=0; i< Lasers.Length; i++)
             {
-                _ = Timer();  //THIS IS WORKING YEEHAW!
-                laserFire = Instantiate(Laser, transform.position, Quaternion.identity);
-                NumberofLasers--;
+                _ = Timer(); //THIS IS WORKING YEEHAW!
+                laserFire = Instantiate(Lasers[i], transform.position, Quaternion.identity);
+                isInstantiated = true;
+
 
             }
-            isInstantiated = true;
-               
+
+            instantiatedLasers = GameObject.FindGameObjectsWithTag("Laser");
+
+          
+
 
         }
 
-        if(laserFireRb.velocity.magnitude <=.1f)
+        foreach(GameObject x in instantiatedLasers)
         {
-            Destroy(laserFire, 3f);
+            if(x!=null)
+            {
+                if (x.GetComponent<Rigidbody>().velocity.magnitude <= .1f)
+                {
+                    Destroy(x, 3f);
+                }
+            }
+         
         }
+
+           
+     
+
+        
+
     }
+
+
+
+
 
      async Task Timer()  //OMG THIS IS WORKING THEN
     {
