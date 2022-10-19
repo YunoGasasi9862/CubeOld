@@ -9,14 +9,21 @@ public class InstantiateSpaceShip : MonoBehaviour
     private Vector3 position;
     private GameObject spaceship;
     private bool destroyed=false;
+    private bool invokePossible = true;
+    private int minz = 1200;
+    private int maxz = 1500;
+    private int miny = 120;
+    private int maxy = 150; 
+
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+         
         if (Player != null)
         {
             position = Player.transform.position;
-            position.y = Player.transform.position.y + 100f;
-            position.z = Player.transform.position.z + 1000f;
+            position.y = Player.transform.position.y + Random.Range(miny, maxy);
+            position.z = Player.transform.position.z + Random.Range(minz, maxz);
             spaceship = Instantiate(SpaceShip, position, Quaternion.identity);
         }
 
@@ -28,31 +35,41 @@ public class InstantiateSpaceShip : MonoBehaviour
     {
         if(destroyed)
         {
- 
-           Invoke("SpawnJet", 2.0f);
 
+            if(invokePossible)
+            {
+                Invoke("SpawnJet", 2.0f);
+                invokePossible = false;  //yaya fixed it!
+            }
+
+        
 
         }
-        if (spaceship!=null && spaceship.transform.position.z < Player.transform.position.z)
-         {
+        else
+        {
+            if (spaceship.transform.position.z < Player.transform.position.z)
+            {
                 Destroy(spaceship, 5f);
                 destroyed = true;
-          }
-        
+            }
+        }
 
     }
 
      void SpawnJet() //using IEnumerator instead
     {
 
+
         if (Player != null)
         {
             position = Player.transform.position;
-            position.y = Player.transform.position.y + 100f;
-            position.z = Player.transform.position.z + 1000f;
+            position.y = Player.transform.position.y + Random.Range(miny, maxy);
+            position.z = Player.transform.position.z + Random.Range(minz, maxz);
+            spaceship = Instantiate(SpaceShip, position, Quaternion.identity);
+            destroyed = false;
+            invokePossible = true;
+
         }
-        spaceship = Instantiate(SpaceShip, position, Quaternion.identity);
-        destroyed = false;
 
     }
 

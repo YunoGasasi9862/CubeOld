@@ -6,6 +6,8 @@ public class CameraRotation : MonoBehaviour
     public float MouseSensitivity = 200f;
     public GameObject Cube;
     float XRotation;
+    private float minRotate=-45;
+        private float MaxRotate=45;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -19,13 +21,11 @@ public class CameraRotation : MonoBehaviour
         float MouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
 
         XRotation -= MouseY;
-
-        XRotation = Mathf.Clamp(XRotation, -45, 45);
+        XRotation = Mathf.Clamp(XRotation, minRotate, MaxRotate);
 
         transform.localRotation = Quaternion.Euler(XRotation, 0, 0);
 
         Cube.transform.Rotate(Vector3.up * MouseX);
-
         //the is similar to transform.Rotate (0,0,4);
 
     }

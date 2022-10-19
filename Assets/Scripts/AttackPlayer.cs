@@ -60,7 +60,7 @@ public class AttackPlayer : MonoBehaviour
 
      async Task Timer()  //OMG THIS IS WORKING THEN
     {
-        await Task.Delay(1400);
+        await Task.Delay(3000);
         //async mode allows you to use await
         //await + Task.Delay() doesnt freeze the screen!
     }

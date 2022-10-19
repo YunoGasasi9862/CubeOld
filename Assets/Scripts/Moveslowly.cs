@@ -20,7 +20,7 @@ public class Moveslowly : MonoBehaviour
         float B = Random.Range(-5f, 50f);
 
       PlanetColor.material.SetColor("_EmissionColor", new Color(R, G, B)); //"_Color is the shader property name"
-     
+      //Renderer
         //because the material 
         //Its _EmissiveColor for emission
     }
