@@ -12,56 +12,52 @@ public class AttackPlayer : MonoBehaviour
     private GameObject laserFire;
     [SerializeField] GameObject[] Lasers;
     public GameObject[] instantiatedLasers;
-
+    private bool allowCoRoutine=true;
  
     void Update()
     {
         float Distance = Vector3.Distance(transform.position, player.transform.position);
         if (Distance <= 400f && !isInstantiated)
         {
-            for(int i=0; i< Lasers.Length; i++)
+           
+            if(allowCoRoutine)
             {
-                _ = Timer(); //THIS IS WORKING YEEHAW!
-                laserFire = Instantiate(Lasers[i], transform.position, Quaternion.identity);
-                isInstantiated = true;
-
-
+                StartCoroutine(SpawnLasers());  //better method!
+                allowCoRoutine = false;
             }
 
-            instantiatedLasers = GameObject.FindGameObjectsWithTag("Laser");
-
-          
 
 
         }
 
-        foreach(GameObject x in instantiatedLasers)
+        foreach (GameObject x in instantiatedLasers)
         {
-            if(x!=null)
+            if (x != null)
             {
                 if (x.GetComponent<Rigidbody>().velocity.magnitude <= .1f)
                 {
                     Destroy(x, 3f);
                 }
             }
-         
+
         }
 
-           
-     
-
-        
-
     }
 
-
-
-
-
-     async Task Timer()  //OMG THIS IS WORKING THEN
+    IEnumerator SpawnLasers()
     {
-        await Task.Delay(3000);
-        //async mode allows you to use await
-        //await + Task.Delay() doesnt freeze the screen!
+        for (int i = 0; i < Lasers.Length; i++)
+        {
+            //THIS IS WORKING YEEHAW!
+            yield return new WaitForSeconds(.5f);  //this method is perfect and better!!
+            laserFire = Instantiate(Lasers[i], transform.position, Quaternion.identity);
+           
+
+
+        }
+
+        instantiatedLasers = GameObject.FindGameObjectsWithTag("Laser");
+        isInstantiated = true;
     }
+ 
 }

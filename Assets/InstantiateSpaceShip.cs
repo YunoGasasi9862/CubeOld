@@ -40,6 +40,7 @@ public class InstantiateSpaceShip : MonoBehaviour
             {
                 Invoke("SpawnJet", 2.0f);
                 invokePossible = false;  //yaya fixed it!
+                //yaya fixed it XD
             }
 
         

@@ -51,6 +51,7 @@ public class FollowPlayer : MonoBehaviour
             //if need in degrees
             angleinDegrees = angleinRadians * 180 / (Mathf.PI);
             previousAngle = angleinDegrees;
+
             transform.rotation = Quaternion.AngleAxis(angleinDegrees, Vector3.right);
         }
         else
@@ -68,7 +69,7 @@ public class FollowPlayer : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player"))
         {
-          //  manager.GameOver();
+            manager.GameOver();
         }
     }
 
