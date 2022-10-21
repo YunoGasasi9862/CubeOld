@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
@@ -13,6 +14,7 @@ public class Shoot : MonoBehaviour
    
     [SerializeField] AudioSource Explosionsound;
     Vector3 parentTransform;
+    private float elapsedTime;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,6 +22,7 @@ public class Shoot : MonoBehaviour
         cam = Camera.main;
 
         parentTransform = transform.parent.forward; // yaya this worked
+        //transform.parent.forward -> forward vector of the parent
 
         //what this line of code does? it simply assigns the transform.forward vector of the parent. 
         //In short allows you to addforce in the direction the parent's transform.forward is facing
@@ -28,12 +31,18 @@ public class Shoot : MonoBehaviour
     }
     void Update()
     {
+        elapsedTime += Time.deltaTime;
+        if(elapsedTime > .2f)
+        {
+           // parentTransform = transform.forward;
+            transform.SetParent(null);
+        }
 
         rb.AddForce(parentTransform * shootingspeed);
 
         //the velocity in the Z-axis
 
-        //transform.position += transform.up * Mathf.Sin(Time.time *20f) * .1f;
+        //transform.position+= transform.up * Mathf.Sin(Time.time * 20f) * .1f;
     }
 
 

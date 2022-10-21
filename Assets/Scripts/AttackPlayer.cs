@@ -51,8 +51,7 @@ public class AttackPlayer : MonoBehaviour
             //THIS IS WORKING YEEHAW!
             yield return new WaitForSeconds(.5f);  //this method is perfect and better!!
             laserFire = Instantiate(Lasers[i], transform.position, Quaternion.identity);
-           
-
+          
 
         }
 

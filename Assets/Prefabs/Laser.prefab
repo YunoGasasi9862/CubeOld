@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 160
   manager: {fileID: 0}
+  gameoverScreen: {fileID: 81502570701441484, guid: 813b42e1bc678864f9bad5d24526f50b, type: 3}
 --- !u!54 &614956398214071857
 Rigidbody:
   m_ObjectHideFlags: 0

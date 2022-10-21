@@ -8,6 +8,7 @@ public class FollowPlayer : MonoBehaviour
     private GameObject Player;
     [SerializeField]float speed = 50f;
     [SerializeField] GameManager manager;
+   
     private float DotProduct;
     private float angleinRadians;
         private float angleinDegrees;
@@ -39,9 +40,7 @@ public class FollowPlayer : MonoBehaviour
 
             //using the DotProduct method, and rotating it on that Axis only
             DotProduct = Vector3.Dot(transform.position, Player.transform.position);
-
             DotProduct = DotProduct / (transform.position.magnitude * Player.transform.position.magnitude);
-
 
             //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
 
@@ -69,7 +68,7 @@ public class FollowPlayer : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player"))
         {
-            manager.GameOver();
+            manager.pause();
         }
     }
 
