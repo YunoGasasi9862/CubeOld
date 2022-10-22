@@ -36,13 +36,14 @@ public class Shoot : MonoBehaviour
         {
            // parentTransform = transform.forward;
             transform.SetParent(null);
+            //removing the parent, so now it moves in the direction previously assigned to it
         }
 
         rb.AddForce(parentTransform * shootingspeed);
 
         //the velocity in the Z-axis
 
-        //transform.position+= transform.up * Mathf.Sin(Time.time * 20f) * .1f;
+        //transform.position += transform.forward * Mathf.Sin(Time.time * 20f)* .1f;
     }
 
 

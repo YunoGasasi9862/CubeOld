@@ -8,7 +8,8 @@ public class FollowPlayer : MonoBehaviour
     private GameObject Player;
     [SerializeField]float speed = 50f;
     [SerializeField] GameManager manager;
-   
+    [SerializeField] AudioSource GameOverclip;
+
     private float DotProduct;
     private float angleinRadians;
         private float angleinDegrees;
@@ -44,7 +45,7 @@ public class FollowPlayer : MonoBehaviour
 
             //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
 
-            angleinRadians = Mathf.Acos(DotProduct);
+           angleinRadians= Mathf.Acos(DotProduct);
 
 
             //if need in degrees
@@ -68,6 +69,7 @@ public class FollowPlayer : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player"))
         {
+            GameOverclip.Play();
             manager.pause();
         }
     }

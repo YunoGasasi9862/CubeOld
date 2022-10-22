@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.I))
+        if(Input.GetKey(KeyCode.F))
         {
             Time.timeScale = 1;
+           
             Restart();
         }
     }
