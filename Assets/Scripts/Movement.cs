@@ -61,6 +61,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+
         Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(Horizontal, 0, Vertical);
@@ -222,10 +223,8 @@ public class Movement : MonoBehaviour
 
     void CheckForSpace()
     {
-        //if(Mathf.Abs(Vector3.Distance(transform.position, player.transform.position))<=120f)
+        
 
-
-      
             if (transform.position.z >= temp.transform.position.z) //wtf THIS IS WORKING? but not the
                                                                      //but not the DistancE? FUCK YOU !!
             {
