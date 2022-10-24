@@ -52,7 +52,7 @@ public class FollowPlayer : MonoBehaviour
             angleinDegrees = angleinRadians * 180 / (Mathf.PI);
             previousAngle = angleinDegrees;
 
-            transform.rotation = Quaternion.AngleAxis(DotProduct, Vector3.right);
+            transform.rotation = Quaternion.AngleAxis(angleinDegrees, Vector3.right);
         }
         else
         {
