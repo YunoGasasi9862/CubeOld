@@ -14,6 +14,7 @@ public class Shoot : MonoBehaviour
    
     [SerializeField] AudioSource Explosionsound;
     Vector3 parentTransform;
+    private Vector3 position;
     private float elapsedTime;
     private void Start()
     {
@@ -53,7 +54,9 @@ public class Shoot : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(Explosionsound.clip, cam.transform.position);//THIS FIXED IT BUT HOW? Playing the audio at the bullet location?
             Destroy(collision.gameObject);
-            GameObject animation = Instantiate(Anim, collision.gameObject.transform.position, Quaternion.identity);
+            position = collision.gameObject.transform.position;
+            position.y = collision.gameObject.transform.position.y + 1.5f;
+            GameObject animation = Instantiate(Anim, position, Quaternion.identity);
             Destroy(gameObject);
 
            
