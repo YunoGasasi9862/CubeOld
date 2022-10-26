@@ -6,23 +6,28 @@ public class CameraShake : MonoBehaviour
 {
   public IEnumerator Shake (float duration, float magnitude)
     {
-        Vector3 originalPos = transform.localPosition;
 
-        float elapsedTime = 0.0f;
+        Vector3 originalpos = transform.localPosition;
 
-        while(elapsedTime < duration)
+        float elapsedtime = 0f;
+
+        while(elapsedtime < duration)
         {
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
 
-            transform.localPosition = new Vector3(x, y, originalPos.z);
 
-            elapsedTime += Time.deltaTime;
 
-            yield return null;  //we want to wait until the next frame
+            transform.localPosition = new Vector3(x, y, originalpos.z);
+            elapsedtime += Time.deltaTime;
+
+            //we want to wait until the next frame
+            yield return null;
+
         }
 
         //after shaking the camera, set back to the old position
-        transform.localPosition = originalPos;
+        transform.localPosition = originalpos;
+
     }
 }

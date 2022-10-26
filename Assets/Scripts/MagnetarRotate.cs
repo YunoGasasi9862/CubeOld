@@ -7,6 +7,6 @@ public class MagnetarRotate : MonoBehaviour
     [SerializeField] float speed = 30;
     void Update()
     {
-        transform.Rotate(0, speed * Time.deltaTime, 0);
+        transform.Rotate(speed * Time.deltaTime, 0,0);
     }
 }

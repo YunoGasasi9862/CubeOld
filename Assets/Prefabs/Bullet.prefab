@@ -80,6 +80,7 @@ MonoBehaviour:
   rb: {fileID: -1184954446382937487}
   shootingspeed: 50
   Anim: {fileID: 100519499546981469, guid: d8e81cbfc44bbd74687362361de470ec, type: 3}
+  camerashake: {fileID: 0}
   cam: {fileID: 0}
   Explosionsound: {fileID: 1986683944}
 --- !u!82 &1986683944
