@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
-    bool isOver = false;
+    public bool isOver = false;
     [SerializeField] GameObject gameoverScreen;
 
     private void Update()

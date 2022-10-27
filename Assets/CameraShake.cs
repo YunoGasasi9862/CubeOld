@@ -4,30 +4,32 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-  public IEnumerator Shake (float duration, float magnitude)
-    {
+    [SerializeField] GameManager gamemanager;
 
+    private void Update()
+    {
+        if(gamemanager.isOver)
+        {
+            Time.timeScale = 0;
+        }
+    }
+    public IEnumerator Shake(float duration, float magnitude)
+    {
         Vector3 originalpos = transform.localPosition;
 
-        float elapsedtime = 0f;
+        float elapsedTime = 0;
 
-        while(elapsedtime < duration)
+        while(elapsedTime<duration)
         {
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
 
-
-
             transform.localPosition = new Vector3(x, y, originalpos.z);
-            elapsedtime += Time.deltaTime;
+            elapsedTime += Time.deltaTime;
 
-            //we want to wait until the next frame
             yield return null;
-
         }
 
-        //after shaking the camera, set back to the old position
         transform.localPosition = originalpos;
-
     }
 }

@@ -48,7 +48,7 @@ public class Shoot : MonoBehaviour
 
         if(bombblast)
         {
-            StartCoroutine(camerashake.Shake(.15f, .1f));
+            StartCoroutine(camerashake.Shake(.15f, .12f));
             bombblast = false;
 
         }
@@ -71,7 +71,7 @@ public class Shoot : MonoBehaviour
             position.y = collision.gameObject.transform.position.y + 1.5f;
             GameObject animation = Instantiate(Anim, position, Quaternion.identity);
             bombblast = true;
-            Destroy(gameObject,3f);
+            Destroy(gameObject,1.5f);
 
            
         }
