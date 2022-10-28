@@ -11,10 +11,11 @@ public class MoveAroundSun : MonoBehaviour
    [SerializeField] bool XY;
     [SerializeField] bool XZ;
     [SerializeField] bool YZ;
-
+   
     private void Start()
     {
-       sign1 = Random.Range(0, 2);
+        
+        sign1 = Random.Range(0, 2);
         if (sign1 == 0)
         {
             sign1 = -1;
@@ -42,39 +43,42 @@ public class MoveAroundSun : MonoBehaviour
     {
 
       
-
-
-         if(XY)
-        {
-            XtoY();
-            XZ = false;
-            YZ = false;
-        }else if(XZ)
-        {
-            XtoZ();
-            XY = false;
-            YZ = false;
-        }
-        else if(YZ)
-        {
-            YtoZ();
-            XY = false;
-            XZ = false;
-        }
-        angle += .01f;
-
-        if(angle>360)
-        {
-            angle = 0;
-        }
-
        
+            if (XY)
+            {
+                XtoY();
+                XZ = false;
+                YZ = false;
+            }
+            else if (XZ)
+            {
+                XtoZ();
+                XY = false;
+                YZ = false;
+            }
+            else if (YZ)
+            {
+                YtoZ();
+                XY = false;
+                XZ = false;
+            }
+            angle += .01f;
+
+            if (angle > 360)
+            {
+                angle = 0;
+            }
+
+
+        
+
+
     }
 
     void XtoZ()
     {
       
-        transform.position = new Vector3(transform.parent.position.x + 60*Mathf.Sin(sign1 * angle * 3), transform.position.y, transform.parent.position.z + 60 * Mathf.Cos((sign1)*angle*3));;
+        transform.position = new Vector3(transform.parent.position.x + 60 * Mathf.Sin(sign1 * angle * 3), transform.position.y, transform.parent.position.z + 60 * Mathf.Cos((sign1)*angle*3));;
 
     }
 

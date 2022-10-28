@@ -110,9 +110,10 @@ public class Movement : MonoBehaviour
 
         if(isPaused && Input.GetKeyDown(KeyCode.F))
         {
+            gameManager.Restart();
             Time.timeScale = 1;
             isPaused = false;
-            gameManager.GameOver(); //restarting the game
+             //restarting the game
 
         }
 
@@ -133,6 +134,7 @@ public class Movement : MonoBehaviour
         if (collision.collider.tag == "Obstacle")
         {
             GameEndChecK();
+            gameManager.isOver = true;
             collisionsound.Play();
 
 

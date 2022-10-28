@@ -17,16 +17,8 @@ public class GameManager : MonoBehaviour
             Restart();
         }
     }
-    public void GameOver()
-    {
-        if(!isOver)
-        {
-            Invoke("Restart", .1f);
-            isOver = true;
-
-        }
-    }
-    void Restart()
+  
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
        

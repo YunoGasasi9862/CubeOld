@@ -113,6 +113,7 @@ MonoBehaviour:
   XY: 0
   XZ: 0
   YZ: 0
+  manager: {fileID: 7107788944643346950, guid: ef6e97e06d29716498680c60a98c1dde, type: 3}
 --- !u!1 &2811862531414653907
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +227,7 @@ MonoBehaviour:
   XY: 0
   XZ: 0
   YZ: 0
+  manager: {fileID: 7107788944643346950, guid: ef6e97e06d29716498680c60a98c1dde, type: 3}
 --- !u!1 &5113993252994756196
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +341,7 @@ MonoBehaviour:
   XY: 0
   XZ: 0
   YZ: 0
+  manager: {fileID: 7107788944643346950, guid: ef6e97e06d29716498680c60a98c1dde, type: 3}
 --- !u!1 &5831545720805581359
 GameObject:
   m_ObjectHideFlags: 0
