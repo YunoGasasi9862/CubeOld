@@ -48,7 +48,7 @@ public class Shoot : MonoBehaviour
 
         if(bombblast)
         {
-            StartCoroutine(camerashake.Shake(.1f, .3f)); //only in update
+            StartCoroutine(camerashake.Shake(.1f, .12f)); //only in update
             bombblast = false;
 
         }
@@ -57,7 +57,7 @@ public class Shoot : MonoBehaviour
 
         //the velocity in the Z-axis
 
-        //transform.postion += transform.up * Mathf.Sin(Time.time * 20f) * .1f;
+        //transform.position+=transform.up * Mathf.Sin(Time.time * 20f)*.1f;
     }
 
 

@@ -15,20 +15,20 @@ public class CameraShake : MonoBehaviour
     }
     public IEnumerator Shake(float duration, float magnitude)
     {
-        Vector3 originalPos = transform.localPosition; //local position is must because the camera would probably be a child of the main player, and if not, local position is always better
+        Vector3 originalPos = transform.localPosition;
 
-        float elapsedTime = 0f;
+        float ElapsedTime = 0f;
 
-        while(elapsedTime < duration)
+        while(ElapsedTime < duration)
         {
             float X = Random.Range(-1f, 1f) * magnitude;
             float Y = Random.Range(-1f, 1f) * magnitude;
 
             transform.localPosition = new Vector3(X, Y, originalPos.z);
 
-            elapsedTime += Time.deltaTime;
+            ElapsedTime += Time.deltaTime;
 
-            yield return null; //wait for the next frame before starting the couratine again
+            yield return null;
         }
 
         transform.localPosition = originalPos;
