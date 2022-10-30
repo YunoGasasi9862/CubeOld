@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerSpawn : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] Camera cam;
+    [SerializeField] GameObject Astronaut;
+
     void Start()
     {
-        
+        cam.enabled = false;
+        Instantiate(Astronaut, transform.position, Quaternion.identity);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

@@ -46,13 +46,12 @@ public class FollowPlayer : MonoBehaviour
 
             angleinDegrees = Mathf.Acos(DotProduct);
 
-
             //if need in degrees
             angleinDegrees = angleinRadians * 180 / (Mathf.PI);
             previousAngle = angleinDegrees;
 
 
-            transform.rotation = Quaternion.AngleAxis(angleinDegrees, Vector3.right); //rotates the angle on a given axis: so here, it turns it on the X axis
+            transform.rotation = Quaternion.AngleAxis(angleinDegrees, Vector3.right);//rotates the angle on a given axis: so here, it turns it on the X axis
 
         }
         else

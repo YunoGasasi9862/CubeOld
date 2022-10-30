@@ -26,8 +26,6 @@ public class AttackPlayer : MonoBehaviour
                 allowCoRoutine = false;
             }
 
-
-
         }
 
         foreach (GameObject x in instantiatedLasers)

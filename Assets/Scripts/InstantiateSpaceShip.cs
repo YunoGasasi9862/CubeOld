@@ -17,7 +17,7 @@ public class InstantiateSpaceShip : MonoBehaviour
 
     private void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        
          
         if (Player != null)
         {
@@ -33,6 +33,10 @@ public class InstantiateSpaceShip : MonoBehaviour
 
     void Update()
     {
+        if(Player==null)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player");
+        }
         if(destroyed)
         {
 

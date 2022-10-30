@@ -55,6 +55,7 @@ public class Movement : MonoBehaviour
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
         col = GetComponent<CapsuleCollider>();
         InstantiatePlanet();
+        jumps=GameObject.
     }
 
     // Update is called once per frame
@@ -177,7 +178,7 @@ public class Movement : MonoBehaviour
 
     }
 
-    void DisableCoinText()  //fix this tomorrow!!!
+    void DisableCoinText()  
     {
         if (CoinAchieved)
         {
