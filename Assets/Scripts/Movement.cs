@@ -12,10 +12,10 @@ public class Movement : MonoBehaviour
     [SerializeField] float JumpSpeed = 5f;
     [SerializeField] Rigidbody rb;
     [SerializeField] int MaxNumberofJumps = 3;
-    [SerializeField] Text jumps;
+    private Text jumps;
 
     [SerializeField] GameManager gameManager;
-    [SerializeField] Text Coincount;
+    private Text Coincount;
     [SerializeField] bool isPaused = false;
 
     [SerializeField] int coinCount=0;
@@ -55,7 +55,8 @@ public class Movement : MonoBehaviour
         gameManager = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
         col = GetComponent<CapsuleCollider>();
         InstantiatePlanet();
-        jumps=GameObject.
+        jumps = GameObject.Find("/HUD/Number").GetComponent<Text>();
+        Coincount = GameObject.Find("/HUD/CoinCount").GetComponent<Text>();
     }
 
     // Update is called once per frame
