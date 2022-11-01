@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CollidewithBoundary : MonoBehaviour
 {
     [SerializeField] LevelGenerator generator;
+    [SerializeField] TextMeshProUGUI Warning;
     float DistanceZ = 22;
 
     private void Awake()
@@ -16,7 +18,7 @@ public class CollidewithBoundary : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Destroy(transform.parent.gameObject); //destroy the parent of the gameobject
+            Destroy(transform.parent.gameObject, 3f); //destroy the parent of the gameobject
 
             //after that platform is destroyed
             Instantiate(generator.plat, generator.pos, generator.plat.transform.rotation);
