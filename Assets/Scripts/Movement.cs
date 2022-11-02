@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using TMPro;
 
 public class Movement : MonoBehaviour
 {
@@ -25,9 +26,6 @@ public class Movement : MonoBehaviour
     [SerializeField] AudioSource collisionsound;
     [SerializeField] GameObject particles;
 
-
-    [SerializeField] GameObject BuyJumps;
-
     [SerializeField] bool CoinAchieved;
 
     [SerializeField] LayerMask ground;
@@ -46,6 +44,7 @@ public class Movement : MonoBehaviour
     private float Horizontal;
     private float Vertical;
     private GameObject temp=null;
+    private TextMeshProUGUI BuyJumps;
 
 
 
@@ -57,7 +56,8 @@ public class Movement : MonoBehaviour
         InstantiatePlanet();
         jumps = GameObject.Find("/HUD/Number").GetComponent<Text>();
         Coincount = GameObject.Find("/HUD/CoinCount").GetComponent<Text>();
-    }
+        BuyJumps = GameObject.Find("/HUD/BuyJumps").GetComponent<TextMeshProUGUI>();
+        }
 
     // Update is called once per frame
     void Update()
@@ -94,8 +94,9 @@ public class Movement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.I))
             {
                 Cursor.lockState = CursorLockMode.None;
+        
                 Cursor.visible = true;
-                BuyJumps.gameObject.SetActive(true);
+                BuyJumps.enabled = true;
                
 
             }
@@ -183,7 +184,7 @@ public class Movement : MonoBehaviour
     {
         if (CoinAchieved)
         {
-            BuyJumps.SetActive(false);
+            BuyJumps.enabled=false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             CoinAchieved = false;
