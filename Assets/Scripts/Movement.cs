@@ -26,7 +26,6 @@ public class Movement : MonoBehaviour
     [SerializeField] AudioSource collisionsound;
     [SerializeField] GameObject particles;
 
-    [SerializeField] bool CoinAchieved;
 
     [SerializeField] LayerMask ground;
      private CapsuleCollider col;
@@ -44,7 +43,6 @@ public class Movement : MonoBehaviour
     private float Horizontal;
     private float Vertical;
     private GameObject temp=null;
-    private TextMeshProUGUI BuyJumps;
 
 
 
@@ -56,7 +54,6 @@ public class Movement : MonoBehaviour
         InstantiatePlanet();
         jumps = GameObject.Find("/HUD/Number").GetComponent<Text>();
         Coincount = GameObject.Find("/HUD/CoinCount").GetComponent<Text>();
-        BuyJumps = GameObject.Find("/HUD/BuyJumps").GetComponent<TextMeshProUGUI>();
         }
 
     // Update is called once per frame
@@ -93,15 +90,11 @@ public class Movement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.I))
             {
-                Cursor.lockState = CursorLockMode.None;
-        
-                Cursor.visible = true;
-                BuyJumps.enabled = true;
+                InreaseJumps();
                
 
             }
 
-            DisableCoinText();
 
             //shows number of jumps left
             showJump();
@@ -174,22 +167,11 @@ public class Movement : MonoBehaviour
 
             MaxNumberofJumps++;
             coinCount = coinCount - 3;
-            CoinAchieved = true;  //i replaced the choin Achieved to here because this will not be called every frame. Which means, only once :) so it worked!!
 
         }
 
     }
 
-    void DisableCoinText()  
-    {
-        if (CoinAchieved)
-        {
-            BuyJumps.enabled=false;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            CoinAchieved = false;
-        }
-    }
 
     private bool isOnetheGround()
     {
