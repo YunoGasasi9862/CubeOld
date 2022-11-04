@@ -9,6 +9,7 @@ public class CollidewithBoundary : MonoBehaviour
     [SerializeField] TextMeshProUGUI Warning;
     private TextMeshProUGUI warning;
     private bool triggerwaring = false;
+    private float elapsedTime = 0f;
     float DistanceZ = 22;
 
     private void Start()
@@ -20,6 +21,14 @@ public class CollidewithBoundary : MonoBehaviour
         if(triggerwaring)
         {
             warning.enabled = true;
+            elapsedTime += Time.deltaTime;
+        }
+
+        if(elapsedTime>2f)
+        {
+            triggerwaring = false;
+            elapsedTime = 0f;
+            warning.enabled = false;
         }
     }
 
