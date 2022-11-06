@@ -18,6 +18,7 @@ TagManager:
   - Bullet
   - Planet
   - Laser
+  - Fire
   layers:
   - Default
   - TransparentFX

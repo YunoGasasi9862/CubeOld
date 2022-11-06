@@ -6,7 +6,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     private GameObject Player;
-    [SerializeField]float speed = 50f;
+    [SerializeField]float speed;
     [SerializeField] GameManager manager;
     [SerializeField] AudioSource GameOverclip;
 
@@ -41,10 +41,10 @@ public class FollowPlayer : MonoBehaviour
 
             //using the DotProduct method, and rotating it on that Axis only
             DotProduct = Vector3.Dot(transform.position, Player.transform.position);
-            DotProduct = DotProduct / (transform.position.magnitude * Player.transform.position.magnitude);
+            DotProduct = DotProduct/ (transform.position.magnitude * Player.transform.position.magnitude);
             //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
 
-            angleinDegrees = Mathf.Acos(DotProduct);
+            angleinRadians = Mathf.Acos(DotProduct); 
 
             //if need in degrees
             angleinDegrees = angleinRadians * 180 / (Mathf.PI);

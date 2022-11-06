@@ -848,17 +848,13 @@ MonoBehaviour:
   JumpSpeed: 5
   rb: {fileID: 3791596637730891973}
   MaxNumberofJumps: 3
-  jumps: {fileID: 0}
   gameManager: {fileID: 0}
-  Coincount: {fileID: 0}
   isPaused: 0
   coinCount: 0
   HS: {fileID: 0}
   sound: {fileID: 2791625608877753400}
   collisionsound: {fileID: 4930749595720662651}
   particles: {fileID: 27920305033932179, guid: 8d159d1d78a3ded4eb5b797f2dd760b9, type: 3}
-  BuyJumps: {fileID: 0}
-  CoinAchieved: 0
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -878,7 +874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d299dc13aa27e514595e4a3790b25f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Distance: {fileID: 0}
 --- !u!1 &3790455356593420645
 GameObject:
   m_ObjectHideFlags: 0

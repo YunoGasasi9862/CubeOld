@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
 using UnityEngine;
 
 public class AttackPlayer : MonoBehaviour
@@ -9,9 +10,9 @@ public class AttackPlayer : MonoBehaviour
 
     [SerializeField] GameObject player;
     private bool isInstantiated = false;
-    private GameObject laserFire;
-    [SerializeField] GameObject[] Lasers;
-    public GameObject[] instantiatedLasers;
+    private GameObject fireTemp;
+    [SerializeField] GameObject[] FireObjects;
+    public GameObject[] instantiatedFireObjects;
     private bool allowCoRoutine=true;
  
     void Update()
@@ -28,13 +29,13 @@ public class AttackPlayer : MonoBehaviour
 
         }
 
-        foreach (GameObject x in instantiatedLasers)
+        foreach (GameObject x in instantiatedFireObjects)
         {
             if (x != null)
             {
                 if (x.GetComponent<Rigidbody>().velocity.magnitude <= .1f)
                 {
-                    Destroy(x, 3f);
+                    Destroy(x, 5f);
                 }
             }
 
@@ -44,16 +45,16 @@ public class AttackPlayer : MonoBehaviour
 
     IEnumerator SpawnLasers()
     {
-        for (int i = 0; i < Lasers.Length; i++)
+        for (int i = 0; i < FireObjects.Length; i++)
         {
             //THIS IS WORKING YEEHAW!
             yield return new WaitForSeconds(.5f);  //this method is perfect and better!!
-            laserFire = Instantiate(Lasers[i], transform.position, Quaternion.identity);
+            fireTemp = Instantiate(FireObjects[i], transform.position, Quaternion.identity);
           
 
         }
 
-        instantiatedLasers = GameObject.FindGameObjectsWithTag("Laser");
+        instantiatedFireObjects = GameObject.FindGameObjectsWithTag("Fire");
         isInstantiated = true;
     }
  

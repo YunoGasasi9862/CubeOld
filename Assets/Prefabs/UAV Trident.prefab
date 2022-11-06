@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3790455090260460069, guid: 37fa0a37dd5182a499b35ffffa113d7a, type: 3}
-  Lasers:
-  - {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038, type: 3}
-  - {fileID: 1223526616464650, guid: c590b17884b119046bc6412066500b7d, type: 3}
+  FireObjects:
   - {fileID: 1900756431413560, guid: 529eb4216865eba419c1a4a68d0b0388, type: 3}
-  instantiatedLasers: []
+  - {fileID: 1223526616464650, guid: c590b17884b119046bc6412066500b7d, type: 3}
+  - {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038, type: 3}
+  instantiatedFireObjects: []
