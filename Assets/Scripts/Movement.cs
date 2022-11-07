@@ -40,8 +40,8 @@ public class Movement : MonoBehaviour
 
     private bool destroy = false;
     private Vector3 newLocation;
-    private float Horizontal;
-    private float Vertical;
+    public float Horizontal;
+    public float Vertical;
     private GameObject temp=null;
 
 

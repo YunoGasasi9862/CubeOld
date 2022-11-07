@@ -7,6 +7,7 @@ public class InstantiateBoundaryWall : MonoBehaviour
 
     private GameObject Player;
     [SerializeField] GameObject boundary;
+    private Vector3 pos;
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
@@ -19,7 +20,9 @@ public class InstantiateBoundaryWall : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Instantiate(boundary, transform.position, boundary.transform.rotation);
+            pos.y = transform.position.y + 7f;
+            Instantiate(boundary, pos, boundary.transform.rotation);
+            gameObject.SetActive(false);
         }
     }
    
