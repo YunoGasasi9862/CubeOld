@@ -6,27 +6,31 @@ public class TrailPlayer : MonoBehaviour
 {
 
     private GameObject Player;
-    private Vector3 TempPos;
-    private Vector3 TempPos2;
+    [SerializeField] float speed=20f;
+    private Vector3 prev;
 
     private void Start()
     {
         Player = GameObject.FindWithTag("Player");
-        TempPos = Player.transform.position;
     }
     void Update()
     {
       
-        if (Player!=null && Vector2.Distance(transform.position, Player.transform.position)<=2f)
+        if (Vector3.Distance(transform.position, Player.transform.position)>10f)
          {
-       
-                transform.position = new Vector3(transform.position.x, transform.position.y, Player.transform.position.z-2f);
-              
+
+            transform.Translate(0,speed * Time.deltaTime,0); //because i have rotated it on the y-axis by 90 degrees, so the orientation has changed
+            prev = transform.position;
         }
-        
+        else
+        {
+            transform.position = prev;
+
+        }
+
+        Debug.Log(Vector3.Distance(transform.position, Player.transform.position) >= 2f);
+
 
     }
-
-
 
 }

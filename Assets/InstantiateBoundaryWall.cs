@@ -20,10 +20,14 @@ public class InstantiateBoundaryWall : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            pos.y = transform.position.y + 7f;
-            Instantiate(boundary, pos, boundary.transform.rotation);
-            gameObject.SetActive(false);
+            Invoke("Spawn", 2f);
         }
     }
-   
+
+    void Spawn()
+    {
+        pos.y = transform.position.y + 7f;
+        Instantiate(boundary, pos, boundary.transform.rotation);
+        gameObject.SetActive(false);
+    }
 }
