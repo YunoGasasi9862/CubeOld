@@ -15,18 +15,17 @@ public class InstantiateBoundaryWall : MonoBehaviour
 
     // Update is called once per frame
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Invoke("Spawn", 2f);
+            Invoke("Spawn", 1f);
         }
     }
 
     void Spawn()
     {
-        pos.y = transform.position.y + 7f;
+        pos.y = transform.position.y + 6f;
         Instantiate(boundary, pos, boundary.transform.rotation);
         gameObject.SetActive(false);
     }

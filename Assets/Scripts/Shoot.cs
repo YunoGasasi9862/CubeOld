@@ -71,7 +71,7 @@ public class Shoot : MonoBehaviour
             position.y = collision.gameObject.transform.position.y + 1.5f;
             GameObject animation = Instantiate(Anim, position, Quaternion.identity);
             bombblast = true;
-            Destroy(gameObject,1.5f);
+            Destroy(gameObject,.3f);
 
            
         }

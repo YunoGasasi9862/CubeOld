@@ -16,7 +16,7 @@ public class TrailPlayer : MonoBehaviour
     void Update()
     {
       
-        if (Vector3.Distance(transform.position, Player.transform.position)>10f)
+        if (Mathf.Abs(transform.position.z - Player.transform.position.z)>2f)
          {
 
             transform.Translate(0,speed * Time.deltaTime,0); //because i have rotated it on the y-axis by 90 degrees, so the orientation has changed
@@ -28,7 +28,7 @@ public class TrailPlayer : MonoBehaviour
 
         }
 
-        Debug.Log(Vector3.Distance(transform.position, Player.transform.position) >= 2f);
+      
 
 
     }
