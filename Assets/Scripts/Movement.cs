@@ -149,6 +149,19 @@ public class Movement : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(part, 5f);
         }
+
+        if(collision.collider.CompareTag("Platform"))
+        {
+            transform.parent = collision.transform;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Platform"))
+        {
+            transform.SetParent(null);
+        }
     }
     void GameEndChecK()
     {
@@ -259,4 +272,6 @@ public class Movement : MonoBehaviour
 
 
     }
+
+
 }

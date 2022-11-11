@@ -7,6 +7,7 @@ public class InstantiateBoundaryWall : MonoBehaviour
 
     private GameObject Player;
     [SerializeField] GameObject boundary;
+    [SerializeField] GameObject boundary2;
     private Vector3 pos;
     void Start()
     {
@@ -27,6 +28,7 @@ public class InstantiateBoundaryWall : MonoBehaviour
     {
         pos.y = transform.position.y + 6f;
         Instantiate(boundary, pos, boundary.transform.rotation);
+        Instantiate(boundary2, pos, boundary.transform.rotation);
         gameObject.SetActive(false);
     }
 }

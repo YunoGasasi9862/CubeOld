@@ -42,6 +42,7 @@ public class FollowPlayer : MonoBehaviour
             //using the DotProduct method, and rotating it on that Axis only
             DotProduct = Vector3.Dot(transform.position, Player.transform.position);
             DotProduct = DotProduct / (transform.position.magnitude * Player.transform.position.magnitude);
+
             //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
 
             angleinRadians = Mathf.Acos(DotProduct);
@@ -51,14 +52,14 @@ public class FollowPlayer : MonoBehaviour
             previousAngle = angleinDegrees;
 
 
-            transform.rotation = Quaternion.AngleAxis(angleinDegrees, Vector3.right); //rotates the angle on a given axis: so here, it turns it on the X axis
+            transform.rotation = Quaternion.AngleAxis(angleinDegrees, Vector3.up); //rotates the angle on a given axis: so here, it turns it on the X axis
 
         }
         else
         {
 
             transform.position = Vector3.MoveTowards(transform.position, previousPosition, speed * Time.deltaTime);
-            transform.rotation = Quaternion.AngleAxis(previousAngle, Vector3.right);
+            transform.rotation = Quaternion.AngleAxis(previousAngle, Vector3.up);
         }
 
 

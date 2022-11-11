@@ -19,6 +19,7 @@ TagManager:
   - Planet
   - Laser
   - Fire
+  - Platform
   layers:
   - Default
   - TransparentFX
