@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 198183646406276484}
   - component: {fileID: 199124509936715704}
   - component: {fileID: 108865412087293738}
-  m_Layer: 0
+  - component: {fileID: 2115265930}
+  m_Layer: 8
   m_Name: FireWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +44,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177575463084462}
   serializedVersion: 8
-  lengthInSec: 11
+  lengthInSec: 8
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -224,8 +225,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.36335698, b: 0, a: 1}
-      maxColor: {r: 1, g: 0.6429338, b: 0.06132078, a: 1}
+      minColor: {r: 1, g: 0.20557198, b: 0.07075471, a: 1}
+      maxColor: {r: 0.6603774, g: 0.1027946, b: 0.21431318, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4947,6 +4948,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2115265930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177575463084462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1189763244611696
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,7 +4980,8 @@ GameObject:
   - component: {fileID: 198896390880492290}
   - component: {fileID: 199231264499006536}
   - component: {fileID: 108754151512872878}
-  m_Layer: 0
+  - component: {fileID: 2115265931}
+  m_Layer: 8
   m_Name: Magic fire pro orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4993,7 +5015,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189763244611696}
   serializedVersion: 8
-  lengthInSec: 11
+  lengthInSec: 8
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -5175,7 +5197,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.65067464, b: 0.11792451, a: 1}
+      maxColor: {r: 0.990566, g: 0.06074228, b: 0.6770253, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5700,7 +5722,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 6
+      value: 3
       mode: 0
       spread: 0
       speed:
@@ -9817,7 +9839,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 14fab0de6c54324468738e7b38a88207, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9930,6 +9951,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2115265931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189763244611696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1270635519253192
 GameObject:
   m_ObjectHideFlags: 0
@@ -9941,7 +9982,7 @@ GameObject:
   - component: {fileID: 4522577826133598}
   - component: {fileID: 198137883097067426}
   - component: {fileID: 199602893399206560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14704,7 +14745,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 14fab0de6c54324468738e7b38a88207, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14766,7 +14806,7 @@ GameObject:
   - component: {fileID: 4015288278877216}
   - component: {fileID: 198685465876230782}
   - component: {fileID: 199902850940216428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SubFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19529,7 +19569,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 14fab0de6c54324468738e7b38a88207, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19591,7 +19630,7 @@ GameObject:
   - component: {fileID: 4219433152750306}
   - component: {fileID: 198520076515105808}
   - component: {fileID: 199335574307221488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24354,7 +24393,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 20e729147a4dad247abfc2305c3dd963, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24416,7 +24454,7 @@ GameObject:
   - component: {fileID: 4535642873094184}
   - component: {fileID: 198192718040690608}
   - component: {fileID: 199608891050430554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29179,7 +29217,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 2e69c8c236ea65447a07e24d8cbed40b, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29243,7 +29280,7 @@ GameObject:
   - component: {fileID: 199118284511953698}
   - component: {fileID: 7138555186268745906}
   - component: {fileID: -7534186835485710004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RotatorPS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29275,7 +29312,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789005739015704}
   serializedVersion: 8
-  lengthInSec: 11
+  lengthInSec: 8
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 1
@@ -34008,7 +34045,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34096,7 +34132,7 @@ GameObject:
   - component: {fileID: 4341984601588282}
   - component: {fileID: 198936029783023320}
   - component: {fileID: 199925803950708636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38859,7 +38895,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 14fab0de6c54324468738e7b38a88207, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

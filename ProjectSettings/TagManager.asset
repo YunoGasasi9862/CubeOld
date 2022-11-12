@@ -20,6 +20,7 @@ TagManager:
   - Laser
   - Fire
   - Platform
+  - PlayerChild
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - UI
   - Ground
   - Infinite Range
-  - 
+  - Fire
   - 
   - 
   - 

@@ -14505,7 +14505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937323477cc58fe4581a0f483dde2d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
+  speed: 140
   manager: {fileID: 0}
   GameOverclip: {fileID: 1705961175756535690}
 --- !u!82 &1705961175756535690

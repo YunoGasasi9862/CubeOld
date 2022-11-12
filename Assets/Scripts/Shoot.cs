@@ -57,7 +57,7 @@ public class Shoot : MonoBehaviour
 
         //the velocity in the Z-axis
 
-        //transform.position += transform.up * Mathf.Sin(Time.time * 20f) * .1f;
+        //transform.position += transform.up * Mathf.Sin(Time.time * 20f)  * .1f 
     }
 
 
