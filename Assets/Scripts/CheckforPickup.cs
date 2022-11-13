@@ -12,14 +12,16 @@ public class CheckforPickup : MonoBehaviour
         nuzzle = GetComponent<NuzzleInstantiate>();
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Pickup"))
+        if (other.gameObject.CompareTag("Pickup"))
         {
             nuzzle.isTrue = true;
             Instantiate(particleAnim, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-            
+
         }
     }
+ 
 }

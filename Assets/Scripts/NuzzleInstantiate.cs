@@ -8,16 +8,18 @@ public class NuzzleInstantiate : MonoBehaviour
     [SerializeField] int bulletCount = 3;
     [SerializeField] private GameObject bullet;
     public bool isTrue=false;
-    private GameObject Player;
+
+    private Vector3 pos;
 
     private void Start()
     {
-        Player = GameObject.FindWithTag("Player");   
+    
     }
 
     private void Update()
     {
-        if(isTrue)
+        pos = transform.localPosition;
+        if (isTrue)
         {
             StartCoroutine(Bullets());
             isTrue = false;
@@ -29,8 +31,10 @@ public class NuzzleInstantiate : MonoBehaviour
      for(int i=0; i<bulletCount; i++)
         {
             yield return new WaitForSeconds(.3f);
-            GameObject bul = Instantiate(bullet, transform.position, Quaternion.identity);
-            bul.transform.parent = Player.transform;
+            pos.z = transform.localPosition.z;
+            GameObject bul = Instantiate(bullet, pos, Quaternion.identity);
+            bul.transform.parent = transform;
+            bul.GetComponent<Rigidbody>().detectCollisions = false;
             Destroy(bul, 5f);
         }
 
