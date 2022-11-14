@@ -42,8 +42,8 @@ public class Shoot : MonoBehaviour
             {
                 // parentTransform = transform.forward;
                 transform.SetParent(null);
-                gameObject.GetComponent<Rigidbody>().detectCollisions = true;
-                gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+                gameObject.GetComponent<Rigidbody>().detectCollisions = true;  //turned off the collisions!
+                gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true; //enabled the renderer
 
                 //removing the parent, so now it moves in the direction previously assigned to it
             }

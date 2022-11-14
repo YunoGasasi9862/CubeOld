@@ -5,15 +5,9 @@ using UnityEngine;
 public class InstantiateBoundaryWall : MonoBehaviour
 {
 
-    private GameObject Player;
     [SerializeField] GameObject boundary;
     [SerializeField] GameObject boundary2;
-    private Vector3 pos;
-    void Start()
-    {
-        Player = GameObject.FindWithTag("Player");
-    }
-
+   
     // Update is called once per frame
 
     private void OnTriggerEnter(Collider other)
@@ -21,14 +15,14 @@ public class InstantiateBoundaryWall : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Invoke("Spawn", 1f);
+            gameObject.SetActive(false);
+
         }
     }
 
     void Spawn()
     {
-        pos.y = transform.position.y + 6f;
-        Instantiate(boundary, pos, boundary.transform.rotation);
-        Instantiate(boundary2, pos, boundary.transform.rotation);
-        gameObject.SetActive(false);
+        Instantiate(boundary, transform.position, boundary.transform.rotation);
+        Instantiate(boundary2, transform.position, boundary.transform.rotation);
     }
 }

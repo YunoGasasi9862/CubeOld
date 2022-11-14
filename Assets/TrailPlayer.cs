@@ -12,6 +12,8 @@ public class TrailPlayer : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindWithTag("Player");
+        prev.y = Player.transform.position.y + 10f;
+        transform.position = prev;
     }
     void Update()
     {
@@ -21,6 +23,8 @@ public class TrailPlayer : MonoBehaviour
 
             transform.Translate(0,speed * Time.deltaTime,0); //because i have rotated it on the y-axis by 90 degrees, so the orientation has changed
             prev = transform.position;
+            prev.z = Player.transform.position.z - 2f;
+
         }
         else
         {
