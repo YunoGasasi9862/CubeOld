@@ -13,6 +13,7 @@ public class TrailPlayer : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player");
         prev.y = Player.transform.position.y + 10f;
+        prev.z = -3f;
         transform.position = prev;
     }
     void Update()

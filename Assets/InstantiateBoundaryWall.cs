@@ -7,9 +7,8 @@ public class InstantiateBoundaryWall : MonoBehaviour
 
     [SerializeField] GameObject boundary;
     [SerializeField] GameObject boundary2;
-   
     // Update is called once per frame
-
+ 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
