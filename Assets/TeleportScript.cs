@@ -9,6 +9,8 @@ public class TeleportScript : MonoBehaviour
     [SerializeField] LayerMask ground;
     private Rigidbody rb;
     private CapsuleCollider col;
+    private float timing = 0f;
+    private bool launchtiming = false;
     
     void Start()
     {
@@ -20,43 +22,50 @@ public class TeleportScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(RayCast() && Input.GetKeyDown(KeyCode.R))
+        if (RayCast() && Input.GetKeyDown(KeyCode.R))
         {
 
             //push the player in the Air
+            launchtiming = false;
 
-             rb.AddForce(transform.up * 400f * Time.deltaTime, ForceMode.Impulse);
-             rb.useGravity = false;
+            rb.AddForce(transform.up * 400f * Time.deltaTime, ForceMode.Impulse);
+
             //Disable it
-             smr.enabled = false;
-
-
-            if(rb.velocity.magnitude <.1f)
-            {
-                rb.velocity = new Vector3(0, 0, 0);
-
-            }
-
-            if(rb.velocity.magnitude==0f)
-            {
-                rb.AddForce(transform.forward * 1000f * Time.deltaTime, ForceMode.Impulse);
-
-            }
-
-
-
-
-            //Move the camera 10F
-
-
-            //bring back the player Again
+            // smr.enabled = false;
 
 
 
 
         }
+        //Move the camera 10F
+        Debug.Log(timing);
 
-      
+        if(launchtiming && rb.isKinematic)
+        {
+            timing += Time.deltaTime;
+        }
+
+        //bring back the player Again
+
+        if(timing>.5f && launchtiming)
+        {
+            rb.isKinematic = false;
+            timing = 0f;
+        }
+
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (rb.velocity.y <= -0.01 && !launchtiming)  //all i have to do is put it in the fixed update;
+        {
+            rb.isKinematic = true;
+            launchtiming = true;
+        }
+     
+
     }
 
     public bool RayCast()

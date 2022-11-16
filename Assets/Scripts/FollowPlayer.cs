@@ -45,7 +45,7 @@ public class FollowPlayer : MonoBehaviour
             //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
 
             angleinRadians = Mathf.Acos(DotProduct);
-
+                 
             //if need in degrees
             angleinDegrees = angleinRadians * 180 / (Mathf.PI);
             previousAngle = angleinDegrees;
