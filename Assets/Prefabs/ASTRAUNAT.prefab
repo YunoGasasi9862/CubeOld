@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7468fc89b0a14454885fa1b690086b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fire: {fileID: 0}
+  Fire: {fileID: 1692517446758730, guid: 2bc12bd9625d9ab4f891cb74a8499b32, type: 3}
   ground:
     serializedVersion: 2
     m_Bits: 64

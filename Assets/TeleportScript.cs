@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TeleportScript : MonoBehaviour
 {
@@ -10,50 +11,64 @@ public class TeleportScript : MonoBehaviour
     private Rigidbody rb;
     private CapsuleCollider col;
     private float timing = 0f;
-    private bool launchtiming = false;
-    
+    private bool launchtiming = true;
+    private bool thrustup = false;
+    private GameObject _fire;
+    private Vector3 posBelow;
+    private Vector3 rotation;
+
+
     void Start()
     {
         smr = transform.GetChild(1).GetComponent<SkinnedMeshRenderer>();
         col= GetComponent<CapsuleCollider>();
         rb= GetComponent<Rigidbody>();
+        rotation = new Vector3(-90, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        posBelow = transform.position;
+
         if (RayCast() && Input.GetKeyDown(KeyCode.R))
         {
 
             //push the player in the Air
             launchtiming = false;
-
-            rb.AddForce(transform.up * 400f * Time.deltaTime, ForceMode.Impulse);
-
+            thrustup = true;
+            posBelow.y = transform.position.y - 1f;
+            Fire.transform.rotation = Quaternion.Euler(rotation);
+            _fire = Instantiate(Fire, posBelow, Fire.transform.rotation);
+            _fire.transform.parent = transform;
             //Disable it
-            // smr.enabled = false;
-
-
-
+           
 
         }
         //Move the camera 10F
-        Debug.Log(timing);
 
         if(launchtiming && rb.isKinematic)
         {
+            smr.enabled = false;
             timing += Time.deltaTime;
+            transform.position += transform.forward * 70f * Time.deltaTime; //teleporting
+        
         }
 
         //bring back the player Again
 
-        if(timing>.5f && launchtiming)
+        if(timing>.2f && launchtiming)
         {
             rb.isKinematic = false;
+
             timing = 0f;
         }
 
+        if(!rb.isKinematic)
+        {
+            smr.enabled = true;
 
+        }
 
     }
 
@@ -64,8 +79,14 @@ public class TeleportScript : MonoBehaviour
             rb.isKinematic = true;
             launchtiming = true;
         }
-     
 
+        if(thrustup)
+        {
+            rb.AddForce(transform.up * 500f * Time.deltaTime, ForceMode.Impulse);
+            thrustup = false;
+        }
+       
+     
     }
 
     public bool RayCast()
