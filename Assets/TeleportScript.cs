@@ -37,7 +37,7 @@ public class TeleportScript : MonoBehaviour
             //push the player in the Air
             launchtiming = false;
             thrustup = true;
-            posBelow.y = transform.position.y - 1f;
+            posBelow.y = transform.position.y - .3f;
             Fire.transform.rotation = Quaternion.Euler(rotation);
             _fire = Instantiate(Fire, posBelow, Fire.transform.rotation);
             _fire.transform.parent = transform;
@@ -51,7 +51,7 @@ public class TeleportScript : MonoBehaviour
         {
             smr.enabled = false;
             timing += Time.deltaTime;
-            transform.position += transform.forward * 70f * Time.deltaTime; //teleporting
+            transform.position += transform.forward * 90f * Time.deltaTime; //teleporting
         
         }
 
@@ -62,6 +62,7 @@ public class TeleportScript : MonoBehaviour
             rb.isKinematic = false;
 
             timing = 0f;
+            Destroy(_fire, 1f);
         }
 
         if(!rb.isKinematic)
@@ -82,7 +83,7 @@ public class TeleportScript : MonoBehaviour
 
         if(thrustup)
         {
-            rb.AddForce(transform.up * 500f * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(transform.up * 500f * Time.deltaTime, ForceMode.Impulse);  //in fixedupdate :)
             thrustup = false;
         }
        
