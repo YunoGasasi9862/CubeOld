@@ -818,6 +818,9 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  teleportScreen:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &8659167909054545659
 MonoBehaviour:
   m_ObjectHideFlags: 0

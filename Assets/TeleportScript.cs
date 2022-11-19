@@ -8,6 +8,7 @@ public class TeleportScript : MonoBehaviour
     private SkinnedMeshRenderer smr;
     [SerializeField] GameObject Fire;
     [SerializeField] LayerMask ground;
+    [SerializeField] LayerMask teleportScreen;
     private Rigidbody rb;
     private CapsuleCollider col;
     private float timing = 0f;
@@ -16,6 +17,7 @@ public class TeleportScript : MonoBehaviour
     private GameObject _fire;
     private Vector3 posBelow;
     private Vector3 rotation;
+    private bool teleport = false;
 
 
     void Start()
@@ -30,8 +32,7 @@ public class TeleportScript : MonoBehaviour
     void Update()
     {
         posBelow = transform.position;
-
-        if (RayCast() && Input.GetKeyDown(KeyCode.R))
+        if (RayCast() && teleport)
         {
 
             //push the player in the Air
@@ -41,13 +42,15 @@ public class TeleportScript : MonoBehaviour
             Fire.transform.rotation = Quaternion.Euler(rotation);
             _fire = Instantiate(Fire, posBelow, Fire.transform.rotation);
             _fire.transform.parent = transform;
+            teleport = false;
+
             //Disable it
-           
+
 
         }
         //Move the camera 10F
 
-        if(launchtiming && rb.isKinematic)
+        if (launchtiming && rb.isKinematic)
         {
             smr.enabled = false;
             timing += Time.deltaTime;
@@ -86,13 +89,32 @@ public class TeleportScript : MonoBehaviour
             rb.AddForce(transform.up * 500f * Time.deltaTime, ForceMode.Impulse);  //in fixedupdate :)
             thrustup = false;
         }
-       
-     
+
+        RaycastHit hit;
+        Debug.DrawRay(transform.position, transform.forward * 1f, Color.black);
+        Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen); //output in hit
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen))
+        { 
+            if(hit.collider.isTrigger)
+            {
+                
+                teleport = true;
+
+            }
+
+        }
+
     }
 
-    public bool RayCast()
-    {
-        Debug.DrawRay(transform.position, -transform.up * 1f, Color.red);
-        return Physics.Raycast(transform.position, -transform.up, 1f, ground);
-    }
+            public bool RayCast()
+        {
+            Debug.DrawRay(transform.position, -transform.up * 1f, Color.red);
+            return Physics.Raycast(transform.position, -transform.up, 1f, ground);
+        }
+
+  
+  
+        
+    
 }
