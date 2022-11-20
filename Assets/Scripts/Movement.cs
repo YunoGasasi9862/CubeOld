@@ -140,20 +140,25 @@ public class Movement : MonoBehaviour
             GameEndChecK();
         }
 
-        if(collision.collider.tag=="Coin")
-        {
-            coinCount++;
-            Coincount.text = coinCount.ToString("0");
-            sound.Play();
-            GameObject part= Instantiate(particles, collision.collider.transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
-            Destroy(part, 5f);
-        }
-
+      
         if(collision.collider.CompareTag("Platform"))
         {
             transform.parent = collision.transform;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Coin")
+        {
+            coinCount++;
+            Coincount.text = coinCount.ToString("0");
+            sound.Play();
+            GameObject part = Instantiate(particles, other.transform.position, Quaternion.identity);
+            Destroy(other.gameObject);
+            Destroy(part, 5f);
+        }
+
     }
 
     private void OnCollisionExit(Collision collision)

@@ -19,7 +19,6 @@ public class TeleportScript : MonoBehaviour
     private Vector3 rotation;
     private bool teleport = false;
 
-
     void Start()
     {
         smr = transform.GetChild(1).GetComponent<SkinnedMeshRenderer>();
@@ -40,22 +39,28 @@ public class TeleportScript : MonoBehaviour
             thrustup = true;
             posBelow.y = transform.position.y - .3f;
             Fire.transform.rotation = Quaternion.Euler(rotation);
-            _fire = Instantiate(Fire, posBelow, Fire.transform.rotation);
-            _fire.transform.parent = transform;
+
+            
+                _fire = Instantiate(Fire, posBelow, Fire.transform.rotation);
+                _fire.transform.parent = transform;
             teleport = false;
 
-            //Disable it
+
+
 
 
         }
-        //Move the camera 10F
+
 
         if (launchtiming && rb.isKinematic)
         {
-            smr.enabled = false;
-            timing += Time.deltaTime;
-            transform.position += transform.forward * 90f * Time.deltaTime; //teleporting
+             smr.enabled = false;
+             timing += Time.deltaTime;
         
+            transform.position += transform.forward * 90f * Time.deltaTime; //teleporting
+
+            
+
         }
 
         //bring back the player Again
@@ -73,33 +78,37 @@ public class TeleportScript : MonoBehaviour
             smr.enabled = true;
 
         }
+        
+       
 
     }
 
     private void FixedUpdate()
     {
-        if (rb.velocity.y <= -0.01 && !launchtiming)  //all i have to do is put it in the fixed update;
+        if (rb.velocity.y < -1 && !launchtiming)  //all i have to do is put it in the fixed update;
         {
             rb.isKinematic = true;
             launchtiming = true;
+           
         }
 
         if(thrustup)
         {
-            rb.AddForce(transform.up * 500f * Time.deltaTime, ForceMode.Impulse);  //in fixedupdate :)
+            rb.AddForce(transform.up * 600f * Time.deltaTime, ForceMode.Impulse);  //in fixedupdate :)
             thrustup = false;
         }
 
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward * 1f, Color.black);
-        Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen); //output in hit
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen))
-        { 
-            if(hit.collider.isTrigger)
+        Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen);
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen)) //output in hit
+        {
+            if (hit.collider.isTrigger) //check if the collider is a hit
             {
-                
                 teleport = true;
+                hit.collider.GetComponent<BoxCollider>().enabled = false;
+               
+
 
             }
 
