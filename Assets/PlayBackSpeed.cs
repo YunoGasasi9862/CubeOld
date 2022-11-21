@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PlayBackSpeed : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private ParticleSystem pa;
+    public ParticleSystem[] psChildren;
     void Start()
     {
-        
+        pa = GetComponent<ParticleSystem>(); //parent
+        psChildren=pa.GetComponentsInChildren<ParticleSystem>();//only storing the particle systems of the children
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        foreach(ParticleSystem ps in psChildren)
+        {
+            var speedMain = ps.main;  //new way to update the simulation speed
+            speedMain.simulationSpeed = 2f;
+        }
+      
+
     }
 }
