@@ -13,7 +13,7 @@ public class HoveringIntheAIr : MonoBehaviour
 
     void Update()
     {
-        if(Vector3.Distance(transform.position, HoverPoints[Index].transform.position) <.1f)
+        if(Vector3.Distance(transform.position, HoverPoints[Index].position) <.1f)
         {
          
             Index++;

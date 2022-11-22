@@ -39,8 +39,6 @@ public class TeleportScript : MonoBehaviour
             thrustup = true;
             posBelow.y = transform.position.y - .3f;
             Fire.transform.rotation = Quaternion.Euler(rotation);
-
-            
                 _fire = Instantiate(Fire, posBelow, Fire.transform.rotation);
                 _fire.transform.parent = transform;
             teleport = false;
