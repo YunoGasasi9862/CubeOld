@@ -13,13 +13,15 @@ public class LevelGenerator : MonoBehaviour
     public Vector3 pos;
     private void Start()
     {
+     
         StartCoroutine(GenerateLevel());
+       
     }
 
 
     IEnumerator GenerateLevel()
     {
-         pos = transform.position;
+        pos = transform.position;
         for (ground=0; ground < NumberofGround; ground++)
         {
             platform = Instantiate(plat, pos, Quaternion.identity);

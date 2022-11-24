@@ -216,7 +216,7 @@ MonoBehaviour:
   ground: 0
   plat: {fileID: 8573606101943640201, guid: 6907bf8d5aba7344e8afefa820063c2d, type: 3}
   platform: {fileID: 0}
-  pos: {x: 0, y: 0, z: 0}
+  pos: {x: -4, y: 0, z: 1.85}
 --- !u!1001 &236898381
 PrefabInstance:
   m_ObjectHideFlags: 0

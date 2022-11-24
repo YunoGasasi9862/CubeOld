@@ -41,7 +41,7 @@ public class CollidewithBoundary : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Destroy(transform.parent.gameObject, 3f); //destroy the parent of the gameobject
+            Destroy(transform.parent.parent.gameObject, 3f); //destroy the parent of the gameobject
             triggerwaring = true;
             //after that platform is destroyed
             Instantiate(generator.plat, generator.pos, generator.plat.transform.rotation);
