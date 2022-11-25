@@ -19,7 +19,7 @@ public class TrailPlayer : MonoBehaviour
     void Update()
     {
       
-        if (Mathf.Abs(transform.position.z-Player.transform.position.z)>2f)
+        if (Mathf.Abs(transform.position.z - Player.transform.position.z)>2f)
          {
 
             transform.Translate(0,speed * Time.deltaTime,0); //because i have rotated it on the y-axis by 90 degrees, so the orientation has changed

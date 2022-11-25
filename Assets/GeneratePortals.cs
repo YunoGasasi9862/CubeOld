@@ -1,31 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GeneratePortals : MonoBehaviour
 {
     [SerializeField] GameObject Portal;
-    private int _NumOfPortals = 40;
     private float distanceBetweenPortals = 100f;
     private Vector3 Placement;
-    private GameObject[] ExistingPortals;
+    private GameObject dummyP;
+    private GameObject Player;
+    private TeleportScript TS;
+
+    private void Awake()
+    {
+        Player = GameObject.FindWithTag("Player");
+        TS = Player.GetComponent<TeleportScript>();
+    }
     void Start()
     {
+       
         Placement.y = 5f;
         Placement.z = distanceBetweenPortals;
-        StartCoroutine(GeneratorPortals());
-   
+        dummyP = Instantiate(Portal, Placement, Portal.transform.rotation);
+
+
     }
-     IEnumerator GeneratorPortals()
+
+    private void Update()
     {
-        for(int i=0; i < _NumOfPortals; i++)
+        
+        if(TS!=null && TS.hit.collider.isTrigger)
         {
-            GameObject dummyP=Instantiate(Portal, Placement, Quaternion.identity);
-            Placement.z += distanceBetweenPortals;
-            ExistingPortals[i] = dummyP;
+            Invoke("InstantiatePortal", 1f);
         }
+    }
 
-        yield return null;
+
+  
+
+    private void InstantiatePortal()
+    {
+        Placement.z += distanceBetweenPortals;
+        dummyP = Instantiate(Portal, Placement, Portal.transform.rotation);
+    
 
     }
+
 }

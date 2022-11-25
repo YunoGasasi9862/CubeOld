@@ -18,6 +18,7 @@ public class TeleportScript : MonoBehaviour
     private Vector3 posBelow;
     private Vector3 rotation;
     private bool teleport = false;
+    public RaycastHit hit;
 
     void Start()
     {
@@ -39,8 +40,8 @@ public class TeleportScript : MonoBehaviour
             thrustup = true;
             posBelow.y = transform.position.y - .3f;
             Fire.transform.rotation = Quaternion.Euler(rotation);
-                _fire = Instantiate(Fire, posBelow, Fire.transform.rotation);
-                _fire.transform.parent = transform;
+            _fire = Instantiate(Fire, posBelow, Fire.transform.rotation);
+            _fire.transform.parent = transform;
             teleport = false;
 
 
@@ -94,7 +95,6 @@ public class TeleportScript : MonoBehaviour
             thrustup = false;
         }
 
-        RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward * 1f, Color.black);
         Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen);
         if (Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen)) //output in hit
