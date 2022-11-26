@@ -19,6 +19,7 @@ public class TeleportScript : MonoBehaviour
     private Vector3 rotation;
     private bool teleport = false;
     public RaycastHit hit;
+    private float distance = 200f;
 
     void Start()
     {
@@ -102,7 +103,7 @@ public class TeleportScript : MonoBehaviour
             if (hit.collider.isTrigger) //check if the collider is a hit
             {
                 teleport = true;
-                hit.collider.GetComponent<BoxCollider>().enabled = false;
+                TeleportScreenShift(hit);
                
 
 
@@ -121,5 +122,12 @@ public class TeleportScript : MonoBehaviour
   
   
         
-    
+    private void TeleportScreenShift(RaycastHit input)
+    {
+        input.collider.GetComponent<BoxCollider>().enabled = false;
+        input.collider.gameObject.SetActive(false);
+        input.collider.gameObject.transform.Translate(0, distance, 0); //using Y shifting because its rotated on X-axis by 90
+        input.collider.GetComponent<BoxCollider>().enabled = true;
+        input.collider.gameObject.SetActive(true);
+    }
 }

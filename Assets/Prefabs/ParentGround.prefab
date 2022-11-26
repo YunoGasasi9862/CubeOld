@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2243209752621041798, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
+      propertyPath: HoverSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8983303829958946246, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
       propertyPath: m_RootOrder
       value: 0
