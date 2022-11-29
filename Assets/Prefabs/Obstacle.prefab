@@ -128,4 +128,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ground: {fileID: 8983303829958946246, guid: caecf6c7f70c9cd458c1d6c8c47a191a, type: 3}
-  speed: 30
+  speed: 10
