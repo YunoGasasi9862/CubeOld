@@ -9,8 +9,16 @@ public class PlayerSpawn : MonoBehaviour
 
     void Start()
     {
-        cam.enabled = false;
+        cam = GameObject.FindWithTag("TemporaryCamera").GetComponent<Camera>();
+        Invoke("InstantiatePlayer", 2f);
+    }
+
+    public void InstantiatePlayer()
+    {
+        //bring Player from above!!
         Instantiate(Astronaut, transform.position, Quaternion.identity);
+        cam.enabled = false;
+
     }
 
 

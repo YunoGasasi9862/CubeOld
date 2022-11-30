@@ -23,6 +23,7 @@ TagManager:
   - PlayerChild
   - HoverTag
   - Portal
+  - TemporaryCamera
   layers:
   - Default
   - TransparentFX

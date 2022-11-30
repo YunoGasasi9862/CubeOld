@@ -16,7 +16,7 @@ public class InstantiateStartPortal : MonoBehaviour
     void _InstantiateSPortal()
     {
  
-       _SP= Instantiate(_StartPortal, transform.position, _StartPortal.transform.rotation);
+        _SP= Instantiate(_StartPortal, transform.position, _StartPortal.transform.rotation);
         _SP.transform.parent = transform;
         
        

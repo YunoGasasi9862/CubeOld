@@ -1904,7 +1904,7 @@ GameObject:
   - component: {fileID: 2075127928}
   m_Layer: 0
   m_Name: TemporaryCamera
-  m_TagString: Untagged
+  m_TagString: TemporaryCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
