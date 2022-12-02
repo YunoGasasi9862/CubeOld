@@ -25,7 +25,6 @@ public class CameraRotation : MonoBehaviour
         XRotation = Mathf.Clamp(XRotation, minRotate, MaxRotate);
 
         transform.localRotation = Quaternion.Euler(XRotation, 0, 0);
-
         Cube.transform.Rotate(Vector3.up * MouseX);
 
         //the is similar to transform.Rotate (0,0,4);

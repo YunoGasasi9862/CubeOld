@@ -8,7 +8,8 @@ public class PlayerSpawn : MonoBehaviour
     [SerializeField] GameObject Astronaut;
     private Vector3 spawnPoint;
     [SerializeField] LayerMask Player;
-    private RaycastHit hit;
+    public RaycastHit hit;
+    private bool disableTemp = false;
     void Start()
     {
         cam = GameObject.FindWithTag("TemporaryCamera").GetComponent<Camera>();
@@ -27,28 +28,25 @@ public class PlayerSpawn : MonoBehaviour
     private void Update()
     {
         RayCast();
+        if(disableTemp)
+        {
+            //cam.enabled = false;
+        }
 
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.collider.CompareTag("Player"))
-    //    {
-    //        collision.gameObject.transform
-    //        Debug.Log("Meow");
-    //    }
-    //}
+ 
     public void RayCast()
     {
       
-        Physics.Raycast(transform.position, transform.up, out hit, 3f, Player);
+        Physics.Raycast(transform.position, transform.up, out hit, 1f, Player);
 
-        Debug.DrawRay(transform.position, transform.up * 3f, Color.red);
+        Debug.DrawRay(transform.position, transform.up * 1f, Color.red);
 
-        if(hit.collider!=null)
+       if(hit.collider!=null)
         {
             hit.collider.gameObject.transform.GetChild(2).transform.GetChild(0).GetComponent<Camera>().enabled = true;
-
+            //disableTemp = true;
         }
 
     }
