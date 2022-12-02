@@ -1619,6 +1619,7 @@ PrefabInstance:
     - target: {fileID: 4446988475467214, guid: f5a93d2c6533ed84fb909c53f908d8e2, type: 3}
       propertyPath: m_LocalPosition.z
       value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4446988475467214, guid: f5a93d2c6533ed84fb909c53f908d8e2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1891,7 +1892,56 @@ MonoBehaviour:
   - {fileID: 436486759}
   - {fileID: 1507404346}
   HoverSpeed: 0.3
+<<<<<<< Updated upstream
 --- !u!1 &2075127927 stripped
+=======
+--- !u!1 &1911735021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911735023}
+  - component: {fileID: 1911735022}
+  m_Layer: 0
+  m_Name: PortalGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1911735022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911735021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae28ab564c6bac459d0561bf75446ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PortalNumbers: 0
+--- !u!4 &1911735023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911735021}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2075127927
+>>>>>>> Stashed changes
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2296095404398092781, guid: bcb2beb166ba29d4e9a792d0b0a0629a, type: 3}
   m_PrefabInstance: {fileID: 2296095403199811994}
