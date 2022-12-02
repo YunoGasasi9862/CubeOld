@@ -9,6 +9,7 @@ public class PlayerSpawn : MonoBehaviour
     private Vector3 spawnPoint;
     [SerializeField] LayerMask Player;
     private RaycastHit hit;
+    private bool disabletrue = false;
     void Start()
     {
         cam = GameObject.FindWithTag("TemporaryCamera").GetComponent<Camera>();
@@ -27,17 +28,13 @@ public class PlayerSpawn : MonoBehaviour
     private void Update()
     {
         RayCast();
-
+        if(disabletrue)
+        {
+            //cam.enabled = false;
+        }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.collider.CompareTag("Player"))
-    //    {
-    //        collision.gameObject.transform
-    //        Debug.Log("Meow");
-    //    }
-    //}
+    
     public void RayCast()
     {
       
@@ -48,7 +45,7 @@ public class PlayerSpawn : MonoBehaviour
         if(hit.collider!=null)
         {
             hit.collider.gameObject.transform.GetChild(2).transform.GetChild(0).GetComponent<Camera>().enabled = true;
-
+           // disabletrue = true;
         }
 
     }
