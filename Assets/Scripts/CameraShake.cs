@@ -8,7 +8,7 @@ public class CameraShake : MonoBehaviour
 
     private void Update()
     {
-        if(gamemanager.isOver)  //stop shaking it!
+        if(gamemanager.isOver)
         {
             Time.timeScale = 0;
         }
@@ -17,9 +17,9 @@ public class CameraShake : MonoBehaviour
     {
         Vector3 originalPos = transform.localPosition;
 
-        float elapsedTime = 0f;
-        
-        while(elapsedTime < duration)
+        float ElapsedTime = 0f;
+
+        while(ElapsedTime<duration)
         {
             float X = Random.Range(-1f, 1f) * magnitude;
 
@@ -27,7 +27,7 @@ public class CameraShake : MonoBehaviour
 
             transform.localPosition = new Vector3(X, Y, originalPos.z);
 
-            elapsedTime += Time.deltaTime;
+            ElapsedTime += Time.deltaTime;
 
             yield return null;
         }
