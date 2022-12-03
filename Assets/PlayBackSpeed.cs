@@ -16,8 +16,8 @@ public class PlayBackSpeed : MonoBehaviour
     {
         foreach(ParticleSystem ps in psChildren)
         {
-            var speedMain = ps.main;  //new way to update the simulation speed
-            speedMain.simulationSpeed = 2f;
+            var SpeedMain = ps.main;  //new way to update the simulation speed
+            SpeedMain.simulationSpeed = 2f;
         }
       
 

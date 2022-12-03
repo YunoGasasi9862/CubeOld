@@ -194,7 +194,7 @@ public class Movement : MonoBehaviour
     private bool isOnetheGround()
     {
 
-        return Physics.CapsuleCast(col.bounds.center, col.bounds.size, .1f, Vector3.down, 3f, ground);
+        return Physics.CapsuleCast(col.bounds.center, col.bounds.size, .1f, Vector2.down, 3f, ground);
     }
 
     void CheckAnimation()
