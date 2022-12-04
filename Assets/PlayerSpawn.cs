@@ -8,10 +8,13 @@ public class PlayerSpawn : MonoBehaviour
     [SerializeField] GameObject Astronaut;
     private Vector3 spawnPoint;
     [SerializeField] LayerMask Player;
+    private GameManager _GM;
     private RaycastHit hit;
     void Start()
     {
         cam = GameObject.FindWithTag("TemporaryCamera").GetComponent<Camera>();
+        cam.enabled = true;
+        _GM = GameObject.FindWithTag("gameManager").GetComponent<GameManager>();
         Invoke("InstantiatePlayer", 2f);
     }
 
@@ -30,7 +33,11 @@ public class PlayerSpawn : MonoBehaviour
         if(MoveTowardPlayer.SwapCamera)
         {
             cam.enabled = false;
+            MoveTowardPlayer.SwapCamera = false; //fixed it!
         }
+
+       
+      
     }
 
     

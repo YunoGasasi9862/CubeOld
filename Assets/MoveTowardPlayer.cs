@@ -10,6 +10,7 @@ public class MoveTowardPlayer : MonoBehaviour
     public static bool SwapCamera = false;
     private float elapsedTime = 0f;
 
+    
     private void Update()
     {
         if (_CanMove)
