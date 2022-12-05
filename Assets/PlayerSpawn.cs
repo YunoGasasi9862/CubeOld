@@ -30,11 +30,16 @@ public class PlayerSpawn : MonoBehaviour
     private void Update()
     {
         RayCast();
+
+    
+
         if(MoveTowardPlayer.SwapCamera)
         {
             cam.enabled = false;
             MoveTowardPlayer.SwapCamera = false; //fixed it!
         }
+
+
 
        
       
@@ -51,7 +56,7 @@ public class PlayerSpawn : MonoBehaviour
         if(hit.collider!=null)
         {
             hit.collider.gameObject.transform.GetChild(2).transform.GetChild(0).GetComponent<Camera>().enabled = true;
-          
+            transform.parent.GetChild(0).gameObject.SetActive(false);
         }
 
     }

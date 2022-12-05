@@ -51,7 +51,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fly Float 0
+  m_Name: FlyFloat
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -129,7 +129,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -151,7 +151,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle01
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2633087661310098619}
@@ -639,7 +639,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 110200000}
-    m_Position: {x: -210, y: -270, z: 0}
+    m_Position: {x: -230, y: -280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110257680}
     m_Position: {x: 280, y: 470, z: 0}
@@ -693,13 +693,13 @@ AnimatorStateMachine:
     m_Position: {x: 280, y: 330, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9165899076046006641}
-    m_Position: {x: -220, y: -140, z: 0}
+    m_Position: {x: -230, y: -180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4922044203939551336}
-    m_Position: {x: -230, y: -10, z: 0}
+    m_Position: {x: -230, y: -90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2848602437326514784}
-    m_Position: {x: 50, y: -10, z: 0}
+    m_Position: {x: -230, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -1069,7 +1069,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fly Forward 0
+  m_Name: FlyForward
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -1139,7 +1139,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Take Off 0
+  m_Name: TakeOff
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
