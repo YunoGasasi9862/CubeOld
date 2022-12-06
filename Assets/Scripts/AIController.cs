@@ -10,7 +10,6 @@ public class AIController : MonoBehaviour
     private Rigidbody rb;
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }
@@ -18,6 +17,7 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForward"))
         {
             rb.AddForce(Vector3.forward * -Speed * Time.deltaTime);
@@ -26,5 +26,20 @@ public class AIController : MonoBehaviour
 
 
         //calculate distance between
+        if(Player!=null)
+        {
+
+            if (Vector3.Distance(transform.position, Player.transform.position) < 15f)
+            {
+                rb.velocity = new Vector3(0, 0, 0);
+                anim.SetBool("KeepFlying", true);
+
+            }
+        }else
+        {
+            Player = GameObject.FindGameObjectWithTag("Player");
+
+        }
+
     }
 }

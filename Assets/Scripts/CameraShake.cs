@@ -30,9 +30,10 @@ public class CameraShake : MonoBehaviour
             elapsedTime += Time.deltaTime;
 
             yield return null;
+
         }
 
-        transform.localPosition= originalPos;
+        transform.localPosition = originalPos;
 
     }
 
