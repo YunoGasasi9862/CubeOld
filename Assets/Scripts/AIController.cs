@@ -5,7 +5,7 @@ using UnityEngine;
 public class AIController : MonoBehaviour
 {
     [SerializeField] GameObject Player;
-    [SerializeField] float Speed = 30f;
+    [SerializeField] float Speed = 50f;
     [SerializeField] Animator anim;
     private Rigidbody rb;
     private float Dotproduct;
@@ -43,22 +43,27 @@ public class AIController : MonoBehaviour
 
                 AinRad = Mathf.Acos(Dotproduct);
 
-                AinDegrees = (AinRad * (180 / Mathf.PI) * 2);
+                AinDegrees = 2* (AinRad * (180 / Mathf.PI));
+                transform.localRotation = Quaternion.AngleAxis(AinDegrees, Vector3.forward);
 
-                if(Player.transform.position.x <= transform.position.x)
+
+                if (Player.transform.position.x < transform.position.x)
                 {
-                    AinDegrees = 180 + AinDegrees ;
-                }else
+                    AinDegrees = 180 + AinDegrees;
+                }
+                else if (Player.transform.position.x > transform.position.x)
                 {
-                    AinDegrees = 180- AinDegrees; //to preserve the first 180 degrees
+                    AinDegrees = 180 - (AinDegrees); //to preserve the first 180 degrees
 
                 }
-
-
-                Debug.Log(AinDegrees);
+              
 
                 transform.localRotation = Quaternion.AngleAxis(AinDegrees, Vector3.up); // on yaxis
 
+
+            }
+            else
+            {
 
             }
         }else

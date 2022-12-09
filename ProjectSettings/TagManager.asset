@@ -24,6 +24,7 @@ TagManager:
   - HoverTag
   - Portal
   - TemporaryCamera
+  - Root
   layers:
   - Default
   - TransparentFX
