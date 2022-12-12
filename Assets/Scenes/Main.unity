@@ -2446,7 +2446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  Speed: 30
+  Speed: 100
   anim: {fileID: 0}
 --- !u!1 &974393698
 GameObject:
@@ -3701,7 +3701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 986498017555383982, guid: d81e20b26d598914c8ea9e7daa0b0e70, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.9999466
+      value: 7.999939
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d81e20b26d598914c8ea9e7daa0b0e70, type: 3}

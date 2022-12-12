@@ -79,7 +79,7 @@ public class MoveAroundSun : MonoBehaviour
     void XtoZ()
     {
 
-        transform.position = new Vector3(transform.position.x + 60 * Mathf.Sin(angle * sign1 * 3), transform.position.y, transform.parent.position.z + 60 * Mathf.Cos((sign1) * angle * 3)) ;;
+        transform.position = new Vector3(transform.position.x + 60 * Mathf.Sin(sign1 * angle * 3), transform.position.y, transform.parent.position.z + 60 * Mathf.Cos((sign1) * angle * 3)) ;;
 
     }
 

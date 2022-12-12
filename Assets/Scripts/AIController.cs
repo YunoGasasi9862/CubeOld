@@ -5,12 +5,13 @@ using UnityEngine;
 public class AIController : MonoBehaviour
 {
     [SerializeField] GameObject Player;
-    [SerializeField] float Speed = 50f;
+    [SerializeField] float Speed;
     [SerializeField] Animator anim;
     private Rigidbody rb;
     private float Dotproduct;
     private float AinRad;
     private float AinDegrees;
+    private bool Backward = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,7 +22,7 @@ public class AIController : MonoBehaviour
     void Update()
     {
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForward"))
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForward") && !Backward)
         {
             rb.AddForce(Vector3.forward * -Speed * Time.deltaTime);
             
@@ -31,9 +32,12 @@ public class AIController : MonoBehaviour
         //calculate distance between
         if(Player!=null)
         {
+            Debug.Log(Vector3.Distance(transform.position, Player.transform.position));
 
-            if (Vector3.Distance(transform.position, Player.transform.position) < 10f)
+            if (Vector3.Distance(transform.position, Player.transform.position) < 10f && Vector3.Distance(transform.position, Player.transform.position)>3f)
             {
+                Backward = false;
+
                 rb.velocity = new Vector3(0, 0, 0);
                 anim.SetBool("KeepFlying", true);
 
@@ -44,6 +48,7 @@ public class AIController : MonoBehaviour
                 AinRad = Mathf.Acos(Dotproduct);
 
                 AinDegrees = 2* (AinRad * (180 / Mathf.PI));
+
                 transform.localRotation = Quaternion.AngleAxis(AinDegrees, Vector3.forward);
 
 
@@ -62,11 +67,27 @@ public class AIController : MonoBehaviour
 
 
             }
-            else
+         
+
+            if (Vector3.Distance(transform.position, Player.transform.position) < 3f && (Vector3.Distance(transform.position, Player.transform.position) > 0f))
             {
+                Backward = true;
+                anim.SetBool("KeepFlying", false);
+
+
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForward"))
+                {
+                    rb.AddForce(Vector3.forward * Speed * Time.deltaTime);
+
+                }
+              
+
 
             }
-        }else
+
+
+        }
+        else
         {
             Player = GameObject.FindGameObjectWithTag("Player");
 
