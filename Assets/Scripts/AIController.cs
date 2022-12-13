@@ -34,20 +34,27 @@ public class AIController : MonoBehaviour
         {
             Debug.Log(Vector3.Distance(transform.position, Player.transform.position));
 
-            if (Vector3.Distance(transform.position, Player.transform.position) < 10f && Vector3.Distance(transform.position, Player.transform.position)>3f)
+            if (Vector3.Distance(transform.position, Player.transform.position) < 20f && Vector3.Distance(transform.position, Player.transform.position)>10f)
             {
                 Backward = false;
 
                 rb.velocity = new Vector3(0, 0, 0);
                 anim.SetBool("KeepFlying", true);
 
+            
+
+
+            }
+
+            if(Vector3.Distance(transform.position, Player.transform.position)<10f && Vector3.Distance(transform.position, Player.transform.position)>4f)
+            {
                 //rotate the dragon toward the Player
                 Dotproduct = Vector3.Dot(transform.position, Player.transform.position);
                 Dotproduct = Dotproduct / (transform.position.magnitude * Player.transform.position.magnitude);
 
                 AinRad = Mathf.Acos(Dotproduct);
 
-                AinDegrees = 2* (AinRad * (180 / Mathf.PI));
+                AinDegrees = 2 * (AinRad * (180 / Mathf.PI));
 
                 transform.localRotation = Quaternion.AngleAxis(AinDegrees, Vector3.forward);
 
@@ -61,23 +68,21 @@ public class AIController : MonoBehaviour
                     AinDegrees = 180 - (AinDegrees); //to preserve the first 180 degrees
 
                 }
-              
+
 
                 transform.localRotation = Quaternion.AngleAxis(AinDegrees, Vector3.up); // on yaxis
-
-
             }
          
 
-            if (Vector3.Distance(transform.position, Player.transform.position) < 3f && (Vector3.Distance(transform.position, Player.transform.position) > 0f))
+            if (transform.position.z < Player.transform.position.z)
             {
                 Backward = true;
                 anim.SetBool("KeepFlying", false);
-
+                 float backwardSpeed = 400f;
 
                 if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForward"))
                 {
-                    rb.AddForce(Vector3.forward * Speed * Time.deltaTime);
+                    rb.AddForce(Vector3.forward * backwardSpeed * Time.deltaTime);
 
                 }
               

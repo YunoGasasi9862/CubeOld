@@ -10,6 +10,7 @@ public class PlayerSpawn : MonoBehaviour
     [SerializeField] LayerMask Player;
     private GameManager _GM;
     private RaycastHit hit;
+    public static bool canMove = false;
     void Start()
     {
         cam = GameObject.FindWithTag("TemporaryCamera").GetComponent<Camera>();
@@ -26,6 +27,7 @@ public class PlayerSpawn : MonoBehaviour
         spawnPoint.y = transform.position.y + 10f; //the height from which the player drops
         Instantiate(Astronaut, spawnPoint, Quaternion.identity);
 
+
     }
     private void Update()
     {
@@ -39,10 +41,15 @@ public class PlayerSpawn : MonoBehaviour
             MoveTowardPlayer.SwapCamera = false; //fixed it!
         }
 
+        if (hit.collider!=null && hit.collider.gameObject.CompareTag("Player"))
+        {
+            canMove = true;
 
-
+        }
        
-      
+
+
+
     }
 
     
@@ -58,6 +65,8 @@ public class PlayerSpawn : MonoBehaviour
             hit.collider.gameObject.transform.GetChild(2).transform.GetChild(0).GetComponent<Camera>().enabled = true;
             transform.parent.GetChild(0).gameObject.SetActive(false);
         }
+
+        
 
     }
 

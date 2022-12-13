@@ -58,12 +58,18 @@ public class Movement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
-        Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime ;
 
-        Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        if(PlayerSpawn.canMove==true)
+        {
+            Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 
-        transform.Translate(Horizontal, 0, Vertical);
+            Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+            transform.Translate(Horizontal, 0, Vertical);
+        }
+       
 
         CheckAnimation();
         CheckForSpace();
