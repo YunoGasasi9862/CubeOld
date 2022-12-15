@@ -32,7 +32,6 @@ public class AIController : MonoBehaviour
         //calculate distance between
         if(Player!=null)
         {
-            Debug.Log(Vector3.Distance(transform.position, Player.transform.position));
 
             if (Vector3.Distance(transform.position, Player.transform.position) < 20f && Vector3.Distance(transform.position, Player.transform.position)>10f)
             {
@@ -74,7 +73,7 @@ public class AIController : MonoBehaviour
             }
          
 
-            if (transform.position.z < Player.transform.position.z)
+            if (transform.position.z  - 3f< Player.transform.position.z)
             {
                 Backward = true;
                 anim.SetBool("KeepFlying", false);

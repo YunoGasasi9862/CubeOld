@@ -11,23 +11,43 @@ public class AttackPlayer : MonoBehaviour
     [SerializeField] GameObject player;
     private bool isInstantiated = false;
     private GameObject fireTemp;
-    [SerializeField] GameObject[] FireObjects;
     public GameObject[] instantiatedFireObjects;
     private bool allowCoRoutine=true;
- 
+
+    public GameObject[] FireLists = new GameObject[500];
+    [SerializeField] GameObject FireBreath;
+
+    private void Start()
+    {
+        for(int i=0; i<FireLists.Length; i++)
+        {
+            FireLists[i] = FireBreath;
+           
+        }
+
+
+    }
+
     void Update()
     {
-        float Distance = Vector3.Distance(transform.position, player.transform.position);
-        if (Distance <= 400f && !isInstantiated)
-        {
-           
-            if(allowCoRoutine)
-            {
-                StartCoroutine(SpawnLasers());  //better method!
-                allowCoRoutine = false;
-            }
+        player = GameObject.FindWithTag("Player");
 
+        if(player!=null)
+        {
+            float Distance = Vector3.Distance(transform.position, player.transform.position);
+            if (Distance <= 10f && !isInstantiated)
+            {
+
+                if (allowCoRoutine)
+                {
+                    StartCoroutine(SpawnLasers());  //better method!
+                    allowCoRoutine = false;
+                }
+
+            }
         }
+
+   
 
         foreach (GameObject x in instantiatedFireObjects)
         {
@@ -45,11 +65,11 @@ public class AttackPlayer : MonoBehaviour
 
     IEnumerator SpawnLasers()
     {
-        for (int i = 0; i < FireObjects.Length; i++)
+        for (int i = 0; i < 5; i++)
         {
             //THIS IS WORKING YEEHAW!
             yield return new WaitForSeconds(.5f);  //this method is perfect and better!!
-            fireTemp = Instantiate(FireObjects[i], transform.position, Quaternion.identity);
+            //fireTemp = Instantiate(FireLists[i], transform.position, Quaternion.identity);
           
 
         }
