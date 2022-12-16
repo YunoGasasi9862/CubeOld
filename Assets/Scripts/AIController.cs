@@ -33,7 +33,7 @@ public class AIController : MonoBehaviour
         if(Player!=null)
         {
 
-            if (Vector3.Distance(transform.position, Player.transform.position) < 20f && Vector3.Distance(transform.position, Player.transform.position)>10f)
+            if (Vector3.Distance(transform.position, Player.transform.position) < 20f && Vector3.Distance(transform.position, Player.transform.position)>10f && (transform.position.z > Player.transform.position.z))
             {
                 Backward = false;
 
@@ -45,7 +45,7 @@ public class AIController : MonoBehaviour
 
             }
 
-            if(Vector3.Distance(transform.position, Player.transform.position)<10f && Vector3.Distance(transform.position, Player.transform.position)>4f)
+            if(Vector3.Distance(transform.position, Player.transform.position)<10f && Vector3.Distance(transform.position, Player.transform.position)>4f && (transform.position.z > Player.transform.position.z))
             {
                 //rotate the dragon toward the Player
                 Dotproduct = Vector3.Dot(transform.position, Player.transform.position);

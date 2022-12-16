@@ -11,10 +11,11 @@ public class AttackPlayer : MonoBehaviour
     [SerializeField] GameObject player;
     private bool isInstantiated = false;
     private GameObject fireTemp;
-    public GameObject[] instantiatedFireObjects;
+   
     private bool allowCoRoutine=true;
 
-    public GameObject[] FireLists = new GameObject[500];
+    public static GameObject[] FireLists = new GameObject[3];
+    public static GameObject[] instantiatedFireObjects = new GameObject[FireLists.Length];
     [SerializeField] GameObject FireBreath;
 
     private void Start()
@@ -48,33 +49,40 @@ public class AttackPlayer : MonoBehaviour
         }
 
    
-
-        foreach (GameObject x in instantiatedFireObjects)
+        for(int i=0; i<instantiatedFireObjects.Length; i++)
         {
-            if (x != null)
+            if (instantiatedFireObjects[i]!=null)
             {
-                if (x.GetComponent<Rigidbody>().velocity.magnitude <= .1f)
+                if (instantiatedFireObjects[i].GetComponent<Rigidbody>().velocity.magnitude <= .1f)
                 {
-                    Destroy(x, 5f);
+                    Destroy(instantiatedFireObjects[i], 2f);
                 }
             }
 
+           
+        }
+
+    
+
+        if(instantiatedFireObjects.Length==0 && Time.deltaTime >=10f)
+        {
+            isInstantiated = false;
+            allowCoRoutine = true;
         }
 
     }
 
     IEnumerator SpawnLasers()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < FireLists.Length; i++)
         {
             //THIS IS WORKING YEEHAW!
-            yield return new WaitForSeconds(.5f);  //this method is perfect and better!!
-            //fireTemp = Instantiate(FireLists[i], transform.position, Quaternion.identity);
-          
+            yield return new WaitForSeconds(1f);  //this method is perfect and better!!
+            fireTemp = Instantiate(FireLists[i], transform.position, Quaternion.identity);
+            instantiatedFireObjects[i] = fireTemp;
 
         }
 
-        instantiatedFireObjects = GameObject.FindGameObjectsWithTag("Fire");
         isInstantiated = true;
     }
  
