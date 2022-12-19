@@ -14,9 +14,11 @@ public class AttackPlayer : MonoBehaviour
    
     private bool allowCoRoutine=true;
 
-    public static GameObject[] FireLists = new GameObject[3];
-    public static GameObject[] instantiatedFireObjects = new GameObject[FireLists.Length];
+    public GameObject[] FireLists = new GameObject[3];
+    public GameObject[] instantiatedFireObjects;
+
     [SerializeField] GameObject FireBreath;
+    public float Again = 0;
 
     private void Start()
     {
@@ -25,6 +27,8 @@ public class AttackPlayer : MonoBehaviour
             FireLists[i] = FireBreath;
            
         }
+
+        instantiatedFireObjects= new GameObject[FireLists.Length];
 
 
     }
@@ -48,26 +52,32 @@ public class AttackPlayer : MonoBehaviour
             }
         }
 
-   
-        for(int i=0; i<instantiatedFireObjects.Length; i++)
+        if(!IsEmpty())
         {
-            if (instantiatedFireObjects[i]!=null)
+            for (int i = 0; i < instantiatedFireObjects.Length; i++)
             {
-                if (instantiatedFireObjects[i].GetComponent<Rigidbody>().velocity.magnitude <= .1f)
+                if (instantiatedFireObjects[i] != null)
                 {
-                    Destroy(instantiatedFireObjects[i], 2f);
+                    if (instantiatedFireObjects[i].GetComponent<Rigidbody>().velocity.magnitude <= .1f)
+                    {
+                        Destroy(instantiatedFireObjects[i], 2f);
+                    }
                 }
             }
+        }
+   
+   
 
-           
+        if(IsEmpty())
+        {
+            Again += Time.deltaTime;
         }
 
-    
-
-        if(instantiatedFireObjects.Length==0 && Time.deltaTime >=10f)
+        if(IsEmpty() && Again>=10f)
         {
             isInstantiated = false;
             allowCoRoutine = true;
+            Again = 0;
         }
 
     }
@@ -85,5 +95,26 @@ public class AttackPlayer : MonoBehaviour
 
         isInstantiated = true;
     }
+
+    public bool IsEmpty()
+    {
+        int count = 0;
+        for(int i=0; i<instantiatedFireObjects.Length; i++)
+        {
+            if(instantiatedFireObjects[i]==null)
+            {
+                count++;
+            }
+        }
+
+        if(count==instantiatedFireObjects.Length)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+
  
 }
