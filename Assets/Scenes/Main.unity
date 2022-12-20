@@ -2461,12 +2461,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  instantiatedFireObjects: []
   FireLists:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  instantiatedFireObjects: []
   FireBreath: {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038, type: 3}
+  Again: 0
 --- !u!1 &974393698
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,7 +3445,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -3452,8 +3453,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1e+14
-  field of view: 60
+  far clip plane: 1e+20
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
