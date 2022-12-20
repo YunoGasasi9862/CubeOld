@@ -27,7 +27,7 @@ public class FollowPlayer : MonoBehaviour
     {
 
 
-        if (Vector2.Distance(transform.position, Player.transform.position) >= 20)  //OMG IT WORKED! I FUCKING DID IT!!!  (IT FOLLOWS THE PLAYER UNTIL THE DISTANCE IS > 20)
+        if (Vector2.Distance(transform.position, Player.transform.position) >=5f)  //OMG IT WORKED! I FUCKING DID IT!!!  (IT FOLLOWS THE PLAYER UNTIL THE DISTANCE IS > 20)
         {
             transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
 

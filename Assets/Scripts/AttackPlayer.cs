@@ -19,10 +19,12 @@ public class AttackPlayer : MonoBehaviour
 
     [SerializeField] GameObject FireBreath;
     public float Again = 0;
+    private Vector3 pos;
 
     private void Start()
     {
-        for(int i=0; i<FireLists.Length; i++)
+      
+        for (int i=0; i<FireLists.Length; i++)
         {
             FireLists[i] = FireBreath;
            
@@ -35,6 +37,7 @@ public class AttackPlayer : MonoBehaviour
 
     void Update()
     {
+       
         player = GameObject.FindWithTag("Player");
 
         if(player!=null)
@@ -42,6 +45,7 @@ public class AttackPlayer : MonoBehaviour
             float Distance = Vector3.Distance(transform.position, player.transform.position);
             if (Distance <= 10f && !isInstantiated)
             {
+                pos = transform.position;
 
                 if (allowCoRoutine)
                 {
@@ -51,6 +55,8 @@ public class AttackPlayer : MonoBehaviour
 
             }
         }
+
+
 
         if(!IsEmpty())
         {
@@ -84,10 +90,11 @@ public class AttackPlayer : MonoBehaviour
 
     IEnumerator SpawnLasers()
     {
+      
         for (int i = 0; i < FireLists.Length; i++)
         {
             //THIS IS WORKING YEEHAW!
-            yield return new WaitForSeconds(1f);  //this method is perfect and better!!
+            yield return new WaitForSeconds(2f);  //this method is perfect and better!!
             fireTemp = Instantiate(FireLists[i], transform.position, Quaternion.identity);
             instantiatedFireObjects[i] = fireTemp;
 
