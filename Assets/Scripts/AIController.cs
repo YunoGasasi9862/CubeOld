@@ -22,7 +22,7 @@ public class AIController : MonoBehaviour
     void Update()
     {
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForward") && !Backward)
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForwardCopy") && !Backward)
         {
             rb.AddForce(Vector3.forward * -Speed * Time.deltaTime);
             
@@ -53,7 +53,7 @@ public class AIController : MonoBehaviour
 
                 AinRad = Mathf.Acos(Dotproduct);
 
-                AinDegrees = 2 * (AinRad * (180 / Mathf.PI));
+                AinDegrees = (AinRad * (180 / Mathf.PI));
 
                 transform.localRotation = Quaternion.AngleAxis(AinDegrees, Vector3.forward);
 
