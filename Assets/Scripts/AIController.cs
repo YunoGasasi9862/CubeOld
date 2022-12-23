@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -79,8 +80,9 @@ public class AIController : MonoBehaviour
                 anim.SetBool("KeepFlying", false);
                  float backwardSpeed = 400f;
 
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForward"))
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForwardCopy"))
                 {
+                    
                     rb.AddForce(Vector3.forward * backwardSpeed * Time.deltaTime);
 
                 }

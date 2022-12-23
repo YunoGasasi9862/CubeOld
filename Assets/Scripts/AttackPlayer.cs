@@ -23,6 +23,7 @@ public class AttackPlayer : MonoBehaviour
 
     private void Start()
     {
+        
       
         for (int i=0; i<FireLists.Length; i++)
         {
@@ -43,9 +44,10 @@ public class AttackPlayer : MonoBehaviour
         if(player!=null)
         {
             float Distance = Vector3.Distance(transform.position, player.transform.position);
-            if (Distance <= 10f && !isInstantiated)
+            if (Distance <= 30f && !isInstantiated)
             {
-                pos = transform.position;
+                pos = transform.GetChild(1).transform.position;
+                Debug.Log(pos);
 
                 if (allowCoRoutine)
                 {
@@ -95,7 +97,7 @@ public class AttackPlayer : MonoBehaviour
         {
             //THIS IS WORKING YEEHAW!
             yield return new WaitForSeconds(2f);  //this method is perfect and better!!
-            fireTemp = Instantiate(FireLists[i], transform.position, Quaternion.identity);
+            fireTemp = Instantiate(FireLists[i], pos, Quaternion.identity);
             instantiatedFireObjects[i] = fireTemp;
 
         }

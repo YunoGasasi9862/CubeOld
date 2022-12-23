@@ -27,7 +27,7 @@ public class FollowPlayer : MonoBehaviour
     {
 
 
-        if (Vector2.Distance(transform.position, Player.transform.position) >=5f)  //OMG IT WORKED! I FUCKING DID IT!!!  (IT FOLLOWS THE PLAYER UNTIL THE DISTANCE IS > 20)
+        if (Vector2.Distance(transform.position, Player.transform.position) >=10f)  //OMG IT WORKED! I FUCKING DID IT!!!  (IT FOLLOWS THE PLAYER UNTIL THE DISTANCE IS > 20)
         {
             transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
 
@@ -47,7 +47,7 @@ public class FollowPlayer : MonoBehaviour
 
             //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
 
-            angleinRadians = Mathf.Acos(DotProduct);
+            angleinRadians = Mathf.Acos(DotProduct); 
                  
             //if need in degrees
             angleinDegrees = angleinRadians * 180 / (Mathf.PI);
