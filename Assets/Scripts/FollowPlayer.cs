@@ -40,14 +40,15 @@ public class FollowPlayer : MonoBehaviour
 
 
             //using the DotProduct method, and rotating it on that Axis only
-            DotProduct = Vector3.Dot(transform.position, Player.transform.position);
-
+            DotProduct = Vector2.Dot(transform.position, Player.transform.position);
             DotProduct = DotProduct / (transform.position.magnitude * Player.transform.position.magnitude);
+
+
 
 
             //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
 
-            angleinRadians = Mathf.Acos(DotProduct); 
+            angleinRadians = Mathf.Sin(DotProduct); 
                  
             //if need in degrees
             angleinDegrees = angleinRadians * 180 / (Mathf.PI);

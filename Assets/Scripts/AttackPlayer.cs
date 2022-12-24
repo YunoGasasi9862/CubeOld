@@ -68,7 +68,7 @@ public class AttackPlayer : MonoBehaviour
                 {
                     if (instantiatedFireObjects[i].GetComponent<Rigidbody>().velocity.magnitude <= .1f)
                     {
-                        Destroy(instantiatedFireObjects[i], 2f);
+                        Destroy(instantiatedFireObjects[i], 3f);
                     }
                 }
             }
@@ -96,7 +96,7 @@ public class AttackPlayer : MonoBehaviour
         for (int i = 0; i < FireLists.Length; i++)
         {
             //THIS IS WORKING YEEHAW!
-            yield return new WaitForSeconds(2f);  //this method is perfect and better!!
+            yield return new WaitForSeconds(2.5f);  //this method is perfect and better!!
             fireTemp = Instantiate(FireLists[i], pos, Quaternion.identity);
             instantiatedFireObjects[i] = fireTemp;
 

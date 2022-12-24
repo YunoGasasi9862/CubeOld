@@ -25,6 +25,7 @@ TagManager:
   - Portal
   - TemporaryCamera
   - Root
+  - BreatheFire
   layers:
   - Default
   - TransparentFX
