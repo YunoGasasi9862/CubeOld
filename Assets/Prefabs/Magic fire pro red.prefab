@@ -19311,6 +19311,7 @@ GameObject:
   - component: {fileID: 411001791633251309}
   - component: {fileID: -7102658522985471206}
   - component: {fileID: -6052341086223936719}
+  - component: {fileID: -2483631380459586515}
   m_Layer: 0
   m_Name: Magic fire pro red
   m_TagString: Fire
@@ -24153,7 +24154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937323477cc58fe4581a0f483dde2d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   manager: {fileID: 0}
   GameOverclip: {fileID: -7102658522985471206}
 --- !u!82 &-7102658522985471206
@@ -24268,3 +24269,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2483631380459586515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975959190090480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c291868c776994b97c11d943b21522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ground:
+    serializedVersion: 2
+    m_Bits: 64
