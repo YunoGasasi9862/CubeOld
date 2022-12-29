@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
         if(Input.GetKey(KeyCode.F))
         {
             Time.timeScale = 1;
+            Movement.HEALTH = 100;
            
             Restart();
         }

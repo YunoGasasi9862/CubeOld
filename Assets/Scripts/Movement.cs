@@ -44,7 +44,9 @@ public class Movement : MonoBehaviour
     public float Vertical;
     private GameObject temp=null;
 
-
+    public static double HEALTH = 100f;
+    private const double OBSTACLEHIT = 10f;
+   
 
     void Start()
     {
@@ -135,9 +137,14 @@ public class Movement : MonoBehaviour
 
         if (collision.collider.tag == "Obstacle")
         {
-            GameEndChecK();
-            gameManager.isOver = true;
-            collisionsound.Play();
+            if(HEALTH<=0)
+            {
+                GameEndChecK();
+                gameManager.isOver = true;
+                collisionsound.Play();
+            }
+
+            HEALTH -= OBSTACLEHIT;
 
 
         }

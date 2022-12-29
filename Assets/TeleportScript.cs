@@ -97,7 +97,7 @@ public class TeleportScript : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position, transform.forward * 1f, Color.black);
-        Physics.Raycast(transform.position, transform.forward, out hit, 1, teleportScreen);
+        Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen);
         if (Physics.Raycast(transform.position, transform.forward, out hit, 1f, teleportScreen)) //output in hit
         {
             if (hit.collider.isTrigger) //check if the collider is a hit

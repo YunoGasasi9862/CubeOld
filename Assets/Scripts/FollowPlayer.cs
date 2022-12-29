@@ -15,7 +15,7 @@ public class FollowPlayer : MonoBehaviour
         private float angleinDegrees;
     private Vector3 previousPosition;
     private float previousAngle;
-  
+    private const float FIREHIT = 10f;
    
         
     private void Start()
@@ -41,9 +41,7 @@ public class FollowPlayer : MonoBehaviour
 
             //using the DotProduct method, and rotating it on that Axis only
             DotProduct = Vector3.Dot(transform.position, Player.transform.position);
-
             DotProduct = DotProduct / (transform.position.magnitude * Player.transform.position.magnitude);
-
 
 
 
@@ -76,8 +74,15 @@ public class FollowPlayer : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player"))
         {
-            GameOverclip.Play();
-            manager.pause();
+            if(Movement.HEALTH<=0)
+            {
+                GameOverclip.Play();
+                manager.pause();
+            }
+
+            Movement.HEALTH -= FIREHIT;
+
+
         }
     }
 

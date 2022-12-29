@@ -7,7 +7,8 @@ public class HealthBarScript : MonoBehaviour
 {
 
     [SerializeField] Slider slide;
-    float value;
+    [SerializeField] Image Fill;
+    [SerializeField] Gradient gradient;
     void Start()
     {
         slide = GetComponent<Slider>();
@@ -16,11 +17,13 @@ public class HealthBarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(slide);
+        
         if(slide!=null)
         {
-            value += Time.deltaTime;
-            slide.value -= value;
+           
+            slide.value = (float) Movement.HEALTH;
+            Fill.color = gradient.Evaluate(slide.value/100) ; //normalized value is a must, because value is between 0 and 100, and Evaluate takes between 0 and 1.
+            //either divide by 100 or use normalzied value
         }
        
     }
