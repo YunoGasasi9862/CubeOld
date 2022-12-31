@@ -46,7 +46,8 @@ public class Movement : MonoBehaviour
 
     public static double HEALTH = 100f;
     private const double OBSTACLEHIT = 10f;
-   
+    private const float FIREHIT = 10f;
+
 
     void Start()
     {
@@ -115,6 +116,8 @@ public class Movement : MonoBehaviour
         if(isPaused && Input.GetKeyDown(KeyCode.F))
         {
             gameManager.Restart();
+
+
             Time.timeScale = 1;
             isPaused = false;
              //restarting the game
@@ -171,6 +174,23 @@ public class Movement : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(part, 5f);
         }
+
+       
+            if (other!=null && other.CompareTag("Fire"))
+            {
+                if (Movement.HEALTH <= 0)
+                {
+                     sound.Play();
+                    gameManager.isOver = true;
+                      gameManager.Restart();
+                 }
+
+                Movement.HEALTH -= FIREHIT;
+                Destroy(other.gameObject, 1f);
+
+
+            }
+        
 
     }
 

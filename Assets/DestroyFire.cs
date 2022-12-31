@@ -24,5 +24,17 @@ public class DestroyFire : MonoBehaviour
                 count = 0;
             }
         }
+
+        if(hit.collider==null)
+        {
+            count += Time.deltaTime;
+            if(count>=2.5f)
+            {
+                Destroy(gameObject);
+                count = 0f;
+            }
+        }
+
+
     }
 }

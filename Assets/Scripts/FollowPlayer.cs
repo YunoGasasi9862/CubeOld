@@ -8,7 +8,6 @@ public class FollowPlayer : MonoBehaviour
     private GameObject Player;
     [SerializeField]float speed;
     [SerializeField] GameManager manager;
-    [SerializeField] AudioSource GameOverclip;
 
     private float DotProduct;
     private float angleinRadians;
@@ -46,6 +45,7 @@ public class FollowPlayer : MonoBehaviour
 
 
 
+
             //remember the formula -> cosOfangle= (Vector1* Vector2)/(their magnitudes) Trignometry!
 
             angleinRadians = Mathf.Acos(DotProduct);
@@ -70,21 +70,7 @@ public class FollowPlayer : MonoBehaviour
     }
     
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.CompareTag("Player"))
-        {
-            if(Movement.HEALTH<=0)
-            {
-                GameOverclip.Play();
-                manager.pause();
-            }
-
-            Movement.HEALTH -= FIREHIT;
-
-
-        }
-    }
+  
 
 
 }
