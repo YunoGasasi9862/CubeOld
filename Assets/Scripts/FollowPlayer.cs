@@ -14,7 +14,6 @@ public class FollowPlayer : MonoBehaviour
         private float angleinDegrees;
     private Vector3 previousPosition;
     private float previousAngle;
-    private const float FIREHIT = 10f;
    
         
     private void Start()
