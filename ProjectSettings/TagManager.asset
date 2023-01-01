@@ -26,6 +26,7 @@ TagManager:
   - TemporaryCamera
   - Root
   - BreatheFire
+  - CE
   layers:
   - Default
   - TransparentFX

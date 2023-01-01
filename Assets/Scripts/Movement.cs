@@ -47,6 +47,7 @@ public class Movement : MonoBehaviour
     public static double HEALTH = 100f;
     private const double OBSTACLEHIT = 10f;
     private const float FIREHIT = 10f;
+    [SerializeField] GameObject ContactEx;
 
 
     void Start()
@@ -184,6 +185,12 @@ public class Movement : MonoBehaviour
                     gameManager.isOver = true;
                       gameManager.Restart();
                  }
+
+                    Vector3 pos = transform.position;
+                    pos.y = transform.position.y + 1f;
+
+                    GameObject explosion = Instantiate(ContactEx,pos, Quaternion.identity);
+                      explosion.transform.parent = transform;
 
                 Movement.HEALTH -= FIREHIT;
                 Destroy(other.gameObject, 1f);

@@ -56,7 +56,7 @@ public class PlayerSpawn : MonoBehaviour
     public void RayCast()
     {
 
-        Physics.Raycast(transform.position, transform.up, out hit, 1f, Player);
+        Physics.Raycast(transform.position, transform.up, out hit, 1, Player);
 
         Debug.DrawRay(transform.position, transform.up * 1f, Color.red);
 
