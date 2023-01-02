@@ -20,9 +20,9 @@ public class HealthBarScript : MonoBehaviour
         
         if(slide!=null)
         {
-           
-            slide.value = (float) Movement.HEALTH;
-            Fill.color = gradient.Evaluate(slide.value/100) ; //normalized value is a must, because value is between 0 and 100, and Evaluate takes between 0 and 1.
+
+            slide.value = (float)Movement.HEALTH;
+            Fill.color = gradient.Evaluate(slide.value/ 100f); //normalized value is a must, because value is between 0 and 100, and Evaluate takes between 0 and 1.
             //either divide by 100 or use normalzied value
         }
        
