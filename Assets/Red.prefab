@@ -2531,7 +2531,7 @@ GameObject:
   - component: {fileID: 8746959749464632921}
   - component: {fileID: 8746959749464632926}
   - component: {fileID: 8746959749464632864}
-  - component: {fileID: 5864920628961437985}
+  - component: {fileID: 2149250779324986173}
   m_Layer: 0
   m_Name: Red
   m_TagString: Untagged
@@ -2607,7 +2607,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   Speed: 100
   anim: {fileID: 0}
-  Flap: {fileID: 0}
+  Flap: {fileID: 2149250779324986173}
 --- !u!114 &8746959749464632864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2623,7 +2623,7 @@ MonoBehaviour:
   Fire: {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038, type: 3}
   Mouth: {fileID: 8746959749249851567}
   Player: {fileID: 0}
---- !u!82 &5864920628961437985
+--- !u!82 &2149250779324986173
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2633,20 +2633,20 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2faa748b184619f41888ee62a46eb9e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
+  Priority: 7
+  DopplerLevel: 1.07
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10000
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -2679,7 +2679,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

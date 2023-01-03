@@ -14,6 +14,7 @@ public class AIController : MonoBehaviour
     private float AinDegrees;
     private bool Backward = false;
     [SerializeField] AudioSource Flap;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,11 +30,17 @@ public class AIController : MonoBehaviour
             rb.AddForce(Vector3.forward * -Speed * Time.deltaTime);
             
         }
+      
+       
 
 
         //calculate distance between
-        if(Player!=null)
+        if (Player!=null)
         {
+            if (!Flap.isPlaying)
+            {
+                Flap.Play();
+            }
 
             if (Vector3.Distance(transform.position, Player.transform.position) < 30f && Vector3.Distance(transform.position, Player.transform.position)>20f && (transform.position.z > Player.transform.position.z))
             {
@@ -47,9 +54,10 @@ public class AIController : MonoBehaviour
 
             }
 
-            if(Vector3.Distance(transform.position, Player.transform.position)<20f && Vector3.Distance(transform.position, Player.transform.position)>14f && (transform.position.z > Player.transform.position.z))
+            if(Vector3.Distance(transform.position, Player.transform.position)<30f && Vector3.Distance(transform.position, Player.transform.position)>20f && (transform.position.z > Player.transform.position.z))
             {
                 //rotate the dragon toward the Player
+                Flap.Stop();
                 Dotproduct = Vector3.Dot(transform.position, Player.transform.position);
                 Dotproduct = Dotproduct / (transform.position.magnitude * Player.transform.position.magnitude);
 
@@ -79,7 +87,7 @@ public class AIController : MonoBehaviour
             {
                 Backward = true;
                 anim.SetBool("KeepFlying", false);
-                 float backwardSpeed = 400f;
+                 float backwardSpeed = 600f;
 
                 if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForwardCopy"))
                 {
