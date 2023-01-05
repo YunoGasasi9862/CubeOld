@@ -57,7 +57,7 @@ public class AIController : MonoBehaviour
             if(Vector3.Distance(transform.position, Player.transform.position)<30f && Vector3.Distance(transform.position, Player.transform.position)>20f && (transform.position.z > Player.transform.position.z))
             {
                 //rotate the dragon toward the Player
-                Flap.Stop();
+                
                 Dotproduct = Vector3.Dot(transform.position, Player.transform.position);
                 Dotproduct = Dotproduct / (transform.position.magnitude * Player.transform.position.magnitude);
 
@@ -83,7 +83,7 @@ public class AIController : MonoBehaviour
             }
          
 
-            if (transform.position.z  - 3f< Player.transform.position.z)
+            if (transform.position.z  < Player.transform.position.z)
             {
                 Backward = true;
                 anim.SetBool("KeepFlying", false);
