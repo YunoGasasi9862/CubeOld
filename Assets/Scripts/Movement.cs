@@ -180,10 +180,10 @@ public class Movement : MonoBehaviour
             if (other!=null && other.CompareTag("Fire"))
             {
                 if (Movement.HEALTH <= 0)
-                {
-                     sound.Play();
-                    gameManager.isOver = true;
-                      gameManager.Restart();
+                {   
+                      sound.Play();
+                      gameManager.isOver = true;
+                      gameManager.pause();
                  }
 
                     Vector3 pos = transform.position;

@@ -42,22 +42,17 @@ public class AIController : MonoBehaviour
                 Flap.Play();
             }
 
-            if (Vector3.Distance(transform.position, Player.transform.position) < 30f && Vector3.Distance(transform.position, Player.transform.position)>20f && (transform.position.z > Player.transform.position.z))
+       
+           
+            if(Vector3.Distance(transform.position, Player.transform.position)<30f && Vector3.Distance(transform.position, Player.transform.position)>20f && (transform.position.z + 10 > Player.transform.position.z))
             {
                 Backward = false;
 
                 rb.velocity = new Vector3(0, 0, 0);
                 anim.SetBool("KeepFlying", true);
 
-            
-
-
-            }
-
-            if(Vector3.Distance(transform.position, Player.transform.position)<30f && Vector3.Distance(transform.position, Player.transform.position)>20f && (transform.position.z > Player.transform.position.z))
-            {
                 //rotate the dragon toward the Player
-                
+
                 Dotproduct = Vector3.Dot(transform.position, Player.transform.position);
                 Dotproduct = Dotproduct / (transform.position.magnitude * Player.transform.position.magnitude);
 
@@ -83,8 +78,9 @@ public class AIController : MonoBehaviour
             }
          
 
-            if (transform.position.z  < Player.transform.position.z)
+            if (transform.position.z -10f < Player.transform.position.z )
             {
+               
                 Backward = true;
                 anim.SetBool("KeepFlying", false);
                  float backwardSpeed = 600f;
@@ -92,7 +88,7 @@ public class AIController : MonoBehaviour
                 if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyForwardCopy"))
                 {
                     
-                    rb.AddForce(Vector3.forward * backwardSpeed * Time.deltaTime);
+                    rb.AddForce(Vector3.forward * backwardSpeed * Time.deltaTime, ForceMode.Impulse);
 
                 }
               
