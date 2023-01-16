@@ -197,6 +197,17 @@ public class Movement : MonoBehaviour
 
 
             }
+
+            if(other.CompareTag("Health"))
+            {
+               
+                if(HEALTH<100 && HEALTH + 10 <=100)
+                {
+                    HEALTH += 10;
+                Destroy(other.gameObject, 1f);
+            }
+
+            }
         
 
     }

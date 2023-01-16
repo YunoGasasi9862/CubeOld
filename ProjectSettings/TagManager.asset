@@ -27,6 +27,8 @@ TagManager:
   - Root
   - BreatheFire
   - CE
+  - FxTemporaire
+  - Health
   layers:
   - Default
   - TransparentFX
