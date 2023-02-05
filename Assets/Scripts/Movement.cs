@@ -48,7 +48,8 @@ public class Movement : MonoBehaviour
     private const double OBSTACLEHIT = 10f;
     private const float FIREHIT = 10f;
     [SerializeField] GameObject ContactEx;
-
+    [SerializeField] GameObject VeilAnim;
+    private GameObject tempVeilAnim;
 
     void Start()
     {
@@ -200,11 +201,17 @@ public class Movement : MonoBehaviour
 
             if(other.CompareTag("Health"))
             {
+             Vector3 pos = other.transform.position;
+             pos.y = other.transform.position.y + 1.5f;
                
                 if(HEALTH<100 && HEALTH + 10 <=100)
                 {
                     HEALTH += 10;
-                Destroy(other.gameObject, 1f);
+                tempVeilAnim = Instantiate(VeilAnim, pos, Quaternion.identity);
+                Destroy(other.gameObject, .5f);
+                Destroy(tempVeilAnim, 1f);
+
+
             }
 
             }
