@@ -202,7 +202,7 @@ public class Movement : MonoBehaviour
             if(other.CompareTag("Health"))
             {
              Vector3 pos = other.transform.position;
-             pos.y = other.transform.position.y + 1.5f;
+             pos.y = other.transform.position.y + 1.1f;
                
                 if(HEALTH<100 && HEALTH + 10 <=100)
                 {

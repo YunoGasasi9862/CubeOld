@@ -11,6 +11,12 @@ public class MovingOsbtacle : MonoBehaviour
     [SerializeField] float speed=5f;
      Vector3 position;
 
+    private float minScale=3, maxScale=5f;
+    private bool scaling = false;
+    private float _timingtrack;
+    private float scaleValue;
+    private float reduce = 0;
+    private bool _reducedfinally = false;
        // Update is called once per frame
 
 
@@ -42,6 +48,58 @@ public class MovingOsbtacle : MonoBehaviour
 
         }
 
+        
+
+    }
+
+    private void Update()
+    {
+
+
+        if(!scaling)
+        {
+            scaleValue = Scaling();
+            scaling = true;
+            _timingtrack = minScale;
+        }
+
+
+        if(scaling)
+        {
+            if (_timingtrack < scaleValue)
+            {
+                _timingtrack += Time.deltaTime;
+             
+               
+                transform.localScale = new Vector3(transform.localScale.x,_timingtrack, transform.localScale.z);
+            }
+            else
+            {
+                reduce = _timingtrack;
+
+                if (reduce > minScale)
+                {
+                    reduce -= Time.deltaTime;
+                  
+                    transform.localScale = new Vector3(transform.localScale.x, reduce, transform.localScale.z);
+                 
+                    _reducedfinally = true;
+                }
+            
+            }
+
+            if(_reducedfinally && reduce < minScale)
+            {
+                _reducedfinally = false;
+                scaling = false;
+
+
+            }
+
+
+        }
+
+      
     }
     void FixedUpdate() //fixed update worked for translating the objects left and right continuously
         //the regular update function didn't work !!
@@ -68,7 +126,15 @@ public class MovingOsbtacle : MonoBehaviour
 
     }
 
+    private float Scaling()
+    {
+        float value=minScale;
+      
+         value = Random.Range(minScale, maxScale);
 
+        _timingtrack = minScale;
+        return value;
+    }
 
 
 

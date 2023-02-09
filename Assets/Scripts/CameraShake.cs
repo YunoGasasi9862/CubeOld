@@ -5,6 +5,12 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     [SerializeField] GameManager gamemanager;
+    private Vector3 originalPos;
+    private void Start()
+    {
+         originalPos = transform.localPosition;
+
+    }
 
     private void Update()
     {
@@ -15,7 +21,6 @@ public class CameraShake : MonoBehaviour
     }
     public IEnumerator Shake(float duration, float magnitude)
     {
-        Vector3 originalPos = transform.localPosition;
 
         float elapsedTime = 0f;
 
